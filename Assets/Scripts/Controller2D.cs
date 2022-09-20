@@ -17,15 +17,21 @@ public class Controller2D : MonoBehaviour {
     float horizontalRaySpacing;
     float verticalRaySpacing;
 
+    float horizontalExtent;
+    float verticalExtent;
+
     BoxCollider2D playerCollider;
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
+    Bounds innerBounds;
     private Quaternion rotation;
 
     void Start()
     {
         playerCollider = GetComponent<BoxCollider2D>();
+        horizontalExtent = playerCollider.bounds.extents.x;
+        verticalExtent = playerCollider.bounds.extents.y;
         CalculateRaySpacing();
         collisions.faceDir = 1;
     }
@@ -67,10 +73,13 @@ public class Controller2D : MonoBehaviour {
         for (int i = 0; i < horizontalRayCount; i++)
         {
             Vector2 rayOrigin = raycastOrigins.botLeft;
-            rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left * rotation, rayLength, collisionMask);
+            //rayOrigin += Vector2.up * (horizontalRaySpacing * i);
+            rayOrigin = transform.TransformPoint(Vector2.left * (horizontalExtent - skinWidth) +
+                                                 Vector2.down * (verticalExtent - skinWidth) +
+                                                 Vector2.up * (horizontalRaySpacing * i));
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rotation * Vector2.left, rayLength, collisionMask);
 
-            Debug.DrawRay(rayOrigin, Vector2.left * rotation * rayLength * 5f, Color.red);
+            Debug.DrawRay(rayOrigin, rotation * Vector2.left * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -86,10 +95,13 @@ public class Controller2D : MonoBehaviour {
         for (int i = 0; i < horizontalRayCount; i++)
         {
             Vector2 rayOrigin = raycastOrigins.botRight;
-            rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * rotation, rayLength, collisionMask);
+            //rayOrigin += Vector2.up * (horizontalRaySpacing * i);
+            rayOrigin = transform.TransformPoint(Vector2.right * (horizontalExtent - skinWidth) +
+                                                 Vector2.down * (verticalExtent - skinWidth) +
+                                                 Vector2.up * (horizontalRaySpacing * i));
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rotation * Vector2.right, rayLength, collisionMask);
 
-            Debug.DrawRay(rayOrigin, Vector2.right * rotation * rayLength * 5f, Color.red);
+            Debug.DrawRay(rayOrigin, rotation * Vector2.right * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -112,10 +124,13 @@ public class Controller2D : MonoBehaviour {
         // below defined as -1
         for (int i = 0; i < verticalRayCount; i++) {
             Vector2 rayOrigin = raycastOrigins.botLeft;
-            rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
-           
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down * rotation, rayLength, collisionMask);
-            Debug.DrawRay(rayOrigin, Vector2.down * rotation * rayLength * 5f, Color.red);
+            //rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
+            rayOrigin = transform.TransformPoint(Vector2.left * (horizontalExtent - skinWidth) +
+                                                 Vector2.down * (verticalExtent - skinWidth) +
+                                                 Vector2.right * (verticalRaySpacing * i));
+
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rotation * Vector2.down, rayLength, collisionMask);
+            Debug.DrawRay(rayOrigin, rotation * Vector2.down * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -129,10 +144,13 @@ public class Controller2D : MonoBehaviour {
         for (int i = 0; i < verticalRayCount; i++)
         {
             Vector2 rayOrigin = raycastOrigins.topLeft;
-            rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
+            //rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
+            rayOrigin = transform.TransformPoint(Vector2.left * (horizontalExtent - skinWidth) +
+                                                 Vector2.up * (verticalExtent - skinWidth) +
+                                                 Vector2.right * (verticalRaySpacing * i));
 
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * rotation, rayLength, collisionMask);
-            Debug.DrawRay(rayOrigin, Vector2.up * rotation * rayLength * 5f, Color.red);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rotation * Vector2.up, rayLength, collisionMask);
+            Debug.DrawRay(rayOrigin, rotation * Vector2.up * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -179,13 +197,14 @@ public class Controller2D : MonoBehaviour {
     {
         Bounds bounds = playerCollider.bounds;
         bounds.Expand(skinWidth * -2);
+        innerBounds = bounds;
 
-        rotation = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.back);
+        rotation = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward);
 
-        raycastOrigins.botLeft = transform.TransformPoint(Vector3.down * bounds.extents.y + Vector3.left * bounds.extents.x);
-        raycastOrigins.botRight = transform.TransformPoint(Vector3.down * bounds.extents.y + Vector3.right * bounds.extents.x);
-        raycastOrigins.topLeft = transform.TransformPoint(Vector3.up * bounds.extents.y + Vector3.left * bounds.extents.x);
-        raycastOrigins.topRight = transform.TransformPoint(Vector3.up * bounds.extents.y + Vector3.right * bounds.extents.x);
+        raycastOrigins.botLeft = transform.TransformPoint(Vector3.down * verticalExtent + Vector3.left * horizontalExtent);
+        raycastOrigins.botRight = transform.TransformPoint(Vector3.down * verticalExtent + Vector3.right * horizontalExtent);
+        raycastOrigins.topLeft = transform.TransformPoint(Vector3.up * verticalExtent + Vector3.left * horizontalExtent);
+        raycastOrigins.topRight = transform.TransformPoint(Vector3.up * verticalExtent + Vector3.right * horizontalExtent);
 
         // code below only applies to non-rotating collision box
         /*
