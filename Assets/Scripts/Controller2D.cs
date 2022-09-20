@@ -21,6 +21,8 @@ public class Controller2D : MonoBehaviour {
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
+    private Quaternion rotation;
+
     void Start()
     {
         playerCollider = GetComponent<BoxCollider2D>();
@@ -66,9 +68,9 @@ public class Controller2D : MonoBehaviour {
         {
             Vector2 rayOrigin = raycastOrigins.botLeft;
             rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left, rayLength, collisionMask);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left * rotation, rayLength, collisionMask);
 
-            Debug.DrawRay(rayOrigin, Vector2.left * rayLength * 5f, Color.red);
+            Debug.DrawRay(rayOrigin, Vector2.left * rotation * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -85,9 +87,9 @@ public class Controller2D : MonoBehaviour {
         {
             Vector2 rayOrigin = raycastOrigins.botRight;
             rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * rotation, rayLength, collisionMask);
 
-            Debug.DrawRay(rayOrigin, Vector2.right * rayLength * 5f, Color.red);
+            Debug.DrawRay(rayOrigin, Vector2.right * rotation * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -112,8 +114,8 @@ public class Controller2D : MonoBehaviour {
             Vector2 rayOrigin = raycastOrigins.botLeft;
             rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
            
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, collisionMask);
-            Debug.DrawRay(rayOrigin, Vector2.down * rayLength * 5f, Color.red);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down * rotation, rayLength, collisionMask);
+            Debug.DrawRay(rayOrigin, Vector2.down * rotation * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -129,8 +131,8 @@ public class Controller2D : MonoBehaviour {
             Vector2 rayOrigin = raycastOrigins.topLeft;
             rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
 
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, collisionMask);
-            Debug.DrawRay(rayOrigin, Vector2.up * rayLength * 5f, Color.red);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * rotation, rayLength, collisionMask);
+            Debug.DrawRay(rayOrigin, Vector2.up * rotation * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -162,6 +164,7 @@ public class Controller2D : MonoBehaviour {
         }
     }
 
+    // obselete
     public bool IsGrounded()
     {
         return collisions.below;        
@@ -177,10 +180,20 @@ public class Controller2D : MonoBehaviour {
         Bounds bounds = playerCollider.bounds;
         bounds.Expand(skinWidth * -2);
 
+        rotation = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.back);
+
+        raycastOrigins.botLeft = transform.TransformPoint(Vector3.down * bounds.extents.y + Vector3.left * bounds.extents.x);
+        raycastOrigins.botRight = transform.TransformPoint(Vector3.down * bounds.extents.y + Vector3.right * bounds.extents.x);
+        raycastOrigins.topLeft = transform.TransformPoint(Vector3.up * bounds.extents.y + Vector3.left * bounds.extents.x);
+        raycastOrigins.topRight = transform.TransformPoint(Vector3.up * bounds.extents.y + Vector3.right * bounds.extents.x);
+
+        // code below only applies to non-rotating collision box
+        /*
         raycastOrigins.botLeft = new Vector2(bounds.min.x, bounds.min.y);
         raycastOrigins.botRight = new Vector2(bounds.max.x, bounds.min.y);
         raycastOrigins.topLeft = new Vector2(bounds.min.x, bounds.max.y);
         raycastOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
+        */
     }
 
     void CalculateRaySpacing()

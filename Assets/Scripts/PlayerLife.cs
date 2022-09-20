@@ -27,7 +27,7 @@ public class PlayerLife : MonoBehaviour
         //anim.SetTrigger("death");
 
         //diable player movement
-        GetComponent<Player>().enabled = false;
+        GetComponentInParent<Player>().enabled = false;
         Debug.Log("died");
         RestartLevel();
     }
