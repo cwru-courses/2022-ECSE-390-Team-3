@@ -1,79 +1,67 @@
 fileFormatVersion: 2
-guid: 024d616cc279c5940b69ada96c4f4fbd
+guid: d1efb2a91882c954081009820234acf6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 349018415689090980
-    second: patrol 2 sprite_0
+      213: 2433729718160136651
+    second: cyborg cell sprite_0
   - first:
-      213: 6533251988280677470
-    second: patrol 2 sprite_1
+      213: 6168803318869320012
+    second: cyborg cell sprite_1
   - first:
-      213: -8945310693227725715
-    second: patrol 2 sprite_2
+      213: -8047978413595368944
+    second: cyborg cell sprite_2
   - first:
-      213: -4861005790683470371
-    second: patrol 2 sprite_3
+      213: -3454533347912888872
+    second: cyborg cell sprite_3
   - first:
-      213: 8952365528622100834
-    second: patrol 2 sprite_4
+      213: -6533034164643586415
+    second: cyborg cell sprite_4
   - first:
-      213: 2673551880665578581
-    second: patrol 2 sprite_5
+      213: 2351750540818533382
+    second: cyborg cell sprite_5
   - first:
-      213: -7617734509359512097
-    second: patrol 2 sprite_6
+      213: 4991647184373945745
+    second: cyborg cell sprite_6
   - first:
-      213: 8584077551771214148
-    second: patrol 2 sprite_7
+      213: -497404479918749749
+    second: cyborg cell sprite_7
   - first:
-      213: -6125946783860613096
-    second: patrol 2 sprite_8
+      213: -6641823891505319178
+    second: cyborg cell sprite_8
   - first:
-      213: 6554756770986590225
-    second: patrol 2 sprite_9
+      213: -9141162963345917413
+    second: cyborg cell sprite_9
   - first:
-      213: 396465019393619383
-    second: patrol 2 sprite_10
+      213: 8549955127386276460
+    second: cyborg cell sprite_10
   - first:
-      213: -6390376194207573937
-    second: patrol 2 sprite_11
+      213: -4376690846327012334
+    second: cyborg cell sprite_11
   - first:
-      213: 296729742760600456
-    second: patrol 2 sprite_12
+      213: 5863900448854770722
+    second: cyborg cell sprite_12
   - first:
-      213: -5020941439184609056
-    second: patrol 2 sprite_13
+      213: -6058929734079357265
+    second: cyborg cell sprite_13
   - first:
-      213: -24086997774618926
-    second: patrol 2 sprite_14
+      213: -7793021653336884788
+    second: cyborg cell sprite_14
   - first:
-      213: 3317254322500683202
-    second: patrol 2 sprite_15
+      213: -7782899881475815071
+    second: cyborg cell sprite_15
   - first:
-      213: 5060915117705606821
-    second: patrol 2 sprite_16
+      213: -8829699757978948786
+    second: cyborg cell sprite_16
   - first:
-      213: -7075090124574887753
-    second: patrol 2 sprite_17
+      213: -4904732299421399229
+    second: cyborg cell sprite_17
   - first:
-      213: -5105280369016336826
-    second: patrol 2 sprite_18
+      213: -5225220878269654325
+    second: cyborg cell sprite_18
   - first:
-      213: -1123688939157365815
-    second: patrol 2 sprite_19
-  - first:
-      213: 7024836279735255047
-    second: patrol 2 sprite_20
-  - first:
-      213: -4449510903908166099
-    second: patrol 2 sprite_21
-  - first:
-      213: 2985476026766069632
-    second: patrol 2 sprite_22
-  - first:
-      213: -3218358240331333024
-    second: patrol 2 sprite_23
+      213: 8932793756817049738
+    second: cyborg cell sprite_19
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -164,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: patrol 2 sprite_0
+      name: cyborg cell sprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 560
-        height: 576
+        width: 70
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +166,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a7c73f5666f7d400800000000000000
-      internalID: 349018415689090980
+      spriteID: bc91f32c84856c120800000000000000
+      internalID: 2433729718160136651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: patrol 2 sprite_1
+      name: cyborg cell sprite_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41e47e4fedfb9550800000000000000
+      internalID: 6168803318869320012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012e2a9d546df4090800000000000000
+      internalID: -8047978413595368944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd49e419380f00d0800000000000000
+      internalID: -3454533347912888872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e9dee6a000655a0800000000000000
+      internalID: -6533034164643586415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c42d128a813a020800000000000000
+      internalID: 2351750540818533382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19510b4daa4e54540800000000000000
+      internalID: 4991647184373945745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_7
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc741c8c24dd819f0800000000000000
+      internalID: -497404479918749749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_8
       rect:
         serializedVersion: 2
         x: 560
         y: 0
-        width: 560
-        height: 576
+        width: 70
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +334,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5495959116caaa50800000000000000
-      internalID: 6533251988280677470
+      spriteID: 6f27f1e4c5083d3a0800000000000000
+      internalID: -6641823891505319178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: patrol 2 sprite_2
+      name: cyborg cell sprite_9
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a3fcf77b0142180800000000000000
+      internalID: -9141162963345917413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_10
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62836583ea87a670800000000000000
+      internalID: 8549955127386276460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_11
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21489fc2dded243c0800000000000000
+      internalID: -4376690846327012334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_12
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2240e34d362c06150800000000000000
+      internalID: 5863900448854770722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_13
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faed529228b5aeba0800000000000000
+      internalID: -6058929734079357265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_14
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc97de17810a9d390800000000000000
+      internalID: -7793021653336884788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_15
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169443a1bc59df390800000000000000
+      internalID: -7782899881475815071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyborg cell sprite_16
       rect:
         serializedVersion: 2
         x: 1120
         y: 0
-        width: 560
-        height: 576
+        width: 70
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,20 +502,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6c78ac915fdbd380800000000000000
-      internalID: -8945310693227725715
+      spriteID: e4bef441ada967580800000000000000
+      internalID: -8829699757978948786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: patrol 2 sprite_3
+      name: cyborg cell sprite_17
       rect:
         serializedVersion: 2
-        x: 1680
+        x: 1190
         y: 0
-        width: 560
-        height: 576
+        width: 70
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,20 +523,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5e133fcfc3a8cb0800000000000000
-      internalID: -4861005790683470371
+      spriteID: 3474a96c5f3eeebb0800000000000000
+      internalID: -4904732299421399229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: patrol 2 sprite_4
+      name: cyborg cell sprite_18
       rect:
         serializedVersion: 2
-        x: 2240
+        x: 1260
         y: 0
-        width: 560
-        height: 576
+        width: 70
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +544,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 261f8f044013d3c70800000000000000
-      internalID: 8952365528622100834
+      spriteID: bca58cdab494c77b0800000000000000
+      internalID: -5225220878269654325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: patrol 2 sprite_5
+      name: cyborg cell sprite_19
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 1330
         y: 0
-        width: 560
-        height: 576
+        width: 70
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,302 +565,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55c36a7354d5a1520800000000000000
-      internalID: 2673551880665578581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_6
-      rect:
-        serializedVersion: 2
-        x: 3360
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd5446003de584690800000000000000
-      internalID: -7617734509359512097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_7
-      rect:
-        serializedVersion: 2
-        x: 3920
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4416abd8d05c02770800000000000000
-      internalID: 8584077551771214148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_8
-      rect:
-        serializedVersion: 2
-        x: 4480
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 810aa035bd34cfaa0800000000000000
-      internalID: -6125946783860613096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_9
-      rect:
-        serializedVersion: 2
-        x: 5040
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1100ebbfd8c27fa50800000000000000
-      internalID: 6554756770986590225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_10
-      rect:
-        serializedVersion: 2
-        x: 5600
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b533d6a5d6808500800000000000000
-      internalID: 396465019393619383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_11
-      rect:
-        serializedVersion: 2
-        x: 6160
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f48152385b2d057a0800000000000000
-      internalID: -6390376194207573937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_12
-      rect:
-        serializedVersion: 2
-        x: 6720
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 883e98ff0223e1400800000000000000
-      internalID: 296729742760600456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_13
-      rect:
-        serializedVersion: 2
-        x: 7280
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e0ec57fc58025ab0800000000000000
-      internalID: -5020941439184609056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_14
-      rect:
-        serializedVersion: 2
-        x: 7840
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2de20fdc00d6aaff0800000000000000
-      internalID: -24086997774618926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_15
-      rect:
-        serializedVersion: 2
-        x: 8400
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c548421b31490e20800000000000000
-      internalID: 3317254322500683202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_16
-      rect:
-        serializedVersion: 2
-        x: 8960
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a63f355c7bfb3640800000000000000
-      internalID: 5060915117705606821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_17
-      rect:
-        serializedVersion: 2
-        x: 9520
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b0f6d2640b30dd90800000000000000
-      internalID: -7075090124574887753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_18
-      rect:
-        serializedVersion: 2
-        x: 10080
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64e8106ad866629b0800000000000000
-      internalID: -5105280369016336826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: patrol 2 sprite_19
-      rect:
-        serializedVersion: 2
-        x: 10640
-        y: 0
-        width: 560
-        height: 576
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cb5d770ddad760f0800000000000000
-      internalID: -1123688939157365815
+      spriteID: a8848e60898a7fb70800000000000000
+      internalID: 8932793756817049738
       vertices: []
       indices: 
       edges: []
