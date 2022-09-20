@@ -9,4 +9,12 @@ public class SceneController : MonoBehaviour
    {
        SceneManager.LoadScene("Credits");
    }
+   public void Intro()
+   {
+        SceneManager.LoadScene("Intro");
+   }
+   public void Sandbox()
+   {
+        SceneManager.LoadScene("Sandbox");
+   }
 }
