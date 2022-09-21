@@ -19,7 +19,6 @@ public class PlayerLife : MonoBehaviour
         {
             Die();
         }
-        Debug.Log("hit");
     }
 
     private void Die()
@@ -27,7 +26,9 @@ public class PlayerLife : MonoBehaviour
         //anim.SetTrigger("death");
 
         //diable player movement
-        GetComponentInParent<Player>().enabled = false;
+        //GetComponentInParent<Player>().enabled = false;
+        // there is really no reason to do that if you immediately reload the scene afterwards;
+        // we won't need an animator to do timer, it'll be handled in gamemanager
         Debug.Log("died");
         RestartLevel();
     }

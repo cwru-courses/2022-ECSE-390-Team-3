@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateFromMouse : MonoBehaviour
+public class RotateToCursor : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("max degrees rotated per second")]
@@ -18,7 +18,7 @@ public class RotateFromMouse : MonoBehaviour
 
         Vector3 lineOfSight = mousePos - transform.position;
 
-        rotation = Quaternion.LookRotation(Vector3.forward, lineOfSight);      
+        rotation = Quaternion.LookRotation(Vector3.forward, lineOfSight);
     }
 
     void LateUpdate()
