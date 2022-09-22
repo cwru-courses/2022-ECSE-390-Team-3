@@ -11,6 +11,8 @@ public class Wind : MonoBehaviour
     [SerializeField]
     float windSpeed;
     Vector2 direction;
+    Vector2 currVelocity;
+    Vector2 refVelocity;
 
     SpriteRenderer SR;
     Color color;
@@ -48,5 +50,20 @@ public class Wind : MonoBehaviour
     public Vector2 GetVelocity()
     {
         return direction.normalized * windSpeed;
+    }
+
+    public Vector2 GetCurrVelocity()
+    {
+        return currVelocity;
+    }
+
+    public ref Vector2 GetRefVelocity()
+    {
+        return ref refVelocity;
+    }
+
+    public void SetCurrVelocity(Vector2 vel)
+    {
+        currVelocity = vel;
     }
 }

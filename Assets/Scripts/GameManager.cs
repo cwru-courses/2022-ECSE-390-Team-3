@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     Controller2D controller;
 
     List<Wind> winds;
+    List<Vector2> windVelocities;
     Vector2 windVelocity;
     Vector2 currVelocity;
 
     void Start()
     {
         winds = new List<Wind>();
+        
     }
 
     void Update()
@@ -26,10 +28,12 @@ public class GameManager : MonoBehaviour
 
             foreach (Wind wind in winds)
             {
-                targetVelocity += wind.GetVelocity();
+                wind.SetCurrVelocity(Vector2.SmoothDamp(wind.GetCurrVelocity(), wind.GetVelocity(), ref wind.GetRefVelocity(), 0.2f));
+
+                targetVelocity += wind.GetCurrVelocity();
             }
 
-            windVelocity = Vector2.SmoothDamp(windVelocity, targetVelocity, ref currVelocity, 0.1f);
+            windVelocity = Vector2.SmoothDamp(windVelocity, targetVelocity, ref currVelocity, 0.2f);
         }
         else
         {
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void RemoveWind(Wind wind)
     {
+        wind.SetCurrVelocity(Vector2.zero);
         winds.Remove(wind);
     }
 }
