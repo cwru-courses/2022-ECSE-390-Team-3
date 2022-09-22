@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     [Tooltip("acceleration downwards due to gravity, stored as positive")]
     float gravityConstant = 2f;
     [SerializeField]
+    [Tooltip("reduces the effect of gravity when in upwards winds")]
+    float gravityModifier = 0.25f;
+    float gravityMod;
+    [SerializeField]
     [Tooltip("terminal falling due to gravity, should be low")]
     float terminalVelocity = 4f;
 
@@ -64,13 +68,11 @@ public class Player : MonoBehaviour
             else gravityOn = false;
         }
 
-        if (Mathf.Abs(windVelocity.y) > 0) gravityOn = false;
-        else gravityOn = true;
-
         if(gravityOn)
         {
             gravity.y = (controller.IsColliding()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
             gravity.y = Mathf.Max(-terminalVelocity, Mathf.Min(0f, gravity.y));
+            gravity.y *= gravityMod;
         }
 
         // test impulse code
@@ -84,6 +86,9 @@ public class Player : MonoBehaviour
         {
             waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
         }
+
+        if (windVelocity.y >= 0.05 && gravity.y < 0) gravityMod = gravityModifier;
+        else gravityMod = 1;
 
         // Pass all calculated vectors to velocity
         velocity = input + gravity + waveImpulse + windVelocity;
@@ -107,6 +112,11 @@ public class Player : MonoBehaviour
     public void ApplyWind(Vector2 dir, float magnitude)
     {
         windVelocity = dir * magnitude;
+    }
+
+    public void SetGravityOn(bool what)
+    {
+        gravityOn = what;
     }
 
     // Handles character rotation and rotates final velocity vector

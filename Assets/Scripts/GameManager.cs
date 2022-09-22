@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            windVelocity = Vector2.SmoothDamp(windVelocity, Vector2.zero, ref currVelocity, 0.25f);
+            windVelocity = Vector2.SmoothDamp(windVelocity, Vector2.zero, ref currVelocity, 0.05f);
         }
 
-        Debug.DrawRay(Vector3.zero, windVelocity.normalized * 10f);
+        Debug.DrawRay(Vector3.zero, windVelocity.normalized * 10f, Color.white, 0.1f);
 
         player.ApplyWind(windVelocity.normalized, windVelocity.magnitude);
     }

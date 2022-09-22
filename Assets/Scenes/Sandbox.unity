@@ -1385,8 +1385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpd: 720
-  gravityConstant: 2
-  terminalVelocity: 10
+  gravityConstant: 20
+  gravityModifier: 0.25
+  terminalVelocity: 40
   inputOn: 0
 --- !u!114 &1496064729
 MonoBehaviour:
