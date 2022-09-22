@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     Controller2D controller;
 
     List<Wind> winds;
-    List<Vector2> windVelocities;
     Vector2 windVelocity;
     Vector2 currVelocity;
 
+    bool umbrellaOpen;
+    Vector2 umbrelocity;
+
+    Vector2 waveImpulse;
     void Start()
     {
         winds = new List<Wind>();
@@ -40,9 +43,18 @@ public class GameManager : MonoBehaviour
             windVelocity = Vector2.SmoothDamp(windVelocity, Vector2.zero, ref currVelocity, 0.05f);
         }
 
-        Debug.DrawRay(Vector3.zero, windVelocity.normalized * 10f, Color.white, 0.1f);
+        Debug.DrawRay(Vector3.zero, windVelocity.normalized * 10f, Color.white);
 
         player.ApplyWind(windVelocity.normalized, windVelocity.magnitude);
+
+        if(umbrellaOpen)
+        {
+            player.ApplyUmbrella(umbrelocity);
+        }
+        else
+        {
+            player.ApplyUmbrella(Vector2.zero);
+        }
     }
 
     public void AddWind(Wind wind)
@@ -54,5 +66,15 @@ public class GameManager : MonoBehaviour
     {
         wind.SetCurrVelocity(Vector2.zero);
         winds.Remove(wind);
+    }
+
+    public void SetUmbrellaStatus(bool _umbrellaOpen)
+    {
+        umbrellaOpen = _umbrellaOpen;
+    }
+
+    public void SetUmbrellaVelocity(Vector2 _umbrelocity)
+    {
+        umbrelocity = _umbrelocity;
     }
 }

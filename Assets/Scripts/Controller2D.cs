@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof (BoxCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 
 public class Controller2D : MonoBehaviour {
 
@@ -205,14 +205,6 @@ public class Controller2D : MonoBehaviour {
         raycastOrigins.botRight = transform.TransformPoint(Vector3.down * verticalExtent + Vector3.right * horizontalExtent);
         raycastOrigins.topLeft = transform.TransformPoint(Vector3.up * verticalExtent + Vector3.left * horizontalExtent);
         raycastOrigins.topRight = transform.TransformPoint(Vector3.up * verticalExtent + Vector3.right * horizontalExtent);
-
-        // code below only applies to non-rotating collision box
-        /*
-        raycastOrigins.botLeft = new Vector2(bounds.min.x, bounds.min.y);
-        raycastOrigins.botRight = new Vector2(bounds.max.x, bounds.min.y);
-        raycastOrigins.topLeft = new Vector2(bounds.min.x, bounds.max.y);
-        raycastOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
-        */
     }
 
     void CalculateRaySpacing()

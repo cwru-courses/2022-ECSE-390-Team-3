@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     // It's wind because current is... well, too similar to current. And flow is lame.
     Vector2 windVelocity;
     Vector2 currVelocity;
+    Vector2 umbrVelocity;
 
     // The final vector that gets passed to the controller
     Vector2 velocity;
@@ -75,23 +76,13 @@ public class Player : MonoBehaviour
             gravity.y *= gravityMod;
         }
 
-        // test impulse code
-        if (Input.GetMouseButtonDown(0))
-        {
-            // do a simple check like for the magnitude
-            // ex. magnitude = (umbrella.catch()) ? umbrella.getMagnitude() : defaultOpenValue
-            ApplyImpulse(cursorDir.normalized, 10f);
-        }
-        else
-        {
-            waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
-        }
+        waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
 
         if (windVelocity.y >= 0.05 && gravity.y < 0) gravityMod = gravityModifier;
         else gravityMod = 1;
 
         // Pass all calculated vectors to velocity
-        velocity = input + gravity + waveImpulse + windVelocity;
+        velocity = input + gravity + waveImpulse + windVelocity + umbrVelocity;
 
         // Perform rotation
         RotateToCursor();
@@ -102,9 +93,9 @@ public class Player : MonoBehaviour
     // It will be necessary to ensure the vector waveImpulse is only passed to velocity once
     // no reason to put this in separate method im just in a software craftsmanship mood today
     // the idea is to handle it from somewhere else
-    public void ApplyImpulse(Vector2 dir, float magnitude)
+    public void ApplyImpulse(Vector2 _impulse)
     {
-        waveImpulse = dir * magnitude;
+        waveImpulse = _impulse;
     }
 
     // Pass a normalized vector for direction,
@@ -112,6 +103,11 @@ public class Player : MonoBehaviour
     public void ApplyWind(Vector2 dir, float magnitude)
     {
         windVelocity = dir * magnitude;
+    }
+
+    public void ApplyUmbrella(Vector2 _velocity)
+    {
+        umbrVelocity = _velocity;
     }
 
     public void SetGravityOn(bool what)
