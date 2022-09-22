@@ -9,32 +9,45 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Controller2D controller;
 
+    List<Wind> winds;
+    Vector2 windVelocity;
+    Vector2 currVelocity;
+
     void Start()
     {
-        
+        winds = new List<Wind>();
     }
 
     void Update()
     {
-        
+        if(winds.Count != 0)
+        {
+            Vector2 targetVelocity = Vector2.zero;
+
+            foreach (Wind wind in winds)
+            {
+                targetVelocity += wind.GetVelocity();
+            }
+
+            windVelocity = Vector2.SmoothDamp(windVelocity, targetVelocity, ref currVelocity, 0.1f);
+        }
+        else
+        {
+            windVelocity = Vector2.SmoothDamp(windVelocity, Vector2.zero, ref currVelocity, 0.25f);
+        }
+
+        Debug.DrawRay(Vector3.zero, windVelocity.normalized * 10f);
+
+        player.ApplyWind(windVelocity.normalized, windVelocity.magnitude);
     }
 
-    public void PushPlayer(Vector2 dir, float force)
+    public void AddWind(Wind wind)
     {
-        // this is really really bad and is really only here for proof of concept
-        // 1. it completely resets the player's movement vector, causing jank
-        // 2. it has to be done this way because it's called constantly while the player is inside an active zone
-        // 3. this is really bad
-        //
-        // using the true wave implementation would work much nicer with the character controller,
-        // ie.,
-        // upon the umbrella opening inside of a wave,
-        // have rigidbody on umbrella, wave.script has OnCollisionEnter
-        // check position inside wave collider and apply one-time push to player
-        // based on umbrella angle (todo) and position inside wave
-        // to prevent players from just holding umbrella right in front of approaching wave,
-        // maybe add a timer to when it's "valid" or just allow players to do so
-        // we'll figure it out
-        controller.Move(dir * force * Time.deltaTime);
+        winds.Add(wind);
+    }
+
+    public void RemoveWind(Wind wind)
+    {
+        winds.Remove(wind);
     }
 }

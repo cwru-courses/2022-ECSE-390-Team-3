@@ -15,8 +15,10 @@ public class Player : MonoBehaviour
     // We can talk about different implementations but for now I'll be doing it like this.
     [SerializeField]
     [Tooltip("acceleration downwards due to gravity, stored as positive")]
-    float gravityConstant = 9.8f;
-    float terminalVelocity = 30f;
+    float gravityConstant = 2f;
+    [SerializeField]
+    [Tooltip("terminal falling due to gravity, should be low")]
+    float terminalVelocity = 4f;
 
     // Temporary flag system
     bool gravityOn;
@@ -61,11 +63,14 @@ public class Player : MonoBehaviour
             if (input == Vector2.zero) gravityOn = true;
             else gravityOn = false;
         }
-        
+
+        if (Mathf.Abs(windVelocity.y) > 0) gravityOn = false;
+        else gravityOn = true;
+
         if(gravityOn)
         {
             gravity.y = (controller.IsColliding()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
-            gravity.y = Mathf.Min(0f, gravity.y);
+            gravity.y = Mathf.Max(-terminalVelocity, Mathf.Min(0f, gravity.y));
         }
 
         // test impulse code
@@ -80,31 +85,8 @@ public class Player : MonoBehaviour
             waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
         }
 
-        // test wind code
-        // controlled by holding mouse2 for testing, in direction of cursor
-        if (Input.GetMouseButton(1))
-        {
-            ApplyWind(cursorDir.normalized, 5f);
-        }
-        else
-        {
-            windVelocity = Vector2.SmoothDamp(windVelocity, Vector2.zero, ref currVelocity, 0.1f);
-        }
-
-        Vector2 finalWaveImpulse = waveImpulse;
-        Vector2 finalWindVelocity = windVelocity;
-
-        if(controller.IsColliding())
-        {
-            finalWaveImpulse.y = 0f;
-            finalWindVelocity.y = 0f;
-        }
-
         // Pass all calculated vectors to velocity
-        velocity = input + gravity + finalWaveImpulse + finalWindVelocity;
-
-        // DrawRay is an axis-aligned function, so no need to rotate
-        Debug.DrawRay(transform.position, velocity * 10f, Color.red);
+        velocity = input + gravity + waveImpulse + windVelocity;
 
         // Perform rotation
         RotateToCursor();
