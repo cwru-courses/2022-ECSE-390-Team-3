@@ -21,7 +21,12 @@ public class SceneController : MonoBehaviour
           SceneManager.LoadScene(NextScene);
      }
 
-     IEnumerator LoadSceneWithDelay(float delay)
+    public static void LoadSpecificScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+        IEnumerator LoadSceneWithDelay(float delay)
      {
           yield return new WaitForSeconds(delay);
           SceneManager.LoadScene(NextScene);
