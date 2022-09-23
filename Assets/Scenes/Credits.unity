@@ -449,24 +449,51 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Credits
+  m_Text: 'Thank You For Checking Out
+
+    DATA STREAM
 
 
 
 
 
 
-    Who made game?
-
-    I did
-
-    Some other people too
+    Group 3
 
 
-    Team
-    3
+    Cleveland
+    Institute of Art
 
-    or are we group 3?
+    Ian McClure
+
+    Alona Henderson
+
+
+
+    Case Western Reserve
+    University
+
+    Haowei Chen
+
+    Aracelli Doescher
+
+    Liam Gongola
+
+    Andrew
+    Gross
+
+    Xiaofan He
+
+    Mikayla Heinrich-Wong
+
+    Brandon Kedson
+
+    Kasper
+    Latawiec
+
+    Yiran Lu
+
+    Brian Xu
 
 
     Doesn''t matter
@@ -474,8 +501,8 @@ MonoBehaviour:
     This is a test
 
 
-    I just
-    want to see
+    I
+    just want to see
 
     If the text scrolls
 

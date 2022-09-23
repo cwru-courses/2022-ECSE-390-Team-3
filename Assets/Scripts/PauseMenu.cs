@@ -56,6 +56,7 @@ public class PauseMenu : MonoBehaviour
         OptionsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
+        SceneController.LoadSpecificScene("Main Menu");
     }
 
     public void ConfirmNo()
