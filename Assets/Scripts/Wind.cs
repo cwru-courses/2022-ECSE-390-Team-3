@@ -59,7 +59,8 @@ public class Wind : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            SR.color = Color.green;
+            SR.color = new Color(0, 1, 0, 0.1f);
+
             GM.AddWind(this);
         }
     }
