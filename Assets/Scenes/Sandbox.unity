@@ -2301,7 +2301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 413688438}
-  umbrelocity: 2
+  umbrelocity: 5
   umbrimpulse: 10
   forgiveness: 0.2
 --- !u!212 &1612485596
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   wave: {fileID: 4446941955660232278, guid: 094b99dcfe52dbd4dbcae5f8024a1642, type: 3}
   waveLength: 3
   speed: 20
-  maxImpulse: 20
+  maxImpulse: 40
 --- !u!1 &4471524347418544535
 GameObject:
   m_ObjectHideFlags: 0
