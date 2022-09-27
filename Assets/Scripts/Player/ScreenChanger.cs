@@ -8,7 +8,7 @@ public class ScreenChanger : MonoBehaviour
     GameManager GM;
 
     Vector3 respawnPoint;
-    Vector3 lsatRespawnPoint;
+    Vector3 lastRespawnPoint;
 
     BoxCollider2D enteredBox;
     BoxCollider2D exitedBox;
@@ -31,6 +31,7 @@ public class ScreenChanger : MonoBehaviour
 
             if (collision.gameObject.transform.childCount == 0) return;
             respawnPoint = collision.gameObject.transform.GetChild(0).transform.position;
+            GM.SetPlayerSpawn(respawnPoint);
             
         }
     }
