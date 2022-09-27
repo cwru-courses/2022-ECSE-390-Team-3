@@ -68,7 +68,7 @@ public class Umbrella : MonoBehaviour
 
     void LateUpdate()
     {
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0) || !inWind)
         {
             GM.SetUmbrellaStatus(false);
             SR.color = color;

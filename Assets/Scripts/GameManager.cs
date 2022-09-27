@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     public void SetUmbrellaStatus(bool _umbrellaOpen)
     {
         umbrellaOpen = _umbrellaOpen;
+        if (!_umbrellaOpen) player.SetGravity(Vector2.zero);
     }
 
     public void SetUmbrellaVelocity(Vector2 _umbrelocity)
@@ -88,5 +89,10 @@ public class GameManager : MonoBehaviour
     {
         player.enabled = true;
         controller.enabled = true;
+    }
+
+    public Transform GetPlayer()
+    {
+        return player.GetComponent<Transform>();
     }
 }
