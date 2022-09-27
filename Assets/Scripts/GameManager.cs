@@ -77,4 +77,16 @@ public class GameManager : MonoBehaviour
     {
         umbrelocity = _umbrelocity;
     }
+
+    public void Latch()
+    {
+        player.enabled = false;
+        controller.enabled = false;
+    }
+
+    public void Unlatch()
+    {
+        player.enabled = true;
+        controller.enabled = true;
+    }
 }

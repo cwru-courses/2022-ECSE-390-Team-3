@@ -8,6 +8,8 @@ public class Umbrella : MonoBehaviour
     GameManager GM;
     Transform pivot;
     Player player;
+    SpriteRenderer SR;
+    Color color;
 
     [SerializeField]
     [Tooltip("the additive velocity due to an open umbrella")]
@@ -28,6 +30,8 @@ public class Umbrella : MonoBehaviour
     {
         pivot = GetComponentInParent<Transform>();
         player = GetComponentInParent<Player>();
+        SR = GetComponent<SpriteRenderer>();
+        color = SR.color;
     }
 
     void Update()
@@ -46,6 +50,8 @@ public class Umbrella : MonoBehaviour
 
                 percentage = Mathf.Clamp(percentage, percentage + forgiveness, 1);
                 player.ApplyImpulse(direction * percentage * impulse);
+
+                SR.color = new Color(1 - percentage, percentage, 0);
             }
         }
         else if (Input.GetMouseButton(0) && inWind)
@@ -54,6 +60,8 @@ public class Umbrella : MonoBehaviour
             velocity *= umbrelocity;
             GM.SetUmbrellaVelocity(velocity);
             GM.SetUmbrellaStatus(true);
+
+            if (!inWave) SR.color = new Color(1, 0.6f, 0);
         }
         
     }
@@ -63,6 +71,7 @@ public class Umbrella : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             GM.SetUmbrellaStatus(false);
+            SR.color = color;
         }
     }
 

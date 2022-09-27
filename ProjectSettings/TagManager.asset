@@ -7,6 +7,7 @@ TagManager:
   - Hazard
   - Wave
   - Wind
+  - Latchable
   layers:
   - Default
   - TransparentFX
