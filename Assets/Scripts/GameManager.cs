@@ -17,10 +17,12 @@ public class GameManager : MonoBehaviour
     Vector2 umbrelocity;
 
     Vector2 waveImpulse;
+
+    bool respawning;
+
     void Start()
     {
         winds = new List<Wind>();
-        
     }
 
     void Update()
@@ -81,14 +83,45 @@ public class GameManager : MonoBehaviour
 
     public void Latch()
     {
-        player.enabled = false;
-        controller.enabled = false;
+        if (respawning) return;
+        SetFreeze(true);
     }
 
     public void Unlatch()
     {
-        player.enabled = true;
-        controller.enabled = true;
+        if (respawning) return;
+        SetFreeze(false);
+    }
+
+    public void PlayerDeath()
+    {
+        StartCoroutine(Death(0.5f));
+    }
+
+    public void SetPlayerSpawn(Vector3 point)
+    {
+        player.SetSpawnPoint(point);
+    }
+
+    private void SetFreeze(bool frozen)
+    {
+        player.enabled = !frozen;
+        controller.enabled = !frozen;
+    }
+
+    IEnumerator Death(float respawnTime)
+    {
+        respawning = true;
+
+        player.DisableRenderer();
+        SetFreeze(true);
+        yield return new WaitForSeconds(respawnTime);
+        SetFreeze(false);
+
+        player.EnableRenderer();
+        player.Respawn();
+        respawning = false;
+        yield return null;
     }
 
     public Transform GetPlayer()

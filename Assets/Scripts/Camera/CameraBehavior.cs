@@ -25,7 +25,6 @@ public class CameraBehavior : MonoBehaviour
 
     bool transitioning;
     bool start;
-    readonly bool stoppedStart = false;
 
     void Start()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Controller2D controller;
+    private List<SpriteRenderer> sprites;
 
     [SerializeField]
     [Tooltip("max degrees rotated per second")]
@@ -32,14 +33,6 @@ public class Player : MonoBehaviour
 
     Vector3 cursorDir;
 
-    // We'll independently calculate a number of movement vectors
-    // which we'll pass into velocity at the end.
-    // This includes gravity, which really doesn't need to be one
-    // but we're doing it for consistency.
-    // When modifying vectors, we're interpreting them as axis-aligned
-    // and they will be rotated at the end to account for player rotation.
-
-    // Input is purely for debug movement
     Vector2 input;
 
     Vector2 gravity;
@@ -52,11 +45,25 @@ public class Player : MonoBehaviour
 
     // The final vector that gets passed to the controller
     Vector2 velocity;
+
+    Vector3 spawnPoint;
     
     void Start()
     {
-        controller = GetComponentInChildren<Controller2D>();
+        controller = GetComponent<Controller2D>();
+
+        sprites = new List<SpriteRenderer>();
+        sprites.Add(GetComponent<SpriteRenderer>());
+
+        foreach (Transform child in transform)
+        {
+            if (child.GetComponentInChildren<SpriteRenderer>() == null) continue;
+            sprites.Add(child.GetComponent<SpriteRenderer>());
+        }
+
         gravityOn = !inputOn;
+
+        spawnPoint = transform.position;
     }
 
     void Update()
@@ -134,6 +141,43 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotSpd * Time.deltaTime);
 
         velocity = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.back) * velocity;
+    }
+
+    public void EnableRenderer()
+    {
+        foreach (SpriteRenderer SR in sprites)
+        {
+            SR.enabled = true;
+        }
+    }
+
+    public void DisableRenderer()
+    {
+        foreach(SpriteRenderer SR in sprites)
+        {
+            SR.enabled = false;
+        }
+    }
+
+    public void Respawn()
+    {
+        ResetVelocities();
+        transform.position = spawnPoint;
+    }
+
+    private void ResetVelocities()
+    {
+        velocity =
+        gravity =
+        waveImpulse =
+        currImpulse =
+        windVelocity =
+        umbrVelocity = Vector2.zero;
+    }
+
+    public void SetSpawnPoint(Vector3 point)
+    {
+        spawnPoint = point;
     }
 
     private void LateUpdate()

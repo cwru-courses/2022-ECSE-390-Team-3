@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class ScreenChanger : MonoBehaviour
 {
+    [SerializeField]
+    GameManager GM;
+
+    Vector3 respawnPoint;
+    Vector3 lsatRespawnPoint;
+
     BoxCollider2D enteredBox;
     BoxCollider2D exitedBox;
     BoxCollider2D lastEnteredBox;
 
+    private void Start()
+    {
+        
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Screen"))
@@ -18,6 +28,10 @@ public class ScreenChanger : MonoBehaviour
             CameraBehavior cam = Camera.main.GetComponent<CameraBehavior>();
             cam.UpdateScreenBounds(enteredBox);
             cam.UpdateScreen();
+
+            if (collision.gameObject.transform.childCount == 0) return;
+            respawnPoint = collision.gameObject.transform.GetChild(0).transform.position;
+            
         }
     }
 
