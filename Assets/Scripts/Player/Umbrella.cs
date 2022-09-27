@@ -98,5 +98,11 @@ public class Umbrella : MonoBehaviour
             inWave = false;
             // wave = null
         }
+
+        if (collision.gameObject.CompareTag("Wind"))
+        {
+            inWind = false;
+            // this should never occur in the final game
+        }
     }
 }
