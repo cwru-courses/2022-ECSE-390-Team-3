@@ -9,6 +9,7 @@ TagManager:
   - Wind
   - Latchable
   - Screen
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

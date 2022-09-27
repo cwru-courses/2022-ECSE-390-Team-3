@@ -93,4 +93,9 @@ public class Wind : MonoBehaviour
     {
         currVelocity = vel;
     }
+
+    public void SetGameManager(GameManager _GM)
+    {
+        GM = _GM;
+    }
 }

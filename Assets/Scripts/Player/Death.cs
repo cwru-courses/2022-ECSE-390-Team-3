@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerLife : MonoBehaviour
+public class Death : MonoBehaviour
 {
+    [SerializeField]
     GameManager GM;
 
     private void OnCollisionEnter2D(Collision2D collision)
