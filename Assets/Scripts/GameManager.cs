@@ -71,10 +71,28 @@ public class GameManager : MonoBehaviour
     public void SetUmbrellaStatus(bool _umbrellaOpen)
     {
         umbrellaOpen = _umbrellaOpen;
+        if (!_umbrellaOpen) player.SetGravity(Vector2.zero);
     }
 
     public void SetUmbrellaVelocity(Vector2 _umbrelocity)
     {
         umbrelocity = _umbrelocity;
+    }
+
+    public void Latch()
+    {
+        player.enabled = false;
+        controller.enabled = false;
+    }
+
+    public void Unlatch()
+    {
+        player.enabled = true;
+        controller.enabled = true;
+    }
+
+    public Transform GetPlayer()
+    {
+        return player.GetComponent<Transform>();
     }
 }

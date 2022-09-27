@@ -115,6 +115,11 @@ public class Player : MonoBehaviour
         gravityOn = what;
     }
 
+    public void SetGravity(Vector2 _gravity)
+    {
+        gravity = _gravity;
+    }
+
     // Handles character rotation and rotates final velocity vector
     void RotateToCursor()
     {
