@@ -19,7 +19,7 @@ public class PlayerLife : MonoBehaviour
         {
             Die();
         }
-        Debug.Log("hit");
+        //Debug.Log("hit");
     }
 
     private void Die()
