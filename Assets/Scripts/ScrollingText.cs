@@ -34,7 +34,7 @@ public class ScrollingText : MonoBehaviour
             {
                 if(index == lines.Length-1)
                 {
-                    SceneController.LoadSpecificScene("Sandbox");
+                    SceneController.LoadSpecificScene("Tutorial_L1");
                 }    
                 else
                 {
