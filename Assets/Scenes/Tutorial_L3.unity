@@ -39877,7 +39877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpd: 720
-  gravityConstant: 10
+  gravityConstant: 2
   gravityModifier: 0.25
   terminalVelocity: 40
   inputOn: 0
