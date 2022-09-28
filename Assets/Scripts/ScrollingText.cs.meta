@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/ScrollingText.cs.meta
 guid: 381a3a0d2e351164abab690df6165cf4
-========
-guid: 6c166265334d28644889c04194e78c95
->>>>>>>> UI:Assets/Scripts/PauseMenu.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
