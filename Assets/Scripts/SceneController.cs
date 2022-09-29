@@ -15,6 +15,15 @@ public class SceneController : MonoBehaviour
           StartCoroutine(LoadSceneWithDelay(delay));
           }
      }
+
+     public void Update()
+     {
+          if(Input.GetKeyDown(KeyCode.Escape))
+          {
+               StopAllCoroutines();
+               LoadScene();
+          }
+     }
      
      public void LoadScene()
      {
@@ -26,7 +35,7 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-        IEnumerator LoadSceneWithDelay(float delay)
+     IEnumerator LoadSceneWithDelay(float delay)
      {
           yield return new WaitForSeconds(delay);
           SceneManager.LoadScene(NextScene);

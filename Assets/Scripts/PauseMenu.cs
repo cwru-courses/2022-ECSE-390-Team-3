@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -24,36 +25,37 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Resume()
+    private void closeAll()
     {
         PauseMenuUI.SetActive(false);
         ConfirmMenuUI.SetActive(false);
-        OptionsMenuUI.SetActive(false);
+        OptionsMenuUI.SetActive(false); 
+    }
+
+    public void Resume()
+    {
+        closeAll();
         Time.timeScale = 1f;
         GamePaused = false;
     }
 
     public void Pause()
     {
+        closeAll();
         PauseMenuUI.SetActive(true);
-        ConfirmMenuUI.SetActive(false);
-        OptionsMenuUI.SetActive(false);
         Time.timeScale = 0f;
         GamePaused = true;
     }
 
     public void Confirm()
     {
-        PauseMenuUI.SetActive(false);
+        closeAll();
         ConfirmMenuUI.SetActive(true);
-        OptionsMenuUI.SetActive(false);
     }
 
     public void ConfirmYes()
     {
-        PauseMenuUI.SetActive(false);
-        ConfirmMenuUI.SetActive(false);
-        OptionsMenuUI.SetActive(false);
+        closeAll();
         Time.timeScale = 1f;
         GamePaused = false;
         SceneController.LoadSpecificScene("Main Menu");
@@ -61,15 +63,20 @@ public class PauseMenu : MonoBehaviour
 
     public void ConfirmNo()
     {
-        OptionsMenuUI.SetActive(false);
-        ConfirmMenuUI.SetActive(false);
+        closeAll();
         PauseMenuUI.SetActive(true);
     }
 
     public void Options()
     {
-        PauseMenuUI.SetActive(false);
+        closeAll();
         OptionsMenuUI.SetActive(true);
-        PauseMenuUI.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        Resume();
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

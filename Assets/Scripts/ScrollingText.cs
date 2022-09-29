@@ -15,6 +15,7 @@ public class ScrollingText : MonoBehaviour
     private float blink;
     private bool notStarted = true;
     private int flip = -1;
+    public string nextScene = "Main Menu";
 
     private int index;
 
@@ -28,13 +29,17 @@ public class ScrollingText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            endCutscene();
+        }
         if(Input.GetMouseButtonDown(0))
         {
             if(line == lines[index])
             {
                 if(index == lines.Length-1)
                 {
-                    SceneController.LoadSpecificScene("Sandbox");
+                    endCutscene();
                 }    
                 else
                 {
@@ -84,6 +89,11 @@ public class ScrollingText : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+    }
+
+    void endCutscene()
+    {
+        SceneController.LoadSpecificScene(nextScene);
     }
 
     IEnumerator TypeLine()

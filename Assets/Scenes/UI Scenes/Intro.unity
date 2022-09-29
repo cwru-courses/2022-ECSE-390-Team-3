@@ -629,3 +629,4 @@ MonoBehaviour:
   - Computer or Biological?
   - Yes
   textSpeed: 0.25
+  nextScene: Sandbox
