@@ -11,6 +11,8 @@ public class Wave : MonoBehaviour
     private Vector2 start, end;
     private Vector2 trailingEdge, leadingEdge;
 
+    private Vector2 dimensions;
+
     void Update()
     {
         bool finish = ((Vector2)transform.position - start).magnitude >= distance;
@@ -34,6 +36,7 @@ public class Wave : MonoBehaviour
     {
         box = GetComponent<BoxCollider2D>();
         box.size = new Vector2(width, height);
+        dimensions = box.size;
     }
 
     public void SetRotation(float angle)
@@ -75,5 +78,10 @@ public class Wave : MonoBehaviour
     {
         Vector2 projectedPos = Vector3.Project((pos - trailingEdge), (leadingEdge - trailingEdge)) + (Vector3)trailingEdge;
         return (projectedPos - trailingEdge).magnitude / (leadingEdge - trailingEdge).magnitude;
+    }
+
+    public Vector2 GetDimensions()
+    {
+        return dimensions;
     }
 }

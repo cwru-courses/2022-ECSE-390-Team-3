@@ -41,8 +41,8 @@ public class Wind : MonoBehaviour
 
         Quaternion rotation = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward);
 
-        Vector2 start = box.bounds.center + (rotation * Vector2.left * (transform.localScale.x + waveLength) / 2);
-        Vector2 end = box.bounds.center + (rotation * Vector2.right * (transform.localScale.x + waveLength) / 2);
+        Vector2 start = box.bounds.center + (rotation * Vector2.left * (transform.localScale.x - waveLength) / 2);
+        Vector2 end = box.bounds.center + (rotation * Vector2.right * (transform.localScale.x - waveLength) / 2);
         
         Debug.DrawLine(start, end, Color.cyan);
 
