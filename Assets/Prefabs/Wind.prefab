@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a693eae79ff84a864eee8672d18be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  windOn: 1
+  waveOn: 1
   GM: {fileID: 0}
   windSpeed: 5
   wave: {fileID: 3096515132989875323, guid: 039069697487efb4e986d0b6016c048d, type: 3}

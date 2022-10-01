@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
         if(gravityOn)
         {
-            gravity.y = (controller.IsColliding()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
+            gravity.y = (controller.IsGrounded()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
             gravity.y = Mathf.Max(-terminalVelocity, Mathf.Min(0f, gravity.y));
             gravity.y *= gravityMod;
         }

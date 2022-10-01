@@ -25,12 +25,6 @@ public class WaveVFX : MonoBehaviour
         Mesh mesh = GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
 
-        foreach(Vector3 point in mesh.vertices)
-        {
-            Debug.Log(point);
-        }
-        Debug.Log("\n");
-
         Color[] colors = new Color[vertices.Length];
 
         for (int i = 0; i < vertices.Length; i++)

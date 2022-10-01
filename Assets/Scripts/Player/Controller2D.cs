@@ -53,6 +53,8 @@ public class Controller2D : MonoBehaviour {
             VerticalCollisions(ref move);
         }
 
+        GroundCollisionsCheck();
+
         transform.Translate(move);
 
         velocity = move;
@@ -164,29 +166,33 @@ public class Controller2D : MonoBehaviour {
 
     // the grounded methods have no purpose due to us rotating the character so much
     // on the off-chance we have a radical change in that aspect i'm keeping this here
-    void GroundCollisionsCheck(Vector3 move)
+    void GroundCollisionsCheck()
     {
         float rayLength = 0.125f + skinWidth;
 
-        for (int i = 0; i < verticalRayCount; i++)
+        for (int i = 0; i < 6; i++)
         {
-            Vector2 rayOrigin = raycastOrigins.botLeft;
-            rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
+            if (i == 0 || i == 5) continue;
+
+            Bounds tempBounds = playerCollider.bounds;
+            tempBounds.Expand(skinWidth * -2);
+            Vector2 rayOrigin = new Vector2(tempBounds.min.x, tempBounds.min.y);
+            rayOrigin += Vector2.right * (verticalRaySpacing * i);
 
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, collisionMask);
-            Debug.DrawRay(rayOrigin, rotation * Vector2.down * rayLength * 5f, Color.red);
+            Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.cyan);
 
             if (hit)
             {
-                collisions.below = true;
+                collisions.ground = true;
             }
         }
     }
 
-    // obselete
     public bool IsGrounded()
     {
-        return collisions.below;        
+        Debug.Log(collisions.ground);
+        return collisions.ground;        
     }
 
     public bool IsColliding()
@@ -235,6 +241,7 @@ public class Controller2D : MonoBehaviour {
         {
             above = below = false;
             left = right = false;
+            ground = false;
         }
         public int faceDir;
     }
