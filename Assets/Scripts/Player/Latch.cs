@@ -8,6 +8,7 @@ public class Latch : MonoBehaviour
     GameManager GM;
 
     private bool canLatch;
+    private bool latched;
 
     private SpriteRenderer SR;
     private Color color;
@@ -24,11 +25,13 @@ public class Latch : MonoBehaviour
 
         if(Input.GetMouseButton(1))
         {
+            latched = true;
             GM.Latch();
             SR.color = new Color(0, 1, 0);
         }
-        else if(Input.GetMouseButtonUp(1))
+        if(Input.GetMouseButtonUp(1) && latched)
         {
+            latched = false;
             GM.Unlatch();
             SR.color = color;
         }

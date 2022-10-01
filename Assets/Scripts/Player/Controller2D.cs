@@ -174,6 +174,7 @@ public class Controller2D : MonoBehaviour {
             rayOrigin += Vector2.right * (verticalRaySpacing * i + move.x);
 
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, collisionMask);
+            Debug.DrawRay(rayOrigin, rotation * Vector2.down * rayLength * 5f, Color.red);
 
             if (hit)
             {
@@ -228,7 +229,7 @@ public class Controller2D : MonoBehaviour {
     {
         public bool above, below;
         public bool left, right;
-        public bool bound;
+        public bool ground;
 
         public void Reset()
         {
@@ -236,6 +237,5 @@ public class Controller2D : MonoBehaviour {
             left = right = false;
         }
         public int faceDir;
-        public bool kill;
     }
 }
