@@ -49,6 +49,7 @@ public class Umbrella : MonoBehaviour
                 float impulse = wave.GetMaxImpulse();
 
                 percentage = Mathf.Clamp(percentage, percentage + forgiveness, 1);
+
                 player.ApplyImpulse(direction * percentage * impulse);
 
                 SR.color = new Color(1 - percentage, percentage, 0);

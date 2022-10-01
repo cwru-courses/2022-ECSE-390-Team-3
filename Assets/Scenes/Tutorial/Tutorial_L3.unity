@@ -39949,6 +39949,7 @@ MonoBehaviour:
   gravityConstant: 2
   gravityModifier: 0.25
   terminalVelocity: 40
+  minRadius: 0
   inputOn: 0
 --- !u!114 &1496064729
 MonoBehaviour:

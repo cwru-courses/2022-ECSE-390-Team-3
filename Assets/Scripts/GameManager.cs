@@ -84,13 +84,14 @@ public class GameManager : MonoBehaviour
     public void Latch()
     {
         if (respawning) return;
-        SetFreeze(true);
+        player.Latch();
+        //SetFreeze(true);
     }
 
     public void Unlatch()
     {
         if (respawning) return;
-        SetFreeze(false);
+        player.Unlatch();
     }
 
     public void PlayerDeath()

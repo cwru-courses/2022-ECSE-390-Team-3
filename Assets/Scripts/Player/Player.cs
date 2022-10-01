@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
     [Tooltip("terminal falling due to gravity, should be low")]
     float terminalVelocity = 4f;
 
+    [SerializeField]
+    [Tooltip("min distance between cursor and player for rotation")]
+    float minRadius;
+
     // Temporary flag system
     bool gravityOn;
     [SerializeField]
@@ -43,10 +47,16 @@ public class Player : MonoBehaviour
     Vector2 currVelocity;
     Vector2 umbrVelocity;
 
+    Vector2 latchImpulse;
+    Vector2 latchImpulseRef;
+
     // The final vector that gets passed to the controller
     Vector2 velocity;
 
     Vector3 spawnPoint;
+
+    bool latched;
+    bool wasLatched;
     
     void Start()
     {
@@ -68,6 +78,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //if (latched) return;
+
         if(inputOn)
         {
             input.x = Input.GetAxisRaw("Horizontal") * 7.5f;
@@ -84,12 +96,15 @@ public class Player : MonoBehaviour
         }
 
         waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
+        latchImpulse = Vector2.SmoothDamp(latchImpulse, Vector2.zero, ref latchImpulseRef, 0.25f);
 
         if (windVelocity.y >= 0.05 && gravity.y < 0) gravityMod = gravityModifier;
         else gravityMod = 1;
 
         // Pass all calculated vectors to velocity
-        velocity = input + gravity + waveImpulse + windVelocity + umbrVelocity;
+        velocity = input + gravity + waveImpulse + latchImpulse + windVelocity + umbrVelocity;
+
+
 
         // Perform rotation
         RotateToCursor();
@@ -117,6 +132,21 @@ public class Player : MonoBehaviour
         umbrVelocity = _velocity;
     }
 
+    public void Latch() { 
+        latched = true; 
+    }
+
+    public void Unlatch() {
+        latched = false;
+        ApplyLatchImpulse();
+    }
+
+    private void ApplyLatchImpulse()
+    {
+        latchImpulse = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector2.up * 10f;
+        Debug.DrawRay(transform.position, latchImpulse, Color.blue, 2f);
+    }
+
     public void SetGravityOn(bool what)
     {
         gravityOn = what;
@@ -138,7 +168,9 @@ public class Player : MonoBehaviour
 
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, cursorDir);
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotSpd * Time.deltaTime);
+        bool rotate = (mousePos - transform.position).magnitude > minRadius;
+
+        if (rotate) transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotSpd * Time.deltaTime);
 
         velocity = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.back) * velocity;
     }
@@ -170,7 +202,7 @@ public class Player : MonoBehaviour
         velocity =
         gravity =
         waveImpulse =
-        currImpulse =
+        currImpulse = 
         windVelocity =
         umbrVelocity = Vector2.zero;
     }
@@ -182,6 +214,7 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (latched) ResetVelocities();
         controller.Move(velocity * Time.deltaTime);
     }
 }

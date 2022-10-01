@@ -6,6 +6,9 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     [SerializeField]
+    bool windOn, waveOn;
+
+    [SerializeField]
     GameManager GM;
 
     [SerializeField]
@@ -36,6 +39,11 @@ public class Wind : MonoBehaviour
         SR = GetComponent<SpriteRenderer>();
         color = SR.color;
 
+        // do not change rotation mid-game
+        direction = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector2.right;
+
+        if (!waveOn) return;
+
         GameObject waveObject = Instantiate(wave);
         Wave waveSettings = waveObject.GetComponent<Wave>();
 
@@ -51,9 +59,6 @@ public class Wind : MonoBehaviour
         waveSettings.SetPath(start, end);
         waveSettings.SetSpeed(speed);
         waveSettings.SetMaxImpulse(maxImpulse);
-
-        // do not change rotation mid-game
-        direction = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector2.right;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -61,7 +66,7 @@ public class Wind : MonoBehaviour
         {
             SR.color = new Color(0, 1, 0, 0.1f);
 
-            GM.AddWind(this);
+            if (windOn) GM.AddWind(this);
         }
     }
 
@@ -70,7 +75,7 @@ public class Wind : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             SR.color = color;
-            GM.RemoveWind(this);
+            if (windOn) GM.RemoveWind(this);
         }
     }
 

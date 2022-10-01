@@ -27,7 +27,7 @@ public class Latch : MonoBehaviour
             GM.Latch();
             SR.color = new Color(0, 1, 0);
         }
-        else
+        else if(Input.GetMouseButtonUp(1))
         {
             GM.Unlatch();
             SR.color = color;
