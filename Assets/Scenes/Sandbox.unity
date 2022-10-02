@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4292,9 +4292,8 @@ GameObject:
   - component: {fileID: 1496064731}
   - component: {fileID: 1496064729}
   - component: {fileID: 1496064728}
-  - component: {fileID: 1496064730}
   m_Layer: 0
-  m_Name: Player (Rotating Collision)
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4336,18 +4335,6 @@ MonoBehaviour:
     m_Bits: 8
   horizontalRayCount: 4
   verticalRayCount: 4
---- !u!114 &1496064730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496064727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7906ab895e03918458b3d5b1ab35d4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1496064731
 BoxCollider2D:
   m_ObjectHideFlags: 0
