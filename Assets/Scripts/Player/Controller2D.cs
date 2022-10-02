@@ -191,7 +191,6 @@ public class Controller2D : MonoBehaviour {
 
     public bool IsGrounded()
     {
-        Debug.Log(collisions.ground);
         return collisions.ground;        
     }
 
