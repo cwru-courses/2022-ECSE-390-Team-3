@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject ConfirmMenuUI;
     public GameObject OptionsMenuUI;
+    public GameObject ToBeOpened = null;
 
     void Update()
     {
@@ -27,9 +28,22 @@ public class PauseMenu : MonoBehaviour
 
     private void closeAll()
     {
-        PauseMenuUI.SetActive(false);
-        ConfirmMenuUI.SetActive(false);
-        OptionsMenuUI.SetActive(false); 
+        if (PauseMenuUI != null)
+        {
+            PauseMenuUI.SetActive(false);
+        }
+        if (ConfirmMenuUI != null)
+        {
+            ConfirmMenuUI.SetActive(false);
+        }
+        if (OptionsMenuUI != null)
+        {
+            OptionsMenuUI.SetActive(false);
+        }
+        if (ToBeOpened != null)
+        {
+            ToBeOpened.SetActive(false);
+        }
     }
 
     public void Resume()
@@ -78,5 +92,11 @@ public class PauseMenu : MonoBehaviour
         Resume();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void Open(GameObject PopUp)
+    {
+        Pause();
+        PopUp.SetActive(true);
     }
 }
