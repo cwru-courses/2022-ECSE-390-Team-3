@@ -608,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453705129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5, y: -5, z: 0}
+  m_LocalPosition: {x: -8, y: -6.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238803305}
@@ -27817,6 +27817,7 @@ MonoBehaviour:
   gravityConstant: 2
   gravityModifier: 0.25
   terminalVelocity: 40
+  minRadius: 0
   inputOn: 0
 --- !u!114 &1496064729
 MonoBehaviour:
@@ -28623,6 +28624,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 979026789836428771, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 979026789836428797, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
     - target: {fileID: 979026790184430857, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
       propertyPath: m_RootOrder
       value: 4

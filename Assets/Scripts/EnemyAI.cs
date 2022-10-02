@@ -80,23 +80,4 @@ public class EnemyAI : MonoBehaviour
             nextID += change;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-        {
-            Debug.Log("Triggered");
-            PlayerDies();
-        }
-    }
-
-    private void PlayerDies()
-    {
-        RestartLevel();
-    }
-
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
