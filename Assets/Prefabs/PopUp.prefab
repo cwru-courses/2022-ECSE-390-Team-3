@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7115861571227845638}
   - component: {fileID: 8024403750570162643}
   - component: {fileID: 8024403750570162642}
-  - component: {fileID: 2315018956092113618}
+  - component: {fileID: 8848955651812804981}
   m_Layer: 0
-  m_Name: Level Transition
+  m_Name: PopUp
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -50,8 +50,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3, y: 1.3}
-    newSize: {x: 3.3, y: 1.3}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -71,10 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eaacbf254aea9247ba1da4ed1a7c354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: Tutorial_L1
+  NextScene: 
   PopUpToOpen: {fileID: 0}
-  TriggerType: Transition
---- !u!212 &2315018956092113618
+  TriggerType: PopUp
+--- !u!212 &8848955651812804981
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,12 +114,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 82004d02344be174f84fa30d6655b73c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cd3448edee4cb44f958e85539f65a91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.3, y: 1.3}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
