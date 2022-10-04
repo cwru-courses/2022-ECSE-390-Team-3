@@ -137,7 +137,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4102913292538441851, guid: 66c1ee2b249e3a14aa69ec7c285d5b43, type: 3}
+  m_Sprite: {fileID: 4102913292538441851, guid: 34b0010e1e3608449a0ff7b6ffb55bff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,11 +233,5 @@ MonoBehaviour:
   walkSpeed: -200
   bodyCollider: {fileID: 2019549362}
   groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  ceilingLayer:
     serializedVersion: 2
     m_Bits: 0
