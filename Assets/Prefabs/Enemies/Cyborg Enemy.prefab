@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 979026789836428768, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6168803318869320012, guid: d1efb2a91882c954081009820234acf6, type: 3}
+      objectReference: {fileID: 21300000, guid: 8cd257b131645bd4d8c0dd7ff20003e3, type: 2}
     - target: {fileID: 979026789836428769, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
       propertyPath: m_Controller
       value: 
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 979026790184430858, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
       propertyPath: m_Name
-      value: cyborg enemy
+      value: Cyborg Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 979026790425263400, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
       propertyPath: m_LocalPosition.x
