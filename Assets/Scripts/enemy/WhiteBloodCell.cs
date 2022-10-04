@@ -64,7 +64,7 @@ public class WhiteBloodCell : MonoBehaviour
 
     // lunges at the player
     void Lunge(){
-     Debug.Log("I am lunging at you now");
+     //Debug.Log("I am lunging at you now");
     }
 
 
