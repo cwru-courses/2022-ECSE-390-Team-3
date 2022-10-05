@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Placeholder.unity
     guid: fe29b95e64e17904488917ac41844776
+  - enabled: 1
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L1.unity
+    guid: 6ea872d005b08be4ca6a7ddc0d5628d8
   m_configObjects: {}
