@@ -620,13 +620,8 @@ MonoBehaviour:
   storyText: {fileID: 824701536}
   continueText: {fileID: 1172533293}
   lines:
-  - 'Your Mission:'
-  - You're a Virus
   - Infiltrate the Cyborg
   - Find The Brain
-  - You're Probably Wondering
-  - What Kind of Virus Am I?
-  - Computer or Biological?
-  - Yes
-  textSpeed: 0.25
+  - Infect It
+  textSpeed: 0.125
   nextScene: Tutorial_L1

@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
-  NextScene: Placeholder
+  NextScene: Tutorial_L2
 --- !u!114 &430085297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,7 +1659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tutorials
+  m_Text: Tutorial Levels
 --- !u!222 &2143253973
 CanvasRenderer:
   m_ObjectHideFlags: 0
