@@ -50746,12 +50746,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad942494cf15d5c41b13127d6781668b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 413688438}
   rotSpd: 720
   gravityConstant: 10
   gravityModifier: 0.25
   terminalVelocity: 40
   minRadius: 0
-  inputOn: 0
+  unlatchImpulse: 10
 --- !u!114 &1496064729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51031,8 +51032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 413688438}
-  umbrelocity: 5
-  umbrimpulse: 10
+  glide: 2
+  impulse: 10
   forgiveness: 0.2
 --- !u!212 &1612485596
 SpriteRenderer:

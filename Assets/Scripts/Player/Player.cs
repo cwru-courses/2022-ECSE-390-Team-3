@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     private List<SpriteRenderer> sprites;
 
     [SerializeField]
+    GameManager GM;
+
+    [SerializeField]
     [Tooltip("max degrees rotated per second")]
     float rotSpd = 720;
 
@@ -29,12 +32,6 @@ public class Player : MonoBehaviour
     [Tooltip("min distance between cursor and player for rotation")]
     float minRadius;
 
-    // Temporary flag system
-    bool gravityOn;
-    [SerializeField]
-    [Tooltip("enable/disable full WASD movement")]
-    bool inputOn;
-
     Vector3 cursorDir;
 
     Vector2 input;
@@ -47,6 +44,8 @@ public class Player : MonoBehaviour
     Vector2 currVelocity;
     Vector2 umbrVelocity;
 
+    [SerializeField]
+    float unlatchImpulse = 10f;
     Vector2 latchImpulse;
     Vector2 latchImpulseRef;
 
@@ -71,34 +70,21 @@ public class Player : MonoBehaviour
             sprites.Add(child.GetComponent<SpriteRenderer>());
         }
 
-        gravityOn = !inputOn;
-
         spawnPoint = transform.position;
     }
 
     void Update()
     {
-        //if (latched) return;
+        if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * 0.5f * Time.deltaTime);
+        else gravity.y = (controller.IsGrounded()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
 
-        if(inputOn)
-        {
-            input.x = Input.GetAxisRaw("Horizontal") * 7.5f;
-            input.y = Input.GetAxisRaw("Vertical") * 7.5f;
-            if (input == Vector2.zero) gravityOn = true;
-            else gravityOn = false;
-        }
-
-        if(gravityOn)
-        {
-            gravity.y = (controller.IsGrounded()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
-            gravity.y = Mathf.Max(-terminalVelocity, Mathf.Min(0f, gravity.y));
-            gravity.y *= gravityMod;
-        }
+        gravity.y = Mathf.Max(-terminalVelocity, Mathf.Min(0f, gravity.y));
+        gravity.y *= gravityMod;
 
         waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
         latchImpulse = Vector2.SmoothDamp(latchImpulse, Vector2.zero, ref latchImpulseRef, 0.25f);
 
-        if (windVelocity.y >= 0.05 && gravity.y < 0) gravityMod = gravityModifier;
+        if (windVelocity.y >= 0.05 && gravity.y < 0 && !GM.UmbrellaOpen()) gravityMod = gravityModifier;
         else gravityMod = 1;
 
         // Pass all calculated vectors to velocity
@@ -143,13 +129,8 @@ public class Player : MonoBehaviour
 
     private void ApplyLatchImpulse()
     {
-        latchImpulse = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector2.up * 10f;
+        latchImpulse = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector2.up * unlatchImpulse;
         Debug.DrawRay(transform.position, latchImpulse, Color.blue, 2f);
-    }
-
-    public void SetGravityOn(bool what)
-    {
-        gravityOn = what;
     }
 
     public void SetGravity(Vector2 _gravity)

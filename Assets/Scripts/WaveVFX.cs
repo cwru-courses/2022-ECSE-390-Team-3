@@ -34,10 +34,4 @@ public class WaveVFX : MonoBehaviour
 
         mesh.colors = colors;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

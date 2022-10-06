@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     Vector2 currVelocity;
 
     bool umbrellaOpen;
-    Vector2 umbrelocity;
+    Vector2 glideVelocity;
 
     Vector2 waveImpulse;
 
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         if(umbrellaOpen)
         {
-            player.ApplyUmbrella(umbrelocity);
+            player.ApplyUmbrella(glideVelocity);
         }
         else
         {
@@ -73,12 +74,16 @@ public class GameManager : MonoBehaviour
     public void SetUmbrellaStatus(bool _umbrellaOpen)
     {
         umbrellaOpen = _umbrellaOpen;
-        if (!_umbrellaOpen) player.SetGravity(Vector2.zero);
     }
 
-    public void SetUmbrellaVelocity(Vector2 _umbrelocity)
+    public void SetUmbrellaVelocity(Vector2 _glideVelocity)
     {
-        umbrelocity = _umbrelocity;
+        glideVelocity = _glideVelocity;
+    }
+
+    public bool UmbrellaOpen()
+    {
+        return umbrellaOpen;
     }
 
     public void Latch()
@@ -108,6 +113,11 @@ public class GameManager : MonoBehaviour
     {
         player.enabled = !frozen;
         controller.enabled = !frozen;
+    }
+
+    public Vector2 GetCurrentWindDirection()
+    {
+        return winds.Last().GetVelocity().normalized;
     }
 
     IEnumerator Death(float respawnTime)

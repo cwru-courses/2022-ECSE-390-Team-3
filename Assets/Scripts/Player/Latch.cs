@@ -21,9 +21,7 @@ public class Latch : MonoBehaviour
 
     void Update()
     {
-        if (!canLatch) return;
-
-        if(Input.GetMouseButton(1))
+        if(canLatch && Input.GetMouseButton(1))
         {
             latched = true;
             GM.Latch();

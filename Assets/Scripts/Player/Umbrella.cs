@@ -13,10 +13,10 @@ public class Umbrella : MonoBehaviour
 
     [SerializeField]
     [Tooltip("the additive velocity due to an open umbrella")]
-    float umbrelocity = 2f;
+    float glide = 2f;
     [SerializeField]
     [Tooltip("the max magnitude of impulse due opening in a wave")]
-    float umbrimpulse = 10f;
+    float impulse = 10f;
     [SerializeField]
     [Tooltip("%length of the wave which grants max push")]
     float forgiveness = 0.2f;
@@ -57,10 +57,53 @@ public class Umbrella : MonoBehaviour
         }
         else if (Input.GetMouseButton(0) && inWind)
         {
-            Vector2 velocity = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
-            velocity *= umbrelocity;
+            // unlike wave, we talk to the GM for this
+
+            // here's the idea:
+            // we split the direction of the umbrella into its components, projected onto the wind direction
+            // that is, the projection parallel to the wind, and the resulting perpendicular piece
+            // we use the angle of the original direction on the wind direction to determine how to adjust these componenets
+            // then return the new vector sum
+
+            // calculate direction vector
+            // also occurs in the other method but like idk
+            // should probably be something innate to player
+            Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
+            Debug.Log(direction.y);
+
+            // now we want to grab the current wind direction
+            // multiple winds may be active but i'm just going to grab the most recent for now
+            Vector2 windDirection = GM.GetCurrentWindDirection();
+
+            // calculate the angle
+            float angle = Vector2.Angle(windDirection, direction);
+
+            // generate components
+            Vector2 parallelComponent = Vector3.Project(direction, windDirection);
+            Vector2 normalComponent = Vector3.Project(direction, Vector2.Perpendicular(windDirection));
+
+            // if the angle is 0 (90 - angle) we make no adjustment
+            // for every percent off, we reduce the parallel componenet
+            // and increase the normal component proportionally
+
+            parallelComponent *= (90f - angle) / 90f;
+            normalComponent *= angle / 90f;
+
+            // the effect of this is that opening the umbrella will give an impulse
+            // this impulse will have the feeling of pushing AGAINST either
+            // the wind or
+            // gravity
+            if (angle > 90) parallelComponent *= -1;
+            if (direction.y < 0) normalComponent *= -1;
+
+            // finally use this to generate velocity
+            Vector2 velocity = parallelComponent + normalComponent;
+
+            velocity *= glide;
             GM.SetUmbrellaVelocity(velocity);
             GM.SetUmbrellaStatus(true);
+
+            Debug.DrawRay(transform.position, velocity, Color.blue);
 
             if (!inWave) SR.color = new Color(1, 0.6f, 0);
         }
