@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScreenChanger : MonoBehaviour
 {
-    [SerializeField]
     GameManager GM;
 
     Vector3 respawnPoint;
@@ -14,10 +13,11 @@ public class ScreenChanger : MonoBehaviour
     BoxCollider2D exitedBox;
     BoxCollider2D lastEnteredBox;
 
-    private void Start()
+    void Start()
     {
-        
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Screen"))
@@ -29,9 +29,9 @@ public class ScreenChanger : MonoBehaviour
             cam.UpdateScreenBounds(enteredBox);
             cam.UpdateScreen();
 
-            if (collision.gameObject.transform.childCount == 0) return;
-            respawnPoint = collision.gameObject.transform.GetChild(0).transform.position;
-            GM.SetPlayerSpawn(respawnPoint);
+            // if (collision.gameObject.transform.childCount == 0) return;
+            // respawnPoint = collision.gameObject.transform.GetChild(0).transform.position;
+            // GM.SetPlayerSpawn(respawnPoint);
             
         }
     }

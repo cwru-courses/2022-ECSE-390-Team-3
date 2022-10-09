@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
     Player player;
-    [SerializeField]
     Controller2D controller;
 
     List<Wind> winds;
@@ -23,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
+        controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
     }
 
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
             windVelocity = Vector2.SmoothDamp(windVelocity, Vector2.zero, ref currVelocity, 0.05f);
         }
 
-        Debug.DrawRay(Vector3.zero, windVelocity.normalized * 10f, Color.white);
+        Debug.DrawRay(player.transform.position, windVelocity.normalized * 10f, Color.white);
 
         player.ApplyWind(windVelocity.normalized, windVelocity.magnitude);
 

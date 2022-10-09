@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Umbrella : MonoBehaviour
 {
-    [SerializeField]
     GameManager GM;
     Transform pivot;
     Player player;
@@ -28,6 +27,7 @@ public class Umbrella : MonoBehaviour
 
     void Start()
     {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         pivot = GetComponentInParent<Transform>();
         player = GetComponentInParent<Player>();
         SR = GetComponent<SpriteRenderer>();

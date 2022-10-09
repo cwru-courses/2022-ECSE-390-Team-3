@@ -9,6 +9,8 @@ public class CircleRenderer : MonoBehaviour
     Transform target;
 
     LineRenderer LR;
+    [SerializeField]
+    float radius;
     
     void Start()
     {
@@ -17,7 +19,7 @@ public class CircleRenderer : MonoBehaviour
     
     void Update()
     {
-        DrawCircle(125, 2 - 0.125f);
+        DrawCircle(125, radius);
     }
 
     void DrawCircle(int steps, float radius)

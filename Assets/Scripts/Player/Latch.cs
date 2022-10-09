@@ -11,13 +11,14 @@ public class Latch : MonoBehaviour
     private bool latched;
     
 
-    private SpriteRenderer SR;
+    //private SpriteRenderer SR;
     private Color color;
 
     void Start()
     {
-        SR = GetComponent<SpriteRenderer>();
-        color = SR.color;
+        //SR = GetComponent<SpriteRenderer>();
+        //color = SR.color;
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -26,14 +27,13 @@ public class Latch : MonoBehaviour
         {
             latched = true;
             GM.Latch();
-            SR.color = new Color(0, 1, 0);
+            //SR.color = new Color(0, 1, 0);
         }
         else if((Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0)) && latched)
         {
-            Debug.Log("what are you doing");
             latched = false;
             GM.Unlatch();
-            SR.color = color;
+            //SR.color = color;
         }
     }
 

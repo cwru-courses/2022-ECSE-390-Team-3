@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    [SerializeField]
     GameManager GM;
+
+    private void Start()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>(); ;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     private Controller2D controller;
     private List<SpriteRenderer> sprites;
 
-    [SerializeField]
     GameManager GM;
 
     [SerializeField]
@@ -34,8 +33,6 @@ public class Player : MonoBehaviour
 
     Vector3 cursorDir;
 
-    Vector2 input;
-
     Vector2 gravity;
     Vector2 waveImpulse;
     Vector2 currImpulse;
@@ -56,18 +53,25 @@ public class Player : MonoBehaviour
 
     bool latched;
     bool wasLatched;
+
+    private Transform pivot;
     
     void Start()
     {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         controller = GetComponent<Controller2D>();
+        pivot = GameObject.Find("Pivot").transform;
 
         sprites = new List<SpriteRenderer>();
         sprites.Add(GetComponent<SpriteRenderer>());
 
+        int i = 0;
+
         foreach (Transform child in transform)
         {
             if (child.GetComponentInChildren<SpriteRenderer>() == null) continue;
-            sprites.Add(child.GetComponent<SpriteRenderer>());
+            sprites.Add(child.GetComponentInChildren<SpriteRenderer>());
         }
 
         spawnPoint = transform.position;
@@ -76,24 +80,26 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * 0.5f * Time.deltaTime);
-        else gravity.y = (controller.IsGrounded()) ? -gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
+        else gravity.y = (controller.IsGrounded()) ? 0f : gravity.y - (gravityConstant * Time.deltaTime);
 
         gravity.y = Mathf.Max(-terminalVelocity, gravity.y);
-        gravity.y *= gravityMod;
 
         waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
         latchImpulse = Vector2.SmoothDamp(latchImpulse, Vector2.zero, ref latchImpulseRef, 0.25f);
 
-        if (windVelocity.y >= 0.05 && gravity.y < 0 && !GM.UmbrellaOpen()) gravityMod = gravityModifier;
+        if (Mathf.Sign(windVelocity.y) == 1 && gravity.y < 0 && GM.UmbrellaOpen()) gravityMod = gravityModifier;
         else gravityMod = 1;
 
         // Pass all calculated vectors to velocity
-        velocity = input + gravity + waveImpulse + latchImpulse + windVelocity + umbrVelocity;
-
-
+        velocity = gravity + waveImpulse + latchImpulse + windVelocity + umbrVelocity;
+        Debug.DrawRay(transform.position, gravity, Color.green);
+        Debug.DrawRay(transform.position, windVelocity, Color.blue);
+        Debug.DrawRay(transform.position, umbrVelocity, Color.magenta);
+        Debug.DrawRay(transform.position, latchImpulse * 2f, Color.yellow);
+        Debug.DrawRay(transform.position, velocity, Color.red);
 
         // Perform rotation
-        RotateToCursor();
+        //RotateToCursor();
     }
 
     // Pass a normalized vector for direction,
@@ -129,8 +135,8 @@ public class Player : MonoBehaviour
 
     private void ApplyLatchImpulse()
     {
-        latchImpulse = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward) * Vector2.up * unlatchImpulse;
-        Debug.DrawRay(transform.position, latchImpulse, Color.blue, 2f);
+        latchImpulse = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up * unlatchImpulse;
+        // Debug.DrawRay(transform.position, latchImpulse, Color.blue, 2f);
     }
 
     public void SetGravity(Vector2 _gravity)
@@ -139,6 +145,7 @@ public class Player : MonoBehaviour
     }
 
     // Handles character rotation and rotates final velocity vector
+    /*
     void RotateToCursor()
     {
         float cameraToScreenRatio = (float)Camera.main.pixelHeight / (float)Screen.height;
@@ -155,6 +162,7 @@ public class Player : MonoBehaviour
 
         velocity = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.back) * velocity;
     }
+    */
 
     public void EnableRenderer()
     {
@@ -183,6 +191,8 @@ public class Player : MonoBehaviour
         velocity =
         gravity =
         waveImpulse =
+        latchImpulse = 
+        latchImpulseRef =
         currImpulse = 
         windVelocity =
         umbrVelocity = Vector2.zero;

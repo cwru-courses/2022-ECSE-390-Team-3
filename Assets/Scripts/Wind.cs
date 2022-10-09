@@ -8,7 +8,6 @@ public class Wind : MonoBehaviour
     [SerializeField]
     bool windOn, waveOn;
 
-    [SerializeField]
     GameManager GM;
 
     [SerializeField]
@@ -53,6 +52,7 @@ public class Wind : MonoBehaviour
     {
         
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))

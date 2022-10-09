@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
-    [SerializeField]
     GameManager GM;
     Transform target;
 
@@ -44,6 +43,8 @@ public class CameraBehavior : MonoBehaviour
 
     void Start()
     {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         start = true;
         bounds = new Bounds();
 
