@@ -8,6 +8,8 @@ public class CameraBehavior : MonoBehaviour
     GameManager GM;
     Transform target;
 
+    BoxCollider2D thisBox;
+
     Vector2 proxyPosition;
 
     Vector2 targetPosition;
@@ -23,8 +25,22 @@ public class CameraBehavior : MonoBehaviour
     float vertEdge;
     float horizEdge;
 
+    float initialVertEdge;
+    float initialHorizEdge;
+
     bool transitioning;
     bool start;
+
+    bool zoomOut;
+    bool unZoom;
+
+    float currentSize;
+    [SerializeField]
+    [Tooltip("amount zoomed, ei 1.25 = 125%")]
+    float zoomAmount = 1.75f;
+    [SerializeField]
+    [Tooltip("time for zoom/unzoom")]
+    float zoomDuration = 0.1f;
 
     void Start()
     {
@@ -33,10 +49,21 @@ public class CameraBehavior : MonoBehaviour
 
         target = GM.GetPlayer();
 
-        vertEdge = Camera.main.orthographicSize;
-        horizEdge = Camera.main.orthographicSize * Camera.main.aspect; // multiply by aspect ratio
+        initialVertEdge = vertEdge = Camera.main.orthographicSize;
+        initialHorizEdge = horizEdge = Camera.main.orthographicSize * Camera.main.aspect; // multiply by aspect ratio
     }
 
+    private void Update()
+    {
+        if(zoomOut)
+        {
+            Zoom(initialVertEdge * zoomAmount);
+        }
+        else if (unZoom)
+        {
+            Zoom(initialVertEdge);
+        }
+    }
     void LateUpdate()
     {
         lastPosition = transform.position;
@@ -66,6 +93,8 @@ public class CameraBehavior : MonoBehaviour
 
     public void UpdateScreenBounds(BoxCollider2D box)
     {
+        thisBox = box;
+
         bounds.xMin = box.bounds.min.x + horizEdge;
         bounds.xMax = box.bounds.max.x - horizEdge;
         bounds.yMin = box.bounds.min.y + vertEdge;
@@ -102,6 +131,25 @@ public class CameraBehavior : MonoBehaviour
         }
     }
 
+    void Zoom(float targetSize)
+    {
+        Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, targetSize, ref currentSize, zoomDuration);
+        vertEdge = Camera.main.orthographicSize;
+        horizEdge = Camera.main.orthographicSize * Camera.main.aspect;
+        UpdateScreenBounds(thisBox);
+    }
+
+    public void ZoomOut()
+    {
+        unZoom = false;
+        zoomOut = true;
+    }
+
+    public void Unzoom()
+    {
+        zoomOut = false;
+        unZoom = true;
+    }
 
     public struct Bounds
     {

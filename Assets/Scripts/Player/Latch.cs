@@ -9,6 +9,7 @@ public class Latch : MonoBehaviour
 
     private bool canLatch;
     private bool latched;
+    
 
     private SpriteRenderer SR;
     private Color color;
@@ -21,14 +22,15 @@ public class Latch : MonoBehaviour
 
     void Update()
     {
-        if(canLatch && Input.GetMouseButton(1))
+        if(!latched && canLatch && Input.GetMouseButtonDown(1))
         {
             latched = true;
             GM.Latch();
             SR.color = new Color(0, 1, 0);
         }
-        if(Input.GetMouseButtonUp(1) && latched)
+        else if((Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0)) && latched)
         {
+            Debug.Log("what are you doing");
             latched = false;
             GM.Unlatch();
             SR.color = color;

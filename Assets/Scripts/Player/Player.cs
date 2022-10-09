@@ -76,9 +76,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * 0.5f * Time.deltaTime);
-        else gravity.y = (controller.IsGrounded()) ? gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
+        else gravity.y = (controller.IsGrounded()) ? -gravityConstant : gravity.y - (gravityConstant * Time.deltaTime);
 
-        gravity.y = Mathf.Max(-terminalVelocity, Mathf.Min(0f, gravity.y));
+        gravity.y = Mathf.Max(-terminalVelocity, gravity.y);
         gravity.y *= gravityMod;
 
         waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);

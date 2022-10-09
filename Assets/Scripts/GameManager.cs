@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
     {
         if (respawning) return;
         player.Latch();
+        Camera.main.GetComponent<CameraBehavior>().ZoomOut();
         //SetFreeze(true);
     }
 
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
     {
         if (respawning) return;
         player.Unlatch();
+        Camera.main.GetComponent<CameraBehavior>().Unzoom();
     }
 
     public void PlayerDeath()

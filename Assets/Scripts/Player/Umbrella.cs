@@ -93,8 +93,10 @@ public class Umbrella : MonoBehaviour
             // this impulse will have the feeling of pushing AGAINST either
             // the wind or
             // gravity
+            /*
             if (angle > 90) parallelComponent *= -1;
             if (direction.y < 0) normalComponent *= -1;
+            */
 
             // finally use this to generate velocity
             Vector2 velocity = parallelComponent + normalComponent;

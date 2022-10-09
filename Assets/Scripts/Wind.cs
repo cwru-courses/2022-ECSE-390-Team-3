@@ -24,6 +24,8 @@ public class Wind : MonoBehaviour
     [SerializeField]
     GameObject wave;
     [SerializeField]
+    int numWaves;
+    [SerializeField]
     [Tooltip("length of wave in unity units")]
     float waveLength = 2f;
     [SerializeField]
@@ -44,21 +46,12 @@ public class Wind : MonoBehaviour
 
         if (!waveOn) return;
 
-        GameObject waveObject = Instantiate(wave);
-        Wave waveSettings = waveObject.GetComponent<Wave>();
+        StartCoroutine(InitializeWaves(numWaves));
+    }
 
-        Quaternion rotation = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward);
-
-        Vector2 start = box.bounds.center + (rotation * Vector2.left * (transform.localScale.x - waveLength) / 2);
-        Vector2 end = box.bounds.center + (rotation * Vector2.right * (transform.localScale.x - waveLength) / 2);
+    private void Update()
+    {
         
-        Debug.DrawLine(start, end, Color.cyan);
-
-        waveSettings.SetDimensions(waveLength, transform.localScale.y);
-        waveSettings.SetRotation(transform.eulerAngles.z);
-        waveSettings.SetPath(start, end);
-        waveSettings.SetSpeed(speed);
-        waveSettings.SetMaxImpulse(maxImpulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -77,6 +70,25 @@ public class Wind : MonoBehaviour
             SR.color = color;
             if (windOn) GM.RemoveWind(this);
         }
+    }
+
+    private void SpawnWave()
+    {
+        GameObject waveObject = Instantiate(wave);
+        Wave waveSettings = waveObject.GetComponent<Wave>();
+
+        Quaternion rotation = Quaternion.AngleAxis(transform.eulerAngles.z, Vector3.forward);
+
+        Vector2 start = box.bounds.center + (rotation * Vector2.left * (transform.localScale.x - waveLength) / 2);
+        Vector2 end = box.bounds.center + (rotation * Vector2.right * (transform.localScale.x - waveLength) / 2);
+
+        Debug.DrawLine(start, end, Color.cyan);
+
+        waveSettings.SetDimensions(waveLength, transform.localScale.y);
+        waveSettings.SetRotation(transform.eulerAngles.z);
+        waveSettings.SetPath(start, end);
+        waveSettings.SetSpeed(speed);
+        waveSettings.SetMaxImpulse(maxImpulse);
     }
 
     public Vector2 GetVelocity()
@@ -102,5 +114,18 @@ public class Wind : MonoBehaviour
     public void SetGameManager(GameManager _GM)
     {
         GM = _GM;
+    }
+
+    IEnumerator InitializeWaves(int num)
+    {
+        float time = ((this.transform.localScale.x - waveLength) / speed) / (float)num;
+
+        for (int i = 0; i < num; i++)
+        {
+            SpawnWave();
+            yield return new WaitForSeconds(time);
+        }
+
+        yield return null;
     }
 }
