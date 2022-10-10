@@ -6,7 +6,7 @@ public class EnemyProjectile : MonoBehaviour
 {
 
     [SerializeField] GameObject bullet;
-    float fireRate;
+    public float fireTime = 1f;
     float nextFire;
     public float range = 10f;
     GameObject target;
@@ -14,7 +14,6 @@ public class EnemyProjectile : MonoBehaviour
 
     void Start()
     {
-        fireRate = 1f;
         nextFire = Time.time;
         target = GameObject.FindGameObjectWithTag("Player");
     }
@@ -33,7 +32,7 @@ public class EnemyProjectile : MonoBehaviour
         if(Time.time > nextFire)
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + fireTime;
         }
     }
 }
