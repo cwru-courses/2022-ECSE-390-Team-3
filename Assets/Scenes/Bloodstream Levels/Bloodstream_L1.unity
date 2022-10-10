@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 38.497208
+      value: 19.431517
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalScale.y
@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -83
+      value: -73.4683
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -232,12 +232,24 @@ PrefabInstance:
       value: Wind (12)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -311,19 +323,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
-      propertyPath: windSpeed
+      propertyPath: waveOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -1113,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2039984073848970481, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 2039984073848970481, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1146,6 +1166,10 @@ PrefabInstance:
     - target: {fileID: 2039984073848970481, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039984073848970484, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
+      propertyPath: terminalVelocity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2039984073848970491, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
       propertyPath: m_Name
@@ -2681,19 +2705,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
-      propertyPath: windSpeed
+      propertyPath: waveOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -2819,12 +2851,24 @@ PrefabInstance:
       value: Wind (5)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -3006,12 +3050,24 @@ PrefabInstance:
       value: Wind (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -3084,12 +3140,28 @@ PrefabInstance:
       value: Wind (14)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: waveOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -3563,7 +3635,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3671,12 +3743,24 @@ PrefabInstance:
       value: Wind (6)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -4024,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 44.742863
+      value: 60.393917
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalScale.y
@@ -4032,7 +4116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.695
+      value: 23.8705
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385313, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4075,12 +4159,24 @@ PrefabInstance:
       value: Wind (13)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -4227,12 +4323,24 @@ PrefabInstance:
       value: Wind (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -52362,12 +52470,24 @@ PrefabInstance:
       value: Wind (4)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -52725,12 +52845,24 @@ PrefabInstance:
       value: Wind
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -52803,12 +52935,24 @@ PrefabInstance:
       value: Wind (8)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -52876,12 +53020,24 @@ PrefabInstance:
       value: Wind (7)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -53285,19 +53441,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
-      propertyPath: windSpeed
+      propertyPath: waveOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -53365,12 +53529,24 @@ PrefabInstance:
       value: Wind (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: windSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}

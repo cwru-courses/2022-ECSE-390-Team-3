@@ -494,8 +494,16 @@ PrefabInstance:
       value: Wind (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: windSpeed
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
@@ -503,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -1006,8 +1014,16 @@ PrefabInstance:
       value: Wind (4)
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: numWaves
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: windSpeed
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: maxImpulse
@@ -1015,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: waveLength
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
@@ -1323,6 +1339,10 @@ PrefabInstance:
       propertyPath: GM
       value: 
       objectReference: {fileID: 413688438}
+    - target: {fileID: 2039984073848970484, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
+      propertyPath: terminalVelocity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2039984073848970491, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1375,8 +1395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89879ef334791347bbe23e061bdf436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 715481608}
-  controller: {fileID: 715481609}
 --- !u!1 &453705129
 GameObject:
   m_ObjectHideFlags: 0
@@ -25051,28 +25069,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676326259}
   m_CullTransparentMesh: 1
---- !u!114 &715481608 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2039984073848970484, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
-  m_PrefabInstance: {fileID: 394615529}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad942494cf15d5c41b13127d6781668b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &715481609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2039984073848970485, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
-  m_PrefabInstance: {fileID: 394615529}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb68ba7d3c04db84e9627738b1695d17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &724158814
 GameObject:
   m_ObjectHideFlags: 0
@@ -25419,7 +25415,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25461,7 +25457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b6a5cec9354914cbbcba7540483819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 413688438}
   zoomAmount: 1.75
   zoomDuration: 0.1
 --- !u!1 &966193451
@@ -148134,12 +148129,16 @@ PrefabInstance:
       value: Wind
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: period
       value: 1.349
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: numWaves
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: windSpeed
