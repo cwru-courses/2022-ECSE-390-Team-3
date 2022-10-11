@@ -98,7 +98,10 @@ public class Player : MonoBehaviour
         }
         else latchJumping = false;
 
-        dampedWindVelocity = Vector2.SmoothDamp(dampedWindVelocity, windVelocity, ref windVelocityRef, 0.3f);
+        // windvelocity == 1, damptime = 0
+        // windvelocity == 20, damptime = 0.3
+        // damptime = 0.3/20
+        dampedWindVelocity = Vector2.SmoothDamp(dampedWindVelocity, windVelocity, ref windVelocityRef, 0.015f * windVelocity.magnitude);
 
         velocity = (latchJumping) ? latchImpulse + waveImpulse: gravity + waveImpulse + latchImpulse + dampedWindVelocity + umbrVelocity;
         Debug.DrawRay(transform.position, gravity, Color.green);
