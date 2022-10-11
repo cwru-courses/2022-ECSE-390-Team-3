@@ -52,7 +52,9 @@ public class Player : MonoBehaviour
     Vector3 spawnPoint;
 
     bool latched;
-    bool wasLatched;
+    bool latchJumping;
+    float latchJumpDuration = 0.25f;
+    float latchJumpTimer;
 
     private Transform pivot;
     
@@ -66,8 +68,6 @@ public class Player : MonoBehaviour
         sprites = new List<SpriteRenderer>();
         sprites.Add(GetComponent<SpriteRenderer>());
 
-        int i = 0;
-
         foreach (Transform child in transform)
         {
             if (child.GetComponentInChildren<SpriteRenderer>() == null) continue;
@@ -80,18 +80,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * 0.5f * Time.deltaTime);
-        else gravity.y = (controller.IsGrounded()) ? 0f : gravity.y - (gravityConstant * Time.deltaTime);
+        else gravity.y = (controller.IsGrounded() || latchJumping) ? 0f : gravity.y - (gravityConstant * Time.deltaTime);
+
+        Debug.Log(controller.IsGrounded());
 
         gravity.y = Mathf.Max(-terminalVelocity, gravity.y);
 
         waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
         latchImpulse = Vector2.SmoothDamp(latchImpulse, Vector2.zero, ref latchImpulseRef, 0.25f);
 
-        if (Mathf.Sign(windVelocity.y) == 1 && gravity.y < 0 && GM.UmbrellaOpen()) gravityMod = gravityModifier;
-        else gravityMod = 1;
+        if (latchJumpTimer <= latchJumpDuration) latchJumpTimer += Time.deltaTime;
+        else latchJumping = false;
 
-        // Pass all calculated vectors to velocity
-        velocity = gravity + waveImpulse + latchImpulse + windVelocity + umbrVelocity;
+        velocity = (latchJumping) ? latchImpulse + waveImpulse: gravity + waveImpulse + latchImpulse + windVelocity + umbrVelocity;
         Debug.DrawRay(transform.position, gravity, Color.green);
         Debug.DrawRay(transform.position, windVelocity, Color.blue);
         Debug.DrawRay(transform.position, umbrVelocity, Color.magenta);
@@ -135,8 +136,11 @@ public class Player : MonoBehaviour
 
     private void ApplyLatchImpulse()
     {
+        latchJumpTimer = 0f;
+        latchJumping = true;
         latchImpulse = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up * unlatchImpulse;
         // Debug.DrawRay(transform.position, latchImpulse, Color.blue, 2f);
+
     }
 
     public void SetGravity(Vector2 _gravity)

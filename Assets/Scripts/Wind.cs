@@ -23,7 +23,7 @@ public class Wind : MonoBehaviour
     [SerializeField]
     GameObject wave;
     [SerializeField]
-    int numWaves;
+    int numWaves = 1;
     [SerializeField]
     [Tooltip("length of wave in unity units")]
     float waveLength = 2f;

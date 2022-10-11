@@ -69,7 +69,6 @@ public class Umbrella : MonoBehaviour
             // also occurs in the other method but like idk
             // should probably be something innate to player
             Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
-            Debug.Log(direction.y);
 
             // now we want to grab the current wind direction
             // multiple winds may be active but i'm just going to grab the most recent for now

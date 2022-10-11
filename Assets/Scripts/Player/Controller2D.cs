@@ -177,10 +177,10 @@ public class Controller2D : MonoBehaviour {
             Bounds tempBounds = playerCollider.bounds;
             tempBounds.Expand(skinWidth * -2);
             Vector2 rayOrigin = new Vector2(tempBounds.min.x, tempBounds.min.y);
-            rayOrigin += Vector2.right * (verticalRaySpacing * i);
+            rayOrigin += Vector2.right * ((verticalRaySpacing * 4f/6f) * i);
 
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, collisionMask);
-            Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.cyan);
+            Debug.DrawRay(rayOrigin, Vector2.down * rayLength * 5f, Color.cyan);
 
             if (hit)
             {
