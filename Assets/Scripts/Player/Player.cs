@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     Vector2 currImpulse;
     // It's wind because current is... well, too similar to current. And flow is lame.
     Vector2 windVelocity;
+    Vector2 dampedWindVelocity;
+    Vector2 windVelocityRef;
     Vector2 currVelocity;
     Vector2 umbrVelocity;
 
@@ -89,10 +91,16 @@ public class Player : MonoBehaviour
         waveImpulse = Vector2.SmoothDamp(waveImpulse, Vector2.zero, ref currImpulse, 0.5f);
         latchImpulse = Vector2.SmoothDamp(latchImpulse, Vector2.zero, ref latchImpulseRef, 0.25f);
 
-        if (latchJumpTimer <= latchJumpDuration) latchJumpTimer += Time.deltaTime;
+        if (latchJumpTimer <= latchJumpDuration)
+        {
+            latchJumpTimer += Time.deltaTime;
+            dampedWindVelocity = Vector2.zero;
+        }
         else latchJumping = false;
 
-        velocity = (latchJumping) ? latchImpulse + waveImpulse: gravity + waveImpulse + latchImpulse + windVelocity + umbrVelocity;
+        dampedWindVelocity = Vector2.SmoothDamp(dampedWindVelocity, windVelocity, ref windVelocityRef, 0.3f);
+
+        velocity = (latchJumping) ? latchImpulse + waveImpulse: gravity + waveImpulse + latchImpulse + dampedWindVelocity + umbrVelocity;
         Debug.DrawRay(transform.position, gravity, Color.green);
         Debug.DrawRay(transform.position, windVelocity, Color.blue);
         Debug.DrawRay(transform.position, umbrVelocity, Color.magenta);
