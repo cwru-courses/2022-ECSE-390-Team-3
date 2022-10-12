@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private List<SpriteRenderer> sprites;
 
     GameManager GM;
+    Latch latch;
 
     [SerializeField]
     [Tooltip("max degrees rotated per second")]
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        latch = GetComponentInChildren<Latch>();
 
         controller = GetComponent<Controller2D>();
         pivot = GameObject.Find("Pivot").transform;
@@ -198,6 +200,8 @@ public class Player : MonoBehaviour
     public void Respawn()
     {
         ResetVelocities();
+        latched = false;
+        latch.Reset();
         transform.position = spawnPoint;
     }
 
@@ -211,6 +215,7 @@ public class Player : MonoBehaviour
         currImpulse = 
         windVelocity =
         umbrVelocity = Vector2.zero;
+        latchJumping = false;
     }
 
     public void SetSpawnPoint(Vector3 point)

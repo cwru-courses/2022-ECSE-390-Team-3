@@ -53,4 +53,9 @@ public class Latch : MonoBehaviour
             canLatch = false;
         }
     }
+
+    public void Reset()
+    {
+        latched = false;
+    }
 }
