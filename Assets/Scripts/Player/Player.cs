@@ -21,10 +21,6 @@ public class Player : MonoBehaviour
     [Tooltip("acceleration downwards due to gravity, stored as positive")]
     float gravityConstant = 2f;
     [SerializeField]
-    [Tooltip("reduces the effect of gravity when in upwards winds")]
-    float gravityModifier = 0.25f;
-    float gravityMod;
-    [SerializeField]
     [Tooltip("terminal falling due to gravity, should be low")]
     float terminalVelocity = 4f;
 
@@ -83,10 +79,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * 0.5f * Time.deltaTime);
+        if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * Time.deltaTime);
         else gravity.y = (controller.IsGrounded() || latchJumping) ? 0f : gravity.y - (gravityConstant * Time.deltaTime);
-
-        Debug.Log(controller.IsGrounded());
 
         gravity.y = Mathf.Max(-terminalVelocity, gravity.y);
 
@@ -106,11 +100,12 @@ public class Player : MonoBehaviour
         dampedWindVelocity = Vector2.SmoothDamp(dampedWindVelocity, windVelocity, ref windVelocityRef, 0.015f * windVelocity.magnitude);
 
         velocity = (latchJumping) ? latchImpulse + waveImpulse: gravity + waveImpulse + latchImpulse + dampedWindVelocity + umbrVelocity;
-        Debug.DrawRay(transform.position, gravity, Color.green);
-        Debug.DrawRay(transform.position, windVelocity, Color.blue);
-        Debug.DrawRay(transform.position, umbrVelocity, Color.magenta);
-        Debug.DrawRay(transform.position, latchImpulse * 2f, Color.yellow);
-        Debug.DrawRay(transform.position, velocity, Color.red);
+
+        // Debug.DrawRay(transform.position, gravity, Color.green);
+        // Debug.DrawRay(transform.position, windVelocity, Color.blue);
+        // Debug.DrawRay(transform.position, umbrVelocity, Color.magenta);
+        // Debug.DrawRay(transform.position, latchImpulse * 2f, Color.yellow);
+        // Debug.DrawRay(transform.position, velocity, Color.red);
 
         // Perform rotation
         //RotateToCursor();
@@ -216,6 +211,21 @@ public class Player : MonoBehaviour
         windVelocity =
         umbrVelocity = Vector2.zero;
         latchJumping = false;
+    }
+
+    public void ResetGravity()
+    {
+        gravity = Vector2.zero;
+    }
+
+    public float GetGravity()
+    {
+        return gravityConstant;
+    }
+
+    public float GetCurrentGravity()
+    {
+        return Mathf.Abs(gravity.y);
     }
 
     public void SetSpawnPoint(Vector3 point)

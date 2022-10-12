@@ -48,11 +48,6 @@ public class Wind : MonoBehaviour
         StartCoroutine(InitializeWaves(numWaves));
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -89,6 +84,11 @@ public class Wind : MonoBehaviour
         waveSettings.SetPath(start, end);
         waveSettings.SetSpeed(speed);
         waveSettings.SetMaxImpulse(maxImpulse);
+    }
+
+    public float GetSpeed()
+    {
+        return windSpeed;
     }
 
     public Vector2 GetVelocity()

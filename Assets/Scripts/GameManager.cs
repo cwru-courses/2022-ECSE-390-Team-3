@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     Controller2D controller;
 
     List<Wind> winds;
+    List<Vector2> windVelocities;
     Vector2 windVelocity;
     Vector2 currVelocity;
 
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
+        windVelocities = new List<Vector2>();
     }
 
     void Update()
@@ -63,12 +65,14 @@ public class GameManager : MonoBehaviour
     public void AddWind(Wind wind)
     {
         winds.Add(wind);
+        windVelocities.Add(wind.GetVelocity());
     }
 
     public void RemoveWind(Wind wind)
     {
         wind.SetCurrVelocity(Vector2.zero);
         winds.Remove(wind);
+        windVelocities.Remove(wind.GetVelocity());
     }
 
     public void SetUmbrellaStatus(bool _umbrellaOpen)
@@ -120,6 +124,16 @@ public class GameManager : MonoBehaviour
     public Vector2 GetCurrentWindDirection()
     {
         return winds.Last().GetVelocity().normalized;
+    }
+
+    public List<Vector2> GetWindDirections()
+    {
+        return windVelocities;
+    }
+
+    public List<Wind> GetWinds()
+    {
+        return winds;
     }
 
     IEnumerator Death(float respawnTime)

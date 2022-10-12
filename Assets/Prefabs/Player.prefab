@@ -290,7 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1a8800bfff5384ab8b043adf238ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glide: 2
+  glide: 0.25
+  maxGlide: 3
+  repulsion: 0.25
   impulse: 10
   forgiveness: 0.2
 --- !u!212 &2039984073157930480
@@ -449,7 +451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c79671bdccd1249be53a5bae15d3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 0}
 --- !u!1 &2039984073848970491
 GameObject:
   m_ObjectHideFlags: 0

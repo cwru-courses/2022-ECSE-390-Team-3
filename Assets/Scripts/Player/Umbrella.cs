@@ -10,9 +10,15 @@ public class Umbrella : MonoBehaviour
     SpriteRenderer SR;
     Color color;
 
+
+    float glide = 0.25f;
     [SerializeField]
-    [Tooltip("the additive velocity due to an open umbrella")]
-    float glide = 2f;
+    [Tooltip("the maximum speed allowed to be gained from 'catching' wind")]
+    float maxGlide = 1.5f;
+
+
+    float repulsion = 0.25f;
+
     [SerializeField]
     [Tooltip("the max magnitude of impulse due opening in a wave")]
     float impulse = 10f;
@@ -25,6 +31,10 @@ public class Umbrella : MonoBehaviour
     private bool inWave;
     private bool inWind;
 
+    [SerializeField]
+    float jumpCd = 2f;
+    float jumpTimer = 2f;
+
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -36,6 +46,18 @@ public class Umbrella : MonoBehaviour
 
     void Update()
     {
+        if (jumpTimer <= jumpCd) jumpTimer += Time.deltaTime;
+        Debug.Log(jumpTimer);
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            if (jumpTimer >= jumpCd)
+            {
+                player.ResetGravity();
+                jumpTimer = 0f;
+            }
+        }
+
         if (Input.GetMouseButtonDown(0) && inWave)
         {
             // wave should never be null when this is executed
@@ -57,58 +79,71 @@ public class Umbrella : MonoBehaviour
         }
         else if (Input.GetMouseButton(0) && inWind)
         {
-            // unlike wave, we talk to the GM for this
+            UmbrellaInWindOld();
+        }   
+    }
 
-            // here's the idea:
-            // we split the direction of the umbrella into its components, projected onto the wind direction
-            // that is, the projection parallel to the wind, and the resulting perpendicular piece
-            // we use the angle of the original direction on the wind direction to determine how to adjust these componenets
-            // then return the new vector sum
+    void UmbrellaInWind()
+    {
+        Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
+        Vector2 velocity = Vector2.zero;
 
-            // calculate direction vector
-            // also occurs in the other method but like idk
-            // should probably be something innate to player
-            Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
-
-            // now we want to grab the current wind direction
-            // multiple winds may be active but i'm just going to grab the most recent for now
-            Vector2 windDirection = GM.GetCurrentWindDirection();
-
+        // now we do calculations for every active wind
+        // in case we have multiple at once
+        // though we probably shouldn't
+        foreach(Wind wind in GM.GetWinds())
+        {
+            float windSpeed = wind.GetSpeed();
+            Vector2 windDirection = wind.GetVelocity().normalized;
             // calculate the angle
             float angle = Vector2.Angle(windDirection, direction);
 
-            // generate components
+            // componentize the direction vector relative to wind direction
             Vector2 parallelComponent = Vector3.Project(direction, windDirection);
             Vector2 normalComponent = Vector3.Project(direction, Vector2.Perpendicular(windDirection));
 
-            // if the angle is 0 (90 - angle) we make no adjustment
-            // for every percent off, we reduce the parallel componenet
-            // and increase the normal component proportionally
+            // these components are generate with magnitudes between 0-1
+            // which is defined as the normalized component of the velocity
 
             parallelComponent *= (90f - angle) / 90f;
             normalComponent *= angle / 90f;
 
-            // the effect of this is that opening the umbrella will give an impulse
-            // this impulse will have the feeling of pushing AGAINST either
-            // the wind or
-            // gravity
-            /*
-            if (angle > 90) parallelComponent *= -1;
-            if (direction.y < 0) normalComponent *= -1;
-            */
+            // if facing against the wind
+            if (angle > 90)
+            {
+                parallelComponent *= -1;
+                parallelComponent *= repulsion * windSpeed;
+            }
+            else
+            {
+                parallelComponent *= Mathf.Min(glide * windSpeed, maxGlide);
+                normalComponent *= Mathf.Min(glide * windSpeed, maxGlide);
+            }
 
             // finally use this to generate velocity
-            Vector2 velocity = parallelComponent + normalComponent;
+            Vector2 thisVelocity = parallelComponent + normalComponent;
 
-            velocity *= glide;
-            GM.SetUmbrellaVelocity(velocity);
-            GM.SetUmbrellaStatus(true);
-
-            Debug.DrawRay(transform.position, velocity, Color.blue);
-
-            if (!inWave) SR.color = new Color(1, 0.6f, 0);
+            velocity += thisVelocity;
         }
-        
+
+        GM.SetUmbrellaVelocity(velocity);
+        GM.SetUmbrellaStatus(true);
+
+        Debug.DrawRay(transform.position, velocity * 5f, Color.blue);
+        // Debug.Log(velocity);
+
+        if (!inWave) SR.color = new Color(1, 0.6f, 0);
+    }
+
+    void UmbrellaInWindOld()
+    {
+        Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
+        GM.SetUmbrellaVelocity(direction * maxGlide);
+        GM.SetUmbrellaStatus(true);
+        Debug.DrawRay(transform.position, direction * 7.5f, Color.blue);
+        // Debug.Log(velocity);
+
+        if (!inWave) SR.color = new Color(1, 0.6f, 0);
     }
 
     void LateUpdate()
