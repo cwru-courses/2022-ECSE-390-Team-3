@@ -47,7 +47,7 @@ public class Umbrella : MonoBehaviour
     void Update()
     {
         if (jumpTimer <= jumpCd) jumpTimer += Time.deltaTime;
-        Debug.Log(jumpTimer);
+        // Debug.Log(jumpTimer);
 
         if(Input.GetMouseButtonDown(0))
         {
