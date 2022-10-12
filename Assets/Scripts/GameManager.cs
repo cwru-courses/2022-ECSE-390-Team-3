@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     Controller2D controller;
 
     List<Wind> winds;
-    List<Vector2> windVelocities;
     Vector2 windVelocity;
     Vector2 currVelocity;
 
@@ -18,18 +17,19 @@ public class GameManager : MonoBehaviour
 
     Vector2 waveImpulse;
 
-    bool respawning;
+    bool respawning = false;
 
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
-        windVelocities = new List<Vector2>();
     }
 
-    void Update()
+    void LateUpdate()
     {
+        if (respawning) return;
+
         if(winds.Count != 0)
         {
             Vector2 targetVelocity = Vector2.zero;
@@ -65,14 +65,12 @@ public class GameManager : MonoBehaviour
     public void AddWind(Wind wind)
     {
         winds.Add(wind);
-        windVelocities.Add(wind.GetVelocity());
     }
 
     public void RemoveWind(Wind wind)
     {
         wind.SetCurrVelocity(Vector2.zero);
         winds.Remove(wind);
-        windVelocities.Remove(wind.GetVelocity());
     }
 
     public void SetUmbrellaStatus(bool _umbrellaOpen)
@@ -126,11 +124,6 @@ public class GameManager : MonoBehaviour
         return winds.Last().GetVelocity().normalized;
     }
 
-    public List<Vector2> GetWindDirections()
-    {
-        return windVelocities;
-    }
-
     public List<Wind> GetWinds()
     {
         return winds;
@@ -146,8 +139,10 @@ public class GameManager : MonoBehaviour
         SetFreeze(false);
 
         player.EnableRenderer();
+        winds = new List<Wind>();
         player.Respawn();
         respawning = false;
+        windVelocity = Vector2.zero;
         yield return null;
     }
 
