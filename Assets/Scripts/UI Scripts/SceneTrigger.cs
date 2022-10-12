@@ -17,7 +17,7 @@ public class SceneTrigger : MonoBehaviour
     {
         if(popupOpen == true)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Resume();
                 popupOpen = false;

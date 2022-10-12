@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: cbde15ac94b1ff840a7da5030cbc96fc
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial_L1.unity
-    guid: 076095db2e69aa044802d7d9f1117035
+    guid: ca8a05621a580874cb8ea658833684c8
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial_L2.unity
     guid: bb659fc585b9013448d9c2ca3d039567
@@ -42,8 +42,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Bloodstream Levels/Bloodstream_L1.unity
     guid: 6ea872d005b08be4ca6a7ddc0d5628d8
   - enabled: 1
-    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L2_DEFUNCT.unity
-    guid: f5b8cb729717a1c4e8486a997afaad7f
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L2.unity
+    guid: 61fbae3b6552e164ea4223a67e19877b
   - enabled: 1
     path: Assets/Scenes/Bloodstream Levels/Bloodstream_L3.unity
     guid: 2f96d89412e9cf04d865d051c4f825f8
@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Finale.unity
     guid: 37febdd79aa962d4fb343c3bfbc1582e
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Levels/Puzzle_L1.unity
+    guid: 4ec6d2dc2234edf4fbb9cda827d786fa
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Levels/Puzzle_L2.unity
+    guid: 2daf4ee4614ac494fb3f42ea407d7f99
   m_configObjects: {}
