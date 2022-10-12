@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
         }
         else latchJumping = false;
 
+        // test parameters
         // windvelocity == 1, damptime = 0
         // windvelocity == 20, damptime = 0.3
         // damptime = 0.3/20
@@ -106,23 +107,13 @@ public class Player : MonoBehaviour
         // Debug.DrawRay(transform.position, umbrVelocity, Color.magenta);
         // Debug.DrawRay(transform.position, latchImpulse * 2f, Color.yellow);
         // Debug.DrawRay(transform.position, velocity, Color.red);
-
-        // Perform rotation
-        //RotateToCursor();
     }
 
-    // Pass a normalized vector for direction,
-    // and a float for the magnitude.
-    // It will be necessary to ensure the vector waveImpulse is only passed to velocity once
-    // no reason to put this in separate method im just in a software craftsmanship mood today
-    // the idea is to handle it from somewhere else
     public void ApplyImpulse(Vector2 _impulse)
     {
         waveImpulse = _impulse;
     }
 
-    // Pass a normalized vector for direction,
-    // and a float for the magnitude.
     public void ApplyWind(Vector2 dir, float magnitude)
     {
         windVelocity = dir * magnitude;
@@ -194,9 +185,9 @@ public class Player : MonoBehaviour
 
     public void Respawn()
     {
-        ResetVelocities();
         latched = false;
         latch.Reset();
+        ResetVelocities();
         transform.position = spawnPoint;
     }
 
@@ -209,6 +200,8 @@ public class Player : MonoBehaviour
         latchImpulseRef =
         currImpulse = 
         windVelocity =
+        dampedWindVelocity =
+        windVelocityRef =
         umbrVelocity = Vector2.zero;
         latchJumping = false;
     }
