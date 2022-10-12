@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Bloodstream Levels/Bloodstream_L1.unity
     guid: 6ea872d005b08be4ca6a7ddc0d5628d8
   - enabled: 1
-    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L2.unity
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L2_DEFUNCT.unity
     guid: f5b8cb729717a1c4e8486a997afaad7f
   - enabled: 1
     path: Assets/Scenes/Bloodstream Levels/Bloodstream_L3.unity
