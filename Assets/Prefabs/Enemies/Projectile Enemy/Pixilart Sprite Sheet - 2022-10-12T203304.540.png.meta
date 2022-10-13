@@ -1,0 +1,661 @@
+fileFormatVersion: 2
+guid: 5317d408b58158a49825a12d9e867df8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -170842004943285258
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_0
+  - first:
+      213: 496757173471130903
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_1
+  - first:
+      213: 6129562816970517880
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_2
+  - first:
+      213: 5852400371569193066
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_3
+  - first:
+      213: 3733661381909290536
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_4
+  - first:
+      213: 2793903276819999419
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_5
+  - first:
+      213: 5193188121952126457
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_6
+  - first:
+      213: -172042650697558073
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_7
+  - first:
+      213: 790914566464044453
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_8
+  - first:
+      213: 1028866679049774046
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_9
+  - first:
+      213: -3250889916870865501
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_10
+  - first:
+      213: -5856937012779207924
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_11
+  - first:
+      213: -4720030148083509200
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_12
+  - first:
+      213: -5076931456219615609
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_13
+  - first:
+      213: -3621553446507043452
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_14
+  - first:
+      213: 18790337477396495
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_15
+  - first:
+      213: 313375862577275797
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_16
+  - first:
+      213: 879794671314931974
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_17
+  - first:
+      213: -8660448713436341056
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_18
+  - first:
+      213: -3957483090588607644
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_19
+  - first:
+      213: -3340471537547418217
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_20
+  - first:
+      213: -7247244667669221609
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_21
+  - first:
+      213: -325226257088587471
+    second: Pixilart Sprite Sheet - 2022-10-12T203304.540_22
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3d3a60a1c01adf0800000000000000
+      internalID: -170842004943285258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_1
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715bf507406d4e600800000000000000
+      internalID: 496757173471130903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_2
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d68fdf7e4901550800000000000000
+      internalID: 6129562816970517880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_3
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60febe6127e73150800000000000000
+      internalID: 5852400371569193066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_4
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e1c4cbe31a0d330800000000000000
+      internalID: 3733661381909290536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_5
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbae7af3a30f5c620800000000000000
+      internalID: 2793903276819999419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_6
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f50cbc0519e11840800000000000000
+      internalID: 5193188121952126457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_7
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c794f6ee18cc9df0800000000000000
+      internalID: -172042650697558073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_8
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad75c59b94e9fa00800000000000000
+      internalID: 790914566464044453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_9
+      rect:
+        serializedVersion: 2
+        x: 4374
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed36ffd1bc4474e00800000000000000
+      internalID: 1028866679049774046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_10
+      rect:
+        serializedVersion: 2
+        x: 4860
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad430538d482e2d0800000000000000
+      internalID: -3250889916870865501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_11
+      rect:
+        serializedVersion: 2
+        x: 5346
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03357971daf7bea0800000000000000
+      internalID: -5856937012779207924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_12
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038195e86951f7eb0800000000000000
+      internalID: -4720030148083509200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_13
+      rect:
+        serializedVersion: 2
+        x: 6318
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ee5034dbd1b89b0800000000000000
+      internalID: -5076931456219615609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_14
+      rect:
+        serializedVersion: 2
+        x: 6804
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4852bd50458adbdc0800000000000000
+      internalID: -3621553446507043452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_15
+      rect:
+        serializedVersion: 2
+        x: 7290
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08cc8e56b1c24000800000000000000
+      internalID: 18790337477396495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_16
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593a91acfa5595400800000000000000
+      internalID: 313375862577275797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_17
+      rect:
+        serializedVersion: 2
+        x: 8262
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601120b9798a53c00800000000000000
+      internalID: 879794671314931974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_18
+      rect:
+        serializedVersion: 2
+        x: 8748
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc5328b7c7efc780800000000000000
+      internalID: -8660448713436341056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_19
+      rect:
+        serializedVersion: 2
+        x: 9234
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bd9d4c8123419c0800000000000000
+      internalID: -3957483090588607644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_20
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795ee2ec5d244a1d0800000000000000
+      internalID: -3340471537547418217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_21
+      rect:
+        serializedVersion: 2
+        x: 10206
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f6b3f4f5d9c6b90800000000000000
+      internalID: -7247244667669221609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet - 2022-10-12T203304.540_22
+      rect:
+        serializedVersion: 2
+        x: 10692
+        y: 0
+        width: 486
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139da9a31709c7bf0800000000000000
+      internalID: -325226257088587471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
