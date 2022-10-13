@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 979026789836428769}
   - component: {fileID: 979026789836428770}
   - component: {fileID: 979026789836428771}
-  - component: {fileID: 4016580073578775869}
   m_Layer: 0
   m_Name: patrol 1 sprite_1
   m_TagString: Hazard
@@ -128,7 +127,7 @@ Animator:
   m_GameObject: {fileID: 979026789836428797}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 479f948a27f29f44ebaf15d9a59f7066, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6964cc38028601d4cbe42cd8f9e662d6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -167,7 +166,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.93932724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -178,22 +177,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8, y: 3}
+  m_Size: {x: 3.8, y: 1.1213455}
   m_EdgeRadius: 0
---- !u!114 &4016580073578775869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979026789836428797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f98b3a6b1082c4b85ac38e433d1fda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 9067955782987323891, guid: ff498a5e3be417c4d83d4cc11a483e7e, type: 3}
-  range: 10
 --- !u!1 &979026790184430858
 GameObject:
   m_ObjectHideFlags: 0
