@@ -11,13 +11,14 @@ public class EnemyProjectile : MonoBehaviour
     public float range = 10f;
     GameObject target;
     public Animator animator;
+    PlayAudioInRange audioPlayer;
 
 
     void Start()
     {
         nextFire = Time.time;
         target = GameObject.FindGameObjectWithTag("Player");
-
+        audioPlayer = transform.GetComponent<PlayAudioInRange>();
 
     }
 
@@ -41,6 +42,7 @@ public class EnemyProjectile : MonoBehaviour
         {
 
             Instantiate(bullet, transform.position, Quaternion.identity);
+            audioPlayer.playAudio();
             nextFire = Time.time + fireTime;
         }
     }
