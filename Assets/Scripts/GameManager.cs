@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("puzzlingTheme");
         player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
