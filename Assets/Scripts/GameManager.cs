@@ -18,10 +18,12 @@ public class GameManager : MonoBehaviour
     Vector2 waveImpulse;
 
     bool respawning = false;
+    AudioManager AM;
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("puzzlingTheme");
+        AM = FindObjectOfType<AudioManager>();
+        if(AM != null) AM.Play("puzzlingTheme");
         player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
