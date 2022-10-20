@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         winds = new List<Wind>();
     }
 
-    void LateUpdate()
+    void Update()
     {
         if (respawning) return;
 
@@ -132,6 +132,18 @@ public class GameManager : MonoBehaviour
         return winds;
     }
 
+    private void PrintWinds()
+    {
+        string windNames = "winds: ";
+
+        foreach(Wind wind in winds)
+        {
+            windNames = windNames + wind.name + " ";
+        }
+
+        Debug.Log(windNames);
+    }
+
     IEnumerator Death(float respawnTime)
     {
         respawning = true;
@@ -142,10 +154,10 @@ public class GameManager : MonoBehaviour
         SetFreeze(false);
 
         player.EnableRenderer();
-        winds = new List<Wind>();
         player.Respawn();
         respawning = false;
         windVelocity = Vector2.zero;
+        currVelocity = Vector2.zero;
         yield return null;
     }
 
