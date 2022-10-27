@@ -6,9 +6,12 @@ using UnityEngine.Tilemaps;
 public class HazardSound : MonoBehaviour
 {
 
+    public AudioSource audioSource;
     public Tilemap tileMap;
     public List<Vector3> hazardPlaces;
     GameObject hazard;
+    public float range;
+    public float maxVolume = 5f;
 
     void Start()
     {
@@ -21,10 +24,9 @@ public class HazardSound : MonoBehaviour
             {
                 Vector3Int localPlace = (new Vector3Int(n, p, (int)tileMap.transform.position.y));
                 Vector3 place = tileMap.CellToWorld(localPlace);
-                hazardPlaces.Add(place);
-                if (tileMap.GetTile(localPlace) == hazard)
+                if (tileMap.HasTile(localPlace))
                 {
-                    //Tile at "place"
+                    //Hazard tile at "place"
                     hazardPlaces.Add(place);
                 }
                 else
@@ -33,15 +35,42 @@ public class HazardSound : MonoBehaviour
                 }
             }
         }
-        Debug.Log(hazardPlaces.Count);
-        foreach (Vector3 p in hazardPlaces)
+        playAudio();
+
+    }
+
+    void playAudio()
+    {
+        audioSource.Stop();
+        audioSource.loop = true;
+        audioSource.volume = 0.2f;
+        audioSource.Play();
+    }
+
+    void adjustVolume(float distance)
+    {
+        if(distance > range)
         {
-            Debug.Log(p);
+            audioSource.volume = 0f;
+        }
+        else{
+            audioSource.volume = maxVolume * (2 / distance);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        float minDist = 999999;
+        float dist = 999999;
+        foreach (Vector3 place in hazardPlaces)
+        {
+            dist = Vector3.Distance(place, transform.position);
+            if(dist < minDist)
+            {
+                minDist = dist;
+            }
+        }
+        adjustVolume(minDist);
     }
 }
