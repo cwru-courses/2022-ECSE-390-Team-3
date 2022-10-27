@@ -8,7 +8,7 @@ public class HazardSound : MonoBehaviour
 
     public AudioSource audioSource;
     public Tilemap tileMap;
-    public List<Vector3> hazardPlaces;
+    List<Vector3> hazardPlaces;
     GameObject hazard;
     public float range;
     public float maxVolume = 5f;
