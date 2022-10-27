@@ -41202,6 +41202,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5367190704794666734, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
+      propertyPath: maxVolume
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367190704794666734, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 881675672}
@@ -42422,7 +42426,7 @@ MonoBehaviour:
   tileMap: {fileID: 609374497}
   hazardPlaces: []
   range: 15
-  maxVolume: 3
+  maxVolume: 2
 --- !u!1 &1928403443
 GameObject:
   m_ObjectHideFlags: 0
