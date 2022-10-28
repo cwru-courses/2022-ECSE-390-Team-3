@@ -18,7 +18,7 @@ TagManager:
   - PlayerCollision
   - Water
   - UI
-  - 
+  - Gear
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 1701641109
+    locked: 0
+  - name: gear
+    uniqueID: 606686347
     locked: 0
   - name: Default
     uniqueID: 0
