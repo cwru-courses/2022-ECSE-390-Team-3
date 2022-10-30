@@ -41211,7 +41211,7 @@ PrefabInstance:
       objectReference: {fileID: 881675672}
     - target: {fileID: 8589381542032188222, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
       propertyPath: range
-      value: 13
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8589381542032188222, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
       propertyPath: bullet
@@ -42424,7 +42424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 2091048272}
   tileMap: {fileID: 609374497}
-  hazardPlaces: []
   range: 15
   maxVolume: 2
 --- !u!1 &1928403443
@@ -42564,7 +42563,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1701641109
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1476b360640429b448a9260fd92d03cc, type: 3}
   m_Color: {r: 0.39607844, g: 0.40178895, b: 0.99215686, a: 1}
@@ -42901,6 +42900,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 881675672}
+    - target: {fileID: 8589381542032188222, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 9067955782987323891, guid: 4b80af5bab2baff4ab4039531090c82b, type: 3}
     - target: {fileID: 8589381542032188222, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
       propertyPath: fireTime
       value: 1.65

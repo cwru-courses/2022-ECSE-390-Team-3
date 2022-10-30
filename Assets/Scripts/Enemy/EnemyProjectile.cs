@@ -37,13 +37,25 @@ public class EnemyProjectile : MonoBehaviour
         }
     }
 
-    IEnumerator waiter()
+    private bool isCoroutineExecuting = false;
+
+    IEnumerator ExecuteAfterTime(float time)
     {
-        yield return new WaitForSecondsRealtime(1);
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        if (isCoroutineExecuting)
+            yield break;
+
         audioPlayer.playAudio();
+
+        isCoroutineExecuting = true;
+
+        yield return new WaitForSeconds(time);
+
+        Instantiate(bullet, transform.position, Quaternion.identity);
+        //audioPlayer.playAudio();
         Debug.Log("should play");
         nextFire = Time.time + fireTime;
+
+        isCoroutineExecuting = false;
     }
 
     void CheckIfTimeToFire()
@@ -51,7 +63,7 @@ public class EnemyProjectile : MonoBehaviour
         if (Time.time > nextFire)
         {
             animator.Play("projectile enemy");
-            StartCoroutine(waiter());
+            StartCoroutine(ExecuteAfterTime(1f));
             /*Instantiate(bullet, transform.position, Quaternion.identity);
             audioPlayer.playAudio();
             Debug.Log("should play");
