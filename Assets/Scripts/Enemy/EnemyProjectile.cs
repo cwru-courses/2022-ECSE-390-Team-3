@@ -10,7 +10,7 @@ public class EnemyProjectile : MonoBehaviour
     float nextFire;
     public float range = 10f;
     GameObject target;
-    public Animator animator;
+    Animator animator;
     PlayAudioInRange audioPlayer;
 
 
@@ -19,6 +19,7 @@ public class EnemyProjectile : MonoBehaviour
         nextFire = Time.time;
         target = GameObject.FindGameObjectWithTag("Player");
         audioPlayer = transform.GetComponent<PlayAudioInRange>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -27,23 +28,34 @@ public class EnemyProjectile : MonoBehaviour
     {
         Vector3 scale = new Vector3(1.5f, 1.5f, 1);
         transform.localScale = scale;
-        animator.SetBool("inRange", false);
+        //animator.SetBool("inRange", false);
 
         if (Vector3.Distance(target.transform.position, transform.position) <= range)
         {
             CheckIfTimeToFire();
-            animator.SetBool("inRange", true);
+            //animator.SetBool("inRange", true);
         }
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        Instantiate(bullet, transform.position, Quaternion.identity);
+        audioPlayer.playAudio();
+        Debug.Log("should play");
+        nextFire = Time.time + fireTime;
     }
 
     void CheckIfTimeToFire()
     {
         if (Time.time > nextFire)
         {
-
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            animator.Play("projectile enemy");
+            StartCoroutine(waiter());
+            /*Instantiate(bullet, transform.position, Quaternion.identity);
             audioPlayer.playAudio();
-            nextFire = Time.time + fireTime;
+            Debug.Log("should play");
+            nextFire = Time.time + fireTime;*/
         }
     }
 }
