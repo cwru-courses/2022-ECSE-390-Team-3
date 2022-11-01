@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: puzzlingTheme
-    clip: {fileID: 8300000, guid: ce885fd97042bdc4b81d8fb0a8fc1811, type: 3}
+    clip: {fileID: 8300000, guid: 490e51be40e87e74ebe1e5f3ae0eb418, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
