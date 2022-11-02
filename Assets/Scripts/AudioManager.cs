@@ -15,17 +15,17 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
 
-        if (instance == null)
+        if (instance)
         {
-            instance = this;
+            DestroyImmediate(gameObject);
+            return;
         }
         else
         {
-            Destroy(gameObject);
-            return;
+            DontDestroyOnLoad(gameObject);
+            instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -56,7 +56,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found.");
             return;
         }
-        s.source.Play();
+        if (!s.source.isPlaying) {
+            s.source.Play();
+        }
     }
 
     public void Stop(string name)
