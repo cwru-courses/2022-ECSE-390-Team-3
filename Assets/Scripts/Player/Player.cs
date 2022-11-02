@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     Latch latch;
 
     [SerializeField]
+    Animator playerAnim;
+
+    [SerializeField]
     [Tooltip("max degrees rotated per second")]
     float rotSpd = 720;
 

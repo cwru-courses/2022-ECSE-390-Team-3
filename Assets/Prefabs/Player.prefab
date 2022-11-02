@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 0}
+  playerAnim: {fileID: 72929441664042948}
 --- !u!120 &966281868038796178
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -406,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1a8800bfff5384ab8b043adf238ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 72929441664042948}
   maxGlide: 3
   impulse: 10
   forgiveness: 0.2
@@ -729,6 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad942494cf15d5c41b13127d6781668b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 72929441664042948}
   rotSpd: 720
   gravityConstant: 10
   terminalVelocity: 40
