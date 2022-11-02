@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 72929441664042948}
+  soundSources: {fileID: 5231610618013430445}
   maxGlide: 3
   impulse: 10
   forgiveness: 0.2
