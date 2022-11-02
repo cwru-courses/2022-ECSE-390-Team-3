@@ -115086,6 +115086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2976895357115584340, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 609374497}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39f9ee7dd1cffb94c9baa964fd7bee4e, type: 3}
 --- !u!1 &1289973912
@@ -115580,6 +115584,7 @@ MonoBehaviour:
   rotSpd: 720
   gravityConstant: 10
   terminalVelocity: 40
+  soundSources: {fileID: 0}
   minRadius: 0
   unlatchImpulse: 10
 --- !u!114 &1496064729
