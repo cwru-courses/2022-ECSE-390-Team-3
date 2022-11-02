@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     [Tooltip("terminal falling due to gravity, should be low")]
     float terminalVelocity = 4f;
+    [SerializeField]
+    GameObject soundSources;
 
     [SerializeField]
     [Tooltip("min distance between cursor and player for rotation")]
@@ -126,11 +128,15 @@ public class Player : MonoBehaviour
 
     public void Latch() { 
         latched = true; 
+        AudioSource latchSound = soundSources.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
+        latchSound.PlayOneShot(latchSound.clip);
     }
 
     public void Unlatch() {
         latched = false;
         ApplyLatchImpulse();
+        AudioSource latchSound = soundSources.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
+        latchSound.PlayOneShot(latchSound.clip);
     }
 
     private void ApplyLatchImpulse()
