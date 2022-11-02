@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
       value: 20
@@ -649,6 +653,10 @@ PrefabInstance:
     - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_Name
       value: Wind (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
@@ -1586,6 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 413688438}
+  playerAnim: {fileID: 0}
 --- !u!1 &609374493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,6 +2036,10 @@ PrefabInstance:
     - target: {fileID: 4736400762080005139, guid: 147d09578b0ddcf41b42d54dca8b0f8c, type: 3}
       propertyPath: m_Name
       value: Cyborg Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736400762436400356, guid: 147d09578b0ddcf41b42d54dca8b0f8c, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4736400763284540113, guid: 147d09578b0ddcf41b42d54dca8b0f8c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2490,6 +2503,10 @@ PrefabInstance:
     - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_Name
       value: Wind (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
@@ -35848,6 +35865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad942494cf15d5c41b13127d6781668b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 0}
   rotSpd: 720
   gravityConstant: 2
   terminalVelocity: 40
@@ -36138,6 +36156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1a8800bfff5384ab8b043adf238ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 0}
   maxGlide: 1.5
   impulse: 10
   forgiveness: 0.2
@@ -36256,6 +36275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind
       objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
       value: 20
@@ -36345,6 +36368,10 @@ PrefabInstance:
     - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_Name
       value: Wind (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
@@ -36922,6 +36949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
       value: 20
@@ -37264,6 +37295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
       value: 20
@@ -37431,6 +37466,10 @@ PrefabInstance:
     - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_Name
       value: Wind (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
@@ -38004,6 +38043,10 @@ PrefabInstance:
     - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: m_Name
       value: Wind (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515799945253385316, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515799945253385318, guid: 2c56bd7ed339d7b4e9ebb3f14b3be2c8, type: 3}
       propertyPath: speed
