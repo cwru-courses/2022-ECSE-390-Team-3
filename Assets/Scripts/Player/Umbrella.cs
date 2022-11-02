@@ -10,6 +10,10 @@ public class Umbrella : MonoBehaviour
     SpriteRenderer SR;
     Color color;
 
+    [SerializeField]
+    Animator playerAnim;
+    [SerializeField]
+    GameObject soundSources;
 
     float glide = 0.25f;
     [SerializeField]
@@ -56,6 +60,14 @@ public class Umbrella : MonoBehaviour
                 player.ResetGravity();
                 jumpTimer = 0f;
             }
+            playerAnim.SetBool("openUmbrella", true);
+            AudioSource latchSound = soundSources.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
+            latchSound.PlayOneShot(latchSound.clip);
+            Debug.Log("open");
+        }
+        else
+        {
+            playerAnim.SetBool("openUmbrella", false);
         }
 
         if (Input.GetMouseButtonDown(0) && inWave)
