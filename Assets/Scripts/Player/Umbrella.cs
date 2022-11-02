@@ -58,12 +58,12 @@ public class Umbrella : MonoBehaviour
                 player.ResetGravity();
                 jumpTimer = 0f;
             }
-            playerAnim.SetBool("umbrellaOpen", true);
+            playerAnim.SetBool("openUmbrella", true);
             Debug.Log("open");
         }
         else
         {
-            playerAnim.SetBool("umbrellaOpen", false);
+            playerAnim.SetBool("openUmbrella", false);
         }
 
         if (Input.GetMouseButtonDown(0) && inWave)
