@@ -42897,6 +42897,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5367190704794666734, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
+      propertyPath: maxVolume
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367190704794666734, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 881675672}

@@ -143,10 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f98b3a6b1082c4b85ac38e433d1fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 9067955782987323891, guid: ff498a5e3be417c4d83d4cc11a483e7e, type: 3}
+  bullet: {fileID: 9067955782987323891, guid: 4b80af5bab2baff4ab4039531090c82b, type: 3}
   fireTime: 1.65
   range: 13
-  animator: {fileID: 6229985043575722811}
 --- !u!114 &5367190704794666734
 MonoBehaviour:
   m_ObjectHideFlags: 0
