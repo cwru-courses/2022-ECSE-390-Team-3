@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3863880249608433800}
   - component: {fileID: 5184503752286659667}
   - component: {fileID: 2366501738627959131}
+  - component: {fileID: 72929441664042948}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -96,6 +97,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpd: 720
+--- !u!95 &72929441664042948
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538645917401106599}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b4c9bc8cf172c748afcd3b08f8bea03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2039984072017814483
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 0}
+  playerAnim: {fileID: 72929441664042948}
 --- !u!120 &966281868038796178
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -386,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1a8800bfff5384ab8b043adf238ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 72929441664042948}
   maxGlide: 3
   impulse: 10
   forgiveness: 0.2
@@ -454,6 +476,7 @@ GameObject:
   - component: {fileID: 2039984073345566238}
   - component: {fileID: 2039984073345566239}
   - component: {fileID: 2039984073345566232}
+  - component: {fileID: 2976895357115584340}
   m_Layer: 0
   m_Name: RigidBody
   m_TagString: Player
@@ -546,6 +569,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c79671bdccd1249be53a5bae15d3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2976895357115584340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039984073345566211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131106bff3f820d4582589d836df041f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 4327473791066758408}
+  tileMap: {fileID: 0}
+  range: 10
+  maxVolume: 5
 --- !u!1 &2039984073848970491
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad942494cf15d5c41b13127d6781668b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 72929441664042948}
   rotSpd: 720
   gravityConstant: 10
   terminalVelocity: 40
@@ -750,6 +790,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2039984073848970481}
     m_Modifications:
+    - target: {fileID: 152082616603294367, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2969974661735989869, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -808,5 +852,10 @@ GameObject:
 --- !u!4 &6891182077717830188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2969974661735989869, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
+  m_PrefabInstance: {fileID: 8544768503587510337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4327473791066758408 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5375991540837467465, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
   m_PrefabInstance: {fileID: 8544768503587510337}
   m_PrefabAsset: {fileID: 0}

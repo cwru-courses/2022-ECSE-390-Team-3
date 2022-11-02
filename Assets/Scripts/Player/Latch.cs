@@ -7,6 +7,9 @@ public class Latch : MonoBehaviour
     [SerializeField]
     GameManager GM;
 
+    [SerializeField]
+    Animator playerAnim;
+
     private bool canLatch;
     private bool latched;
     
@@ -28,12 +31,14 @@ public class Latch : MonoBehaviour
             latched = true;
             GM.Latch();
             //SR.color = new Color(0, 1, 0);
+            playerAnim.SetBool("latchOn", true);
         }
         else if((Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0)) && latched)
         {
             latched = false;
             GM.Unlatch();
             //SR.color = color;
+            playerAnim.SetBool("latchOn", false);
         }
     }
 

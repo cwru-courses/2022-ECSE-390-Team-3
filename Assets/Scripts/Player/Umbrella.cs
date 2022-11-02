@@ -10,6 +10,8 @@ public class Umbrella : MonoBehaviour
     SpriteRenderer SR;
     Color color;
 
+    [SerializeField]
+    Animator playerAnim;
 
     float glide = 0.25f;
     [SerializeField]
@@ -56,6 +58,12 @@ public class Umbrella : MonoBehaviour
                 player.ResetGravity();
                 jumpTimer = 0f;
             }
+            playerAnim.SetBool("umbrellaOpen", true);
+            Debug.Log("open");
+        }
+        else
+        {
+            playerAnim.SetBool("umbrellaOpen", false);
         }
 
         if (Input.GetMouseButtonDown(0) && inWave)
