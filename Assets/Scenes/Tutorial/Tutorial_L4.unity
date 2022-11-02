@@ -2543,7 +2543,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1476b360640429b448a9260fd92d03cc, type: 3}
-  m_Color: {r: 0.39607844, g: 0.40178895, b: 0.99215686, a: 1}
+  m_Color: {r: 0.99215686, g: 0.40392157, b: 0.39607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -35995,6 +35995,7 @@ MonoBehaviour:
   rotSpd: 720
   gravityConstant: 2
   terminalVelocity: 40
+  soundSources: {fileID: 0}
   minRadius: 0
   unlatchImpulse: 10
 --- !u!114 &1496064729
