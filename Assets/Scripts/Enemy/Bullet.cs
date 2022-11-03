@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Bullet : MonoBehaviour
 {
@@ -8,12 +9,17 @@ public class Bullet : MonoBehaviour
     float duration = 5f;
     Transform target;
     Vector2 moveDirection;
+    GameObject hazardWall;
+    GameObject latchableWall;
+    
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         moveDirection = (target.position - transform.position).normalized;
         StartCoroutine(Despawn(duration));
+        hazardWall = GameObject.FindGameObjectsWithTag("Hazard")[0];
+        latchableWall = GameObject.FindGameObjectsWithTag("Latchable")[0];
     }
 
     void Update()
@@ -26,7 +32,16 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("hit");
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject == latchableWall)
+        {
+            Debug.Log("hit the wall");
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject == hazardWall)
+        {
+            Debug.Log("hit the hazard wall");
             Destroy(this.gameObject);
         }
     }
