@@ -65,7 +65,7 @@ public class Umbrella : MonoBehaviour
             latchSound.PlayOneShot(latchSound.clip);
             Debug.Log("open");
         }
-        else
+        else if (Input.GetMouseButtonUp(0))
         {
             playerAnim.SetBool("openUmbrella", false);
         }
