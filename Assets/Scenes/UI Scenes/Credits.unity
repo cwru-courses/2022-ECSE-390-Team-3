@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 20
-  NextScene: Main Menu
+  NextScene: Stats
 --- !u!1 &1798646578
 GameObject:
   m_ObjectHideFlags: 0

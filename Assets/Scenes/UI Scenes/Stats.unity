@@ -390,7 +390,7 @@ MonoBehaviour:
   levelLabel: {fileID: 0}
   timeLabel: {fileID: 0}
   deathsLabel: {fileID: 0}
-  finalStats: {fileID: 0}
+  finalStats: {fileID: 60104343}
   finalTime: {fileID: 1304714126}
   finalDeaths: {fileID: 222211683}
   currentLevel: 

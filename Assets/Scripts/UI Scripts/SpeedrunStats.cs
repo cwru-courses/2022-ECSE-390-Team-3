@@ -61,6 +61,7 @@ public class SpeedrunStats : MonoBehaviour
             switch (levelHelper)
             {
                 case "Tutorial_L1":
+                    resetAll();
                     break;
                 case "Tutorial_L2":
                     TutorialL1Time = timePlaying;
@@ -249,47 +250,72 @@ public class SpeedrunStats : MonoBehaviour
         {
             case "Tutorial_L1":
                 TutorialL1Time = TimeSpan.Zero;
-                TutorialL1Deaths = 0;
+                //TutorialL1Deaths = 0;
                 break;
             case "Tutorial_L2":
                 TutorialL2Time = TimeSpan.Zero;
-                TutorialL2Deaths = 0;
+                //TutorialL2Deaths = 0;
                 break;
             case "Tutorial_L3":
                 TutorialL3Time = TimeSpan.Zero;
-                TutorialL3Deaths = 0;
+                //TutorialL3Deaths = 0;
                 break;
             case "Tutorial_L4":
                 TutorialL4Time = TimeSpan.Zero;
-                TutorialL4Deaths = 0;
+                //TutorialL4Deaths = 0;
                 break;
             case "Bloodstream_L1":
                 BloodstreamL1Time = TimeSpan.Zero;
-                BloodstreamL1Deaths = 0;
+                //BloodstreamL1Deaths = 0;
                 break;
             case "Bloodstream_L2":
                 BloodstreamL2Time = TimeSpan.Zero;
-                BloodstreamL2Deaths = 0;
+                //BloodstreamL2Deaths = 0;
                 break;
             case "Bloodstream_L3":
                 BloodstreamL3Time = TimeSpan.Zero;
-                BloodstreamL3Deaths = 0;
+                //BloodstreamL3Deaths = 0;
                 break;
             case "Bloodstream_L4":
                 BloodstreamL4Time = TimeSpan.Zero;
-                BloodstreamL4Deaths = 0;
+                //BloodstreamL4Deaths = 0;
                 break;
             case "Puzzle_L1":
                 PuzzleL1Time = TimeSpan.Zero;
-                PuzzleL1Deaths = 0;
+                //PuzzleL1Deaths = 0;
                 break;
             case "Puzzle_L2":
                 PuzzleL2Time = TimeSpan.Zero;
-                PuzzleL2Deaths = 0;
+                //PuzzleL2Deaths = 0;
                 break;
             default:
                 break;
         }
         totalDeaths = TutorialL1Deaths + TutorialL2Deaths + TutorialL3Deaths + TutorialL4Deaths + BloodstreamL1Deaths + BloodstreamL2Deaths + BloodstreamL3Deaths + BloodstreamL4Deaths + PuzzleL1Deaths + PuzzleL2Deaths;
+    }
+
+    public static void resetAll()
+    {
+        totalDeaths = 0;
+        TutorialL1Time = TimeSpan.Zero;
+        TutorialL1Deaths = 0;
+        TutorialL2Time = TimeSpan.Zero;
+        TutorialL2Deaths = 0;
+        TutorialL3Time = TimeSpan.Zero;
+        TutorialL3Deaths = 0;
+        TutorialL4Time = TimeSpan.Zero;
+        TutorialL4Deaths = 0;
+        BloodstreamL1Time = TimeSpan.Zero;
+        BloodstreamL1Deaths = 0;
+        BloodstreamL2Time = TimeSpan.Zero;
+        BloodstreamL2Deaths = 0;
+        BloodstreamL3Time = TimeSpan.Zero;
+        BloodstreamL3Deaths = 0;
+        BloodstreamL4Time = TimeSpan.Zero;
+        BloodstreamL4Deaths = 0;
+        PuzzleL1Time = TimeSpan.Zero;
+        PuzzleL1Deaths = 0;
+        PuzzleL2Time = TimeSpan.Zero;
+        PuzzleL2Deaths = 0;
     }
 }
