@@ -26,15 +26,11 @@ public class GearSound : MonoBehaviour
         distance = Vector3.Distance(target.transform.position, transform.position);
         audioSource.Play();
         audioSource.loop = true;
-        //isPlaying = true;
-        Debug.Log(transform.name + " play gear sound");
     }
 
     void stopAudio()
     {
-        Debug.Log(transform.name + " stop gear sound");
         audioSource.Stop();
-        //isPlaying = false;
     }
 
     void updateVolume()
@@ -82,7 +78,6 @@ public class GearSound : MonoBehaviour
                 {
                     stopAudio();
                 }
-                Debug.Log("out of range");
             }
 
         }
