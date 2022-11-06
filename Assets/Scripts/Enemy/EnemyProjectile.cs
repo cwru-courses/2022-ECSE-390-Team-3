@@ -9,6 +9,7 @@ public class EnemyProjectile : MonoBehaviour
     public float fireTime = 1f;
     float nextFire;
     public float range = 10f;
+    public float shootSpeed = 7f;
     GameObject target;
     Animator animator;
     PlayAudioInRange audioPlayer;
@@ -20,7 +21,7 @@ public class EnemyProjectile : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         audioPlayer = transform.GetComponent<PlayAudioInRange>();
         animator = GetComponent<Animator>();
-
+        bullet.GetComponent<Bullet>().speed = shootSpeed;
     }
 
     // Update is called once per frame

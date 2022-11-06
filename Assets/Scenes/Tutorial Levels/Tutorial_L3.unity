@@ -41683,6 +41683,10 @@ PrefabInstance:
       propertyPath: fireTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8589381542032188222, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
+      propertyPath: shootSpeed
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc00e9dfa3261034fa0ff90eb84ab14b, type: 3}
 --- !u!4 &1436753538 stripped
@@ -43050,6 +43054,9 @@ MonoBehaviour:
   levelLabel: {fileID: 140199941}
   timeLabel: {fileID: 1166758994}
   deathsLabel: {fileID: 673608377}
+  finalStats: {fileID: 0}
+  finalTime: {fileID: 0}
+  finalDeaths: {fileID: 0}
   currentLevel: Tutorial_L3
 --- !u!95 &1897099674
 Animator:

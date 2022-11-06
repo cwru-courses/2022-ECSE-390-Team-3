@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Bullet : MonoBehaviour
 {
-    float speed = 7f;
+    public float speed = 7f;
     float duration = 5f;
     Transform target;
     Vector2 moveDirection;
