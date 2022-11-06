@@ -48,7 +48,8 @@ public class GearSound : MonoBehaviour
     {
         if (Vector3.Distance(target.transform.position, transform.position) <= range)
         {
-            if (inrange != true)
+            //if just get into range
+            if (inrange == false)
             {
                 inrange = true;
                 if (audioSource.isPlaying)
@@ -61,6 +62,7 @@ public class GearSound : MonoBehaviour
                     playAudio();
                 }
             }
+            //if already in range
             else
             {
                 updateVolume();
