@@ -166,7 +166,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.875
+  m_Radius: 1
 --- !u!50 &2039984072017813549
 Rigidbody2D:
   serializedVersion: 4
@@ -343,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 2039984073157930491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7602227729210360904}
   m_RootOrder: 0
@@ -361,7 +361,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -477,7 +477,6 @@ GameObject:
   - component: {fileID: 2039984073345566238}
   - component: {fileID: 2039984073345566239}
   - component: {fileID: 2039984073345566232}
-  - component: {fileID: 2976895357115584340}
   m_Layer: 0
   m_Name: RigidBody
   m_TagString: Player
@@ -570,22 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c79671bdccd1249be53a5bae15d3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2976895357115584340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039984073345566211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 131106bff3f820d4582589d836df041f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 4327473791066758408}
-  tileMap: {fileID: 0}
-  range: 10
-  maxVolume: 5
 --- !u!1 &2039984073848970491
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,10 +836,5 @@ GameObject:
 --- !u!4 &6891182077717830188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2969974661735989869, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
-  m_PrefabInstance: {fileID: 8544768503587510337}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &4327473791066758408 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5375991540837467465, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
   m_PrefabInstance: {fileID: 8544768503587510337}
   m_PrefabAsset: {fileID: 0}

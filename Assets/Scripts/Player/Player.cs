@@ -117,6 +117,7 @@ public class Player : MonoBehaviour
     public void ApplyImpulse(Vector2 _impulse)
     {
         waveImpulse = _impulse;
+        GM.Shake(_impulse);
     }
 
     public void ApplyWind(Vector2 dir, float magnitude)

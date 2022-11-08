@@ -85,6 +85,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Resume();
+        SpeedrunStats.resetLevel();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

@@ -9,7 +9,7 @@ public class PlayAudio : MonoBehaviour
     public float maxVolume = 5f;
     float distance;
     public float range = 10f;
-    bool isPlaying = false;
+    //bool isPlaying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,15 +24,16 @@ public class PlayAudio : MonoBehaviour
     {
         distance = Vector3.Distance(target.transform.position, transform.position);
         audioSource.Play();
-        isPlaying = true;
-        Debug.Log("play yellow sound");
+        audioSource.loop = true;
+        //isPlaying = true;
+        Debug.Log(transform.name + " play yellow sound");
     }
 
     void stopAudio()
     {
-        Debug.Log("stop yellow sound");
+        Debug.Log(transform.name + " stop yellow sound");
         audioSource.Stop();
-        isPlaying = false;
+        //isPlaying = false;
     }
 
     void updateVolume()
@@ -46,7 +47,7 @@ public class PlayAudio : MonoBehaviour
     {
         if (Vector3.Distance(target.transform.position, transform.position) <= range)
         {
-            if (isPlaying)
+            if (audioSource.isPlaying)
             {
                 updateVolume();
             }
@@ -58,7 +59,7 @@ public class PlayAudio : MonoBehaviour
         }
         else
         {
-            if (isPlaying)
+            if (audioSource.isPlaying)
             {
                 stopAudio();
             }

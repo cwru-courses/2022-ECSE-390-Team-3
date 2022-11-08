@@ -16,6 +16,7 @@ public class Death : MonoBehaviour
         if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy"))
         {
             GM.PlayerDeath();
+            SpeedrunStats.playerDeath();
         }
     }
 }
