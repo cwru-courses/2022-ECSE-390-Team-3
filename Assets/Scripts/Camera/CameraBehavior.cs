@@ -9,6 +9,8 @@ public class CameraBehavior : MonoBehaviour
 
     BoxCollider2D thisBox;
 
+    int PPU = 32;
+
     Vector2 proxyPosition;
 
     Vector2 targetPosition;
@@ -33,6 +35,11 @@ public class CameraBehavior : MonoBehaviour
     bool zoomOut;
     bool unZoom;
 
+    float shakeTimer;
+    float shakeDuration = 0.1f;
+    float shakeMagnitude = 1f;
+    Vector2 shakeDir;
+
     float currentSize;
     [SerializeField]
     [Tooltip("amount zoomed, ei 1.25 = 125%")]
@@ -47,6 +54,8 @@ public class CameraBehavior : MonoBehaviour
 
         start = true;
         bounds = new Bounds();
+
+        shakeTimer = shakeDuration;
 
         target = GM.GetPlayer();
 
@@ -81,6 +90,12 @@ public class CameraBehavior : MonoBehaviour
         targetPosition.y = Mathf.Clamp(proxyPosition.y, bounds.yMin, bounds.yMax);
 
         transform.position = new Vector3(targetPosition.x, targetPosition.y, -10.0f);
+
+        if(shakeTimer < shakeDuration)
+        {
+            transform.localPosition += Random.value * shakeMagnitude * -(Vector3)shakeDir;
+            shakeTimer += Time.deltaTime;
+        }
 
         start = false;
     }
@@ -130,6 +145,12 @@ public class CameraBehavior : MonoBehaviour
             proxyPosition = lastPosition;
             transitioning = false;
         }
+    }
+
+    public void Shake(Vector2 dir)
+    {
+        shakeDir = dir.normalized;
+        shakeTimer = 0f;
     }
 
     void Zoom(float targetSize)

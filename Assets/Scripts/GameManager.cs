@@ -106,6 +106,11 @@ public class GameManager : MonoBehaviour
         Camera.main.GetComponent<CameraBehavior>().Unzoom();
     }
 
+    public void Shake(Vector2 dir)
+    {
+        Camera.main.GetComponent<CameraBehavior>().Shake(dir);
+    }
+
     public void PlayerDeath()
     {
         StartCoroutine(Death(0.5f));
