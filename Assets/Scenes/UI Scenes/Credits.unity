@@ -307,6 +307,8 @@ GameObject:
   - component: {fileID: 348501835}
   - component: {fileID: 348501834}
   - component: {fileID: 348501833}
+  - component: {fileID: 348501837}
+  - component: {fileID: 348501836}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -379,6 +381,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348501836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348501832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8bcb87d082a6f4ab54438302723895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &348501837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348501832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976303ea4cad53246b88e7c7b1227d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: vyrusVibing
+    clip: {fileID: 8300000, guid: 166986f7951dcad418bc27e556a29f2f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!1 &971338823
 GameObject:
   m_ObjectHideFlags: 0
