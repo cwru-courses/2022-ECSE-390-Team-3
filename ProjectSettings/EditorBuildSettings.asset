@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UI Scenes/Disclaimer.unity
+    path: Assets/Scenes/UI Scenes/Cutscenes/Disclaimer.unity
     guid: 1c39cc37909c2ef4ba8e0a6882930c5c
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Main Menu.unity
@@ -24,13 +24,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial Levels/Tutorial_L4.unity
     guid: 853137f6f2ecc594fa0e456dc712e0f4
   - enabled: 0
-    path: Assets/Scenes/UI Scenes/Options.unity
+    path: Assets/Scenes/UI Scenes/Controls.unity
     guid: f5b642cf0f117ce40818257a5a081cf2
   - enabled: 1
-    path: Assets/Scenes/UI Scenes/Intro.unity
+    path: Assets/Scenes/UI Scenes/Cutscenes/Intro.unity
     guid: c061b76d17372664bbb85e825a5ad9f8
   - enabled: 1
-    path: Assets/Scenes/UI Scenes/Credits.unity
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits.unity
     guid: 0767794e347b4f14f85c377dce0ba8e0
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Select Tutorial.unity
@@ -63,10 +63,10 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Select_Puzzle.unity
     guid: 58005af76cb720b4abd96381e27717af
   - enabled: 1
-    path: Assets/Scenes/UI Scenes/Finale.unity
+    path: Assets/Scenes/UI Scenes/Cutscenes/Finale.unity
     guid: 37febdd79aa962d4fb343c3bfbc1582e
   - enabled: 1
-    path: Assets/Scenes/UI Scenes/Placeholder.unity
+    path: Assets/Scenes/UI Scenes/Template/Placeholder.unity
     guid: fe29b95e64e17904488917ac41844776
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Stats.unity
