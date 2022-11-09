@@ -26,12 +26,12 @@ public class PlayAudio : MonoBehaviour
         audioSource.Play();
         audioSource.loop = true;
         //isPlaying = true;
-        Debug.Log(transform.name + " play yellow sound");
+        //Debug.Log(transform.name + " play yellow sound");
     }
 
     void stopAudio()
     {
-        Debug.Log(transform.name + " stop yellow sound");
+        //Debug.Log(transform.name + " stop yellow sound");
         audioSource.Stop();
         //isPlaying = false;
     }
@@ -63,7 +63,7 @@ public class PlayAudio : MonoBehaviour
             {
                 stopAudio();
             }
-            Debug.Log("out of range");
+            //Debug.Log("out of range");
 
         }
     }
