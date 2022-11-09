@@ -12,6 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Credits.unity
     guid: 0767794e347b4f14f85c377dce0ba8e0
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/UI Scenes/Intro.unity
     guid: c061b76d17372664bbb85e825a5ad9f8
   - enabled: 1
@@ -20,7 +21,50 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Options.unity
     guid: f5b642cf0f117ce40818257a5a081cf2
+=======
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L1.unity
+    guid: 6ea872d005b08be4ca6a7ddc0d5628d8
+  - enabled: 1
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L2.unity
+    guid: 61fbae3b6552e164ea4223a67e19877b
+  - enabled: 1
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L3.unity
+    guid: 2f96d89412e9cf04d865d051c4f825f8
+  - enabled: 1
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L4.unity
+    guid: 83a4e6ac6087c4671b13616b738c5cb8
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Levels/Puzzle_L1.unity
+    guid: 4ec6d2dc2234edf4fbb9cda827d786fa
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Levels/Puzzle_L2.unity
+    guid: 2daf4ee4614ac494fb3f42ea407d7f99
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Finale.unity
+    guid: 37febdd79aa962d4fb343c3bfbc1582e
+>>>>>>> Stashed changes
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Placeholder.unity
     guid: fe29b95e64e17904488917ac41844776
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Stats.unity
+    guid: f2a538038eb95134e8fab139021a24a3
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Level Select (Bloodstream).unity
+    guid: 5559148b6e62cf94c9a1a291ba3ac71a
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Level Select (Main).unity
+    guid: 57df7dfe1f8ac85459ce32a754de543e
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Level Select (Puzzle).unity
+    guid: 0e3a0cf25123d9241af6ae297084724f
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Level Select (Tutorial).unity
+    guid: c835752f8f739f0439bb988019b6d374
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Level Select Idea.unity
+    guid: 590ae8c0e6b7af44083e4930d7107942
+>>>>>>> Stashed changes
   m_configObjects: {}

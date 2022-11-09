@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Sprites/Placeholder/hazard.jpg.meta
-guid: 2100467339cbad84c97ebe3fd18e272b
-=======
-guid: d5358e36775c0174ba61be0d41560528
->>>>>>> Stashed changes:Assets/Sprites/LevelPreviews/Bloodstream4.PNG.meta
+guid: 34177cabf719ecb47bf8fe7f6c20f868
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
