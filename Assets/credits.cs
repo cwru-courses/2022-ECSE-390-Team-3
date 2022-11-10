@@ -9,7 +9,10 @@ public class credits : MonoBehaviour
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
-        if(AM != null) AM.Play("vyrusVibing");
+        if(AM != null){
+            AM.Stop("all");
+            AM.Play("vyrusVibing");
+        } 
     }
 
 

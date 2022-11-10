@@ -63,6 +63,15 @@ public class AudioManager : MonoBehaviour
 
     public void Stop(string name)
     {
+        if(name == "all"){
+            Debug.Log("stopping all sounds");
+            foreach (Sound x in sounds)
+            {
+                x.source.Stop();
+            }
+            return;
+        }
+
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {

@@ -23,7 +23,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
-        if(AM != null) AM.Play("puzzlingTheme");
+        if(AM != null) {
+            AM.Stop("briansTheme");
+            AM.Play("puzzlingTheme");
+        }
         player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
