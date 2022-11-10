@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -765,10 +765,10 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: alienBabbling
+    clip: {fileID: 8300000, guid: 2084cf705ce13a5418bd9ff30280d49a, type: 3}
+    volume: 0.242
+    pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: 
