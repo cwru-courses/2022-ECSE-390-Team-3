@@ -9,6 +9,7 @@ public class WhiteBloodCell : MonoBehaviour
     public float moveSpeed;
     public int patrolDestination;
     private bool bonked;
+    private int pointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,14 @@ public class WhiteBloodCell : MonoBehaviour
     {
         if (bonked)
         {
-            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, moveSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, patrolPoints[pointIndex].position) < .002f)
+            {
+                anim.SetBool("unbonk", true);
+                anim.SetBool("bonked", false);
+                
+            }
+
         }
 
 
@@ -33,6 +41,7 @@ public class WhiteBloodCell : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             anim.SetBool("bonked", true);
+            if(pointIndex < patrolPoints.Length - 1) pointIndex++;
             bonked = true;
            
         }
