@@ -12,6 +12,11 @@ public class SceneTrigger : MonoBehaviour
     public Animator anim;
     private bool popupOpen = false;
     private bool popupHasBeenTriggered = false;
+    private AudioManager AM;
+
+    private void Start(){
+        AM = FindObjectOfType<AudioManager>();
+    }
 
     private void Update()
     {
@@ -68,10 +73,12 @@ public class SceneTrigger : MonoBehaviour
         popupHasBeenTriggered = true;
         Time.timeScale = 0f;
         PopUpToOpen.SetActive(true);
+        if(AM != null) AM.Play("alienBabbling");
     }
     public void Resume()
     {
         Time.timeScale = 1f;
         PopUpToOpen.SetActive(false);
+        if(AM != null) AM.Stop("alienBabbling");
     }
 }
