@@ -796,6 +796,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: puzzleComplete
+    clip: {fileID: 8300000, guid: de8f3f1dba26e4a44bfba1817c1f7c0c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: doorOpen
+    clip: {fileID: 8300000, guid: 652114ad84d7ab84081c24474022bb83, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &748203655
 Transform:
   m_ObjectHideFlags: 0
