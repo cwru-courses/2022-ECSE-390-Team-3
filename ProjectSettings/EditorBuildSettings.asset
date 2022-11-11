@@ -39,16 +39,16 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Select Level.unity
     guid: e06c8e634445ad7459f3c0931fe20f1a
   - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Bloodstream Levels/Bloodstream_L1.unity
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L1.unity
     guid: 6ea872d005b08be4ca6a7ddc0d5628d8
   - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Bloodstream Levels/Bloodstream_L2.unity
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L2.unity
     guid: 61fbae3b6552e164ea4223a67e19877b
   - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Bloodstream Levels/Bloodstream_L3.unity
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L3.unity
     guid: 2f96d89412e9cf04d865d051c4f825f8
   - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Bloodstream Levels/Bloodstream_L4.unity
+    path: Assets/Scenes/Bloodstream Levels/Bloodstream_L4.unity
     guid: 83a4e6ac6087c4671b13616b738c5cb8
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Select_Bloodstream.unity

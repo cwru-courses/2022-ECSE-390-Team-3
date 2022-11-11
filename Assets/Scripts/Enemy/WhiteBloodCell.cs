@@ -20,7 +20,7 @@ public class WhiteBloodCell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bonked)
+        if (bonked && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5)
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, moveSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, patrolPoints[pointIndex].position) < .002f)
@@ -41,8 +41,11 @@ public class WhiteBloodCell : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             anim.SetBool("bonked", true);
-            if(pointIndex < patrolPoints.Length - 1) pointIndex++;
+            anim.SetBool("unbonk", false);
+            if (pointIndex < patrolPoints.Length - 1) pointIndex++;
             bonked = true;
+
+           FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 350));
            
         }
 

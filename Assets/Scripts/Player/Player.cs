@@ -84,7 +84,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(GM.UmbrellaOpen()) gravity.y -= (gravityConstant * Time.deltaTime);
+
+        if (GM.UmbrellaOpen()) gravity.y -= (gravityConstant * Time.deltaTime);
         else gravity.y = (controller.IsGrounded() || latchJumping) ? 0f : gravity.y - (gravityConstant * Time.deltaTime);
 
         gravity.y = Mathf.Max(-terminalVelocity, gravity.y);
@@ -236,9 +237,17 @@ public class Player : MonoBehaviour
         spawnPoint = point;
     }
 
+
+  
+    public void bonkedBoss(Vector2 bounce)
+    {
+        controller.Move(bounce * Time.deltaTime);
+    }
+
     private void LateUpdate()
     {
         if (latched) ResetVelocities();
+
         controller.Move(velocity * Time.deltaTime);
     }
 }
