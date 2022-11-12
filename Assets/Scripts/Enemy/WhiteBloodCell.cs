@@ -18,11 +18,20 @@ public class WhiteBloodCell : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    //anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5
     void Update()
     {
-        if (bonked && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5)
+        if (bonked && anim.GetCurrentAnimatorStateInfo(0).IsName("wbc swim") )
         {
+
+          /*  Vector3 vectorToTarget = patrolPoints[pointIndex].position - transform.position;
+            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 100000);*/
+
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, moveSpeed * Time.deltaTime);
+
             if (Vector2.Distance(transform.position, patrolPoints[pointIndex].position) < .002f)
             {
                 anim.SetBool("unbonk", true);
