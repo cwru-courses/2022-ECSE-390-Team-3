@@ -1494,8 +1494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1375.0481, y: 376.725}
+  m_AnchoredPosition: {x: 1.2572, y: 0}
+  m_SizeDelta: {x: 1806.5144, y: 376.725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578311262
 MonoBehaviour:
@@ -1524,14 +1524,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Be careful latching onto some floors and ceilings - cholesterol buildup
-    enemies are known to roam these surfaces!
+  m_Text: "Beware latching onto some surfaces. \nCholesterol buildup enemies are
+    known to roam these surfaces!"
 --- !u!222 &578311263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2255,8 +2255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 18}
-  m_SizeDelta: {x: 1320.623, y: 540}
+  m_AnchoredPosition: {x: 0, y: 21}
+  m_SizeDelta: {x: 1739.2097, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884436866
 MonoBehaviour:
@@ -2285,18 +2285,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Throughout the bloodstream, you''ll encounter patrolling cyborg cells.
-    These patrolling enemies can often be found floating in the bloostream, sometimes
-    alone and sometimes in groups.
-
-    Don''t get too close and avoid them at all
-    cost!'
+  m_Text: Beware of cyborg cells, they can patrol individually or in large groups!
 --- !u!222 &884436867
 CanvasRenderer:
   m_ObjectHideFlags: 0
