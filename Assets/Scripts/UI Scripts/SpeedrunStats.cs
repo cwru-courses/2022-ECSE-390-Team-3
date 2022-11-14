@@ -318,4 +318,45 @@ public class SpeedrunStats : MonoBehaviour
         PuzzleL2Time = TimeSpan.Zero;
         PuzzleL2Deaths = 0;
     }
+
+    public int getDeaths(string level)
+    {
+        int deaths = -1;
+        switch (level)
+        {
+            case "Tutorial_L1":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Tutorial_L2":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Tutorial_L3":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Tutorial_L4":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Bloodstream_L1":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Bloodstream_L2":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Bloodstream_L3":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Bloodstream_L4":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Puzzle_L1":
+                deaths = TutorialL1Deaths;
+                break;
+            case "Puzzle_L2":
+                deaths = TutorialL1Deaths;
+                break;
+            default:
+                break;
+        }
+        return deaths;
+    }
 }
