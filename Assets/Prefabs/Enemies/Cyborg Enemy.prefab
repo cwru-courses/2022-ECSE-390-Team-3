@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2604138269999378210, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: be754943338d4e442a9de1ed0b29d7cb, type: 3}
     - target: {fileID: 4016580073578775869, guid: c05c358b957a0834fbc8683707d5c111, type: 3}
       propertyPath: m_Enabled
       value: 0
