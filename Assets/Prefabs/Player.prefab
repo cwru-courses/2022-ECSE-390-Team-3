@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c79671bdccd1249be53a5bae15d3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 8101141689207359957}
 --- !u!1 &2039984073848970491
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,5 +837,10 @@ GameObject:
 --- !u!4 &6891182077717830188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2969974661735989869, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
+  m_PrefabInstance: {fileID: 8544768503587510337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8101141689207359957 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 502174307604468116, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
   m_PrefabInstance: {fileID: 8544768503587510337}
   m_PrefabAsset: {fileID: 0}

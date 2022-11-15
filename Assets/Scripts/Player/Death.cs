@@ -5,6 +5,8 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     GameManager GM;
+    public AudioSource deathSound;
+
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class Death : MonoBehaviour
         {
             GM.PlayerDeath();
             SpeedrunStats.playerDeath();
+            deathSound.PlayOneShot(deathSound.clip);
         }
     }
 }
