@@ -6,15 +6,18 @@ using UnityEngine.Tilemaps;
 public class Bullet : MonoBehaviour
 {
     public float speed = 7f;
+    public AudioSource deathSound;
     float duration = 5f;
     Transform target;
     Vector2 moveDirection;
     GameObject hazardWall;
     GameObject latchableWall;
-    
+    GameManager GM;
+
 
     void Start()
     {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         moveDirection = (target.position - transform.position).normalized;
         StartCoroutine(Despawn(duration));
@@ -33,6 +36,9 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(this.gameObject);
+            GM.PlayerDeath();
+            SpeedrunStats.playerDeath();
+            deathSound.PlayOneShot(deathSound.clip);
         }
         else if (collision.gameObject == latchableWall)
         {
