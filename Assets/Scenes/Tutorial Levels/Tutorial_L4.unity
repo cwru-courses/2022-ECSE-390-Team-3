@@ -1531,7 +1531,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Beware latching onto some surfaces. \nCholesterol buildup enemies are
-    known to roam these surfaces!"
+    known to roam these surfaces."
 --- !u!222 &578311263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2291,7 +2291,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Beware of cyborg cells, they can patrol individually or in large groups!
+  m_Text: Beware of cyborg cells, they can patrol individually or in large groups.
 --- !u!222 &884436867
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37341,7 +37341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1847939435
 RectTransform:
   m_ObjectHideFlags: 0
