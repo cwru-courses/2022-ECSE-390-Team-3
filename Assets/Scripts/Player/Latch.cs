@@ -10,9 +10,15 @@ public class Latch : MonoBehaviour
     [SerializeField]
     Animator playerAnim;
 
+    //[SerializeField]
+    //[Tooltip("latch cooldown")]
+    private float cooldown = 1f;
+
     private bool canLatch;
     private bool latched;
-    
+
+    private bool onCd;
+    private float timer;
 
     //private SpriteRenderer SR;
     private Color color;
@@ -22,11 +28,14 @@ public class Latch : MonoBehaviour
         //SR = GetComponent<SpriteRenderer>();
         //color = SR.color;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        timer = cooldown;
     }
 
     void Update()
     {
-        if(!latched && canLatch && Input.GetMouseButtonDown(1))
+        onCd = timer < cooldown;
+
+        if(!latched && canLatch && Input.GetMouseButtonDown(1) && !onCd)
         {
             latched = true;
             GM.Latch();
@@ -39,7 +48,13 @@ public class Latch : MonoBehaviour
             GM.Unlatch();
             //SR.color = color;
             playerAnim.SetBool("latchOn", false);
+
+            timer = 0f;
         }
+
+        if (timer < cooldown) timer += Time.deltaTime;
+
+        Debug.Log(timer);
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -62,5 +77,6 @@ public class Latch : MonoBehaviour
     public void Reset()
     {
         latched = false;
+        timer = cooldown;
     }
 }

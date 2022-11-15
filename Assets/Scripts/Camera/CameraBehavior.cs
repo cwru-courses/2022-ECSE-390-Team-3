@@ -86,8 +86,8 @@ public class CameraBehavior : MonoBehaviour
 
         proxyPosition = Vector2.SmoothDamp(proxyPosition, target.position, ref velocity, 0.2f);
 
-        targetPosition.x = Mathf.Clamp(proxyPosition.x, bounds.xMin, bounds.xMax);
-        targetPosition.y = Mathf.Clamp(proxyPosition.y, bounds.yMin, bounds.yMax);
+        targetPosition.x = Mathf.Clamp(Mathf.Round(proxyPosition.x * PPU) / PPU, bounds.xMin, bounds.xMax);
+        targetPosition.y = Mathf.Clamp(Mathf.Round(proxyPosition.y * PPU) / PPU, bounds.yMin, bounds.yMax);
 
         transform.position = new Vector3(targetPosition.x, targetPosition.y, -10.0f);
 
@@ -171,6 +171,22 @@ public class CameraBehavior : MonoBehaviour
     {
         zoomOut = false;
         unZoom = true;
+    }
+
+    public void Rotate()
+    {
+        RotateBounds();
+    }
+
+    private void RotateBounds()
+    {
+        Bounds rotatedBounds = new Bounds();
+        rotatedBounds.xMin = bounds.yMin;
+        rotatedBounds.xMax = bounds.yMax;
+        rotatedBounds.yMin = bounds.xMax;
+        rotatedBounds.yMax = bounds.xMax;
+
+        bounds = rotatedBounds;
     }
 
     public struct Bounds

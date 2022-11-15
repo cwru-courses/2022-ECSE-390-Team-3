@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     bool respawning = false;
     AudioManager AM;
 
+    bool rotating = false;
+
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
@@ -65,6 +67,11 @@ public class GameManager : MonoBehaviour
         else
         {
             player.ApplyUmbrella(Vector2.zero);
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            StartCoroutine(RotateWorldClockwise90());
         }
     }
 
@@ -150,6 +157,32 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log(windNames);
+    }
+
+    IEnumerator RotateWorldClockwise90()
+    {
+        if (rotating) yield break;
+
+        rotating = true;
+        // lock world entities
+        // then
+        Transform cam = Camera.main.transform;
+
+        float currentRotation = Mathf.Round(cam.rotation.eulerAngles.z);
+        float targetRotation = currentRotation + 90f;
+
+
+        while(currentRotation < targetRotation)
+        {
+            cam.Rotate(0f, 0f, 90f * Time.deltaTime);
+            currentRotation += 90f * Time.deltaTime;
+            yield return null;
+        }
+        cam.eulerAngles = new Vector3(0f, 0f, targetRotation);
+        rotating = false;
+
+        //cam.transform.GetComponent<CameraBehavior>().Rotate();
+        yield return null;
     }
 
     IEnumerator Death(float respawnTime)
