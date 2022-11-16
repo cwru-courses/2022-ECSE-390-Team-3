@@ -75,10 +75,15 @@ public class GameManager : MonoBehaviour
             player.ApplyUmbrella(Vector2.zero);
         }
 
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            StartCoroutine(RotateWorldClockwise90());
-        }
+        // if(Input.GetKeyDown(KeyCode.P))
+        // {
+        //     StartCoroutine(RotateWorldClockwise90());
+        // }
+    }
+
+    public void Rotate90()
+    {
+        StartCoroutine(RotateWorldClockwise90());
     }
 
     public void AddWind(Wind wind)

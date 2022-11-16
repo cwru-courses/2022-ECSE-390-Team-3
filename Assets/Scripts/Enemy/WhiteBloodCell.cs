@@ -10,11 +10,12 @@ public class WhiteBloodCell : MonoBehaviour
     public int patrolDestination;
     private bool bonked;
     private int pointIndex = 0;
+    private GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = GameObject.Find("GameManager");
     }
 
     // Update is called once per frame
@@ -51,6 +52,7 @@ public class WhiteBloodCell : MonoBehaviour
         {
             anim.SetBool("bonked", true);
             anim.SetBool("unbonk", false);
+            gameManager.GetComponent<GameManager>().Rotate90();
             if (pointIndex < patrolPoints.Length - 1) pointIndex++;
             bonked = true;
 
