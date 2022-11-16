@@ -7,11 +7,13 @@ public class KeyManager : MonoBehaviour
 
     public GameObject door;
     private AudioManager AM;
+    private GameManager GM;
 
     // Start is called before the first frame update
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
+        GM = FindObjectOfType<GameManager>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -22,8 +24,8 @@ public class KeyManager : MonoBehaviour
             if(AM != null) {
                 AM.Play("doorOpen");
             }
-            Destroy(this.gameObject);
-            Destroy(door);
+
+            GM.OnKeyGet(this.gameObject, door);
         }
     }
 }

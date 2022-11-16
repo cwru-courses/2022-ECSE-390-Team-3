@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     int change = 1;
     public float speed = 2;
 
+    private bool frozen = false;
+
     private void Reset()
     {
         Init();
@@ -51,6 +53,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (frozen) return;
         MoveToNextPoint();
     }
 
@@ -79,5 +82,10 @@ public class EnemyAI : MonoBehaviour
             }
             nextID += change;
         }
+    }
+
+    public void SetFreeze(bool _frozen)
+    {
+        frozen = _frozen;
     }
 }

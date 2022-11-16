@@ -14,6 +14,7 @@ public class EnemyProjectile : MonoBehaviour
     Animator animator;
     PlayAudioInRange audioPlayer;
 
+    private bool frozen;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (frozen) return;
+
         Vector3 scale = new Vector3(1.5f, 1.5f, 1);
         transform.localScale = scale;
         //animator.SetBool("inRange", false);
@@ -36,6 +39,11 @@ public class EnemyProjectile : MonoBehaviour
             CheckIfTimeToFire();
             //animator.SetBool("inRange", true);
         }
+    }
+
+    public void SetFreeze(bool _frozen)
+    {
+        frozen = _frozen;
     }
 
     private bool isCoroutineExecuting = false;

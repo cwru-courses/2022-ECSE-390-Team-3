@@ -40,6 +40,8 @@ public class CameraBehavior : MonoBehaviour
     float shakeMagnitude = 1f;
     Vector2 shakeDir;
 
+    private bool locked;
+
     float currentSize;
     [SerializeField]
     [Tooltip("amount zoomed, ei 1.25 = 125%")]
@@ -78,6 +80,12 @@ public class CameraBehavior : MonoBehaviour
     {
         lastPosition = transform.position;
 
+        if(!locked)
+        {
+            UnlockedFollow();
+            return;
+        }
+
         if(transitioning)
         {
             ScreenTransition();
@@ -98,6 +106,16 @@ public class CameraBehavior : MonoBehaviour
         }
 
         start = false;
+    }
+
+    public void SetTarget(Transform _target)
+    {
+        target = _target;
+    }
+
+    public void ToggleScreenLock(bool _locked)
+    {
+        locked = _locked;
     }
 
     public void UpdateScreen()
@@ -145,6 +163,13 @@ public class CameraBehavior : MonoBehaviour
             proxyPosition = lastPosition;
             transitioning = false;
         }
+    }
+
+    void UnlockedFollow()
+    {
+        // fuck my camera system was so bad
+        proxyPosition = Vector2.SmoothDamp(proxyPosition, target.position, ref velocity, 0.2f);
+        transform.position = new Vector3(proxyPosition.x, proxyPosition.y, -10f);
     }
 
     public void Shake(Vector2 dir)

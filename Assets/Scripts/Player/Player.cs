@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     GameManager GM;
     Latch latch;
+    RotateToCursor RTC;
 
     [SerializeField]
     Animator playerAnim;
@@ -60,12 +61,15 @@ public class Player : MonoBehaviour
     float latchJumpDuration = 0.25f;
     float latchJumpTimer;
 
+    private bool frozen = false;
+
     private Transform pivot;
     
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         latch = GetComponentInChildren<Latch>();
+        RTC = GetComponentInChildren<RotateToCursor>();
 
         controller = GetComponent<Controller2D>();
         pivot = GameObject.Find("Pivot").transform;
@@ -84,6 +88,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (frozen) return;
 
         if (GM.UmbrellaOpen()) gravity.y -= (gravityConstant * Time.deltaTime);
         else gravity.y = (controller.IsGrounded() || latchJumping) ? 0f : gravity.y - (gravityConstant * Time.deltaTime);
@@ -237,8 +242,13 @@ public class Player : MonoBehaviour
         spawnPoint = point;
     }
 
+    public void SetFreeze(bool _frozen)
+    {
+        frozen = _frozen;
+        latch.enabled = _frozen;
+        RTC.enabled = _frozen;
+    }
 
-  
     public void bonkedBoss(Vector2 bounce)
     {
         controller.Move(bounce * Time.deltaTime);

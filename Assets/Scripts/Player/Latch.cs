@@ -41,6 +41,8 @@ public class Latch : MonoBehaviour
             GM.Latch();
             //SR.color = new Color(0, 1, 0);
             playerAnim.SetBool("latchOn", true);
+
+            timer = 0f;
         }
         else if((Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0)) && latched)
         {
@@ -48,13 +50,9 @@ public class Latch : MonoBehaviour
             GM.Unlatch();
             //SR.color = color;
             playerAnim.SetBool("latchOn", false);
-
-            timer = 0f;
         }
 
         if (timer < cooldown) timer += Time.deltaTime;
-
-        Debug.Log(timer);
     }
 
     void OnCollisionStay2D(Collision2D collision)

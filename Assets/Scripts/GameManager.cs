@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     Player player;
     Controller2D controller;
+    Camera cam;
+    EnemyManager EM;
 
     List<Wind> winds;
     Vector2 windVelocity;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     bool rotating = false;
 
+    bool frozen = false;
+
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
@@ -29,6 +33,8 @@ public class GameManager : MonoBehaviour
             AM.Stop("briansTheme");
             AM.Play("puzzlingTheme");
         }
+        EM = FindObjectOfType<EnemyManager>();
+        cam = Camera.main;
         player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
@@ -36,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (respawning) return;
+        if (respawning || frozen) return;
 
         if(winds.Count != 0)
         {
@@ -105,7 +111,7 @@ public class GameManager : MonoBehaviour
     {
         if (respawning) return;
         player.Latch();
-        Camera.main.GetComponent<CameraBehavior>().ZoomOut();
+        cam.GetComponent<CameraBehavior>().ZoomOut();
         //SetFreeze(true);
     }
 
@@ -113,12 +119,12 @@ public class GameManager : MonoBehaviour
     {
         if (respawning) return;
         player.Unlatch();
-        Camera.main.GetComponent<CameraBehavior>().Unzoom();
+        cam.GetComponent<CameraBehavior>().Unzoom();
     }
 
     public void Shake(Vector2 dir)
     {
-        Camera.main.GetComponent<CameraBehavior>().Shake(dir);
+        cam.GetComponent<CameraBehavior>().Shake(dir);
     }
 
     public void PlayerDeath()
@@ -147,6 +153,11 @@ public class GameManager : MonoBehaviour
         return winds;
     }
 
+    public void OnKeyGet(GameObject key, GameObject door)
+    {
+        StartCoroutine(WTFDoICallThis(key, door));
+    }
+
     private void PrintWinds()
     {
         string windNames = "winds: ";
@@ -166,22 +177,62 @@ public class GameManager : MonoBehaviour
         rotating = true;
         // lock world entities
         // then
-        Transform cam = Camera.main.transform;
 
-        float currentRotation = Mathf.Round(cam.rotation.eulerAngles.z);
+        float currentRotation = Mathf.Round(cam.transform.rotation.eulerAngles.z);
         float targetRotation = currentRotation + 90f;
 
 
         while(currentRotation < targetRotation)
         {
-            cam.Rotate(0f, 0f, 90f * Time.deltaTime);
+            cam.transform.Rotate(0f, 0f, 90f * Time.deltaTime);
             currentRotation += 90f * Time.deltaTime;
             yield return null;
         }
-        cam.eulerAngles = new Vector3(0f, 0f, targetRotation);
+        cam.transform.eulerAngles = new Vector3(0f, 0f, targetRotation);
         rotating = false;
 
         //cam.transform.GetComponent<CameraBehavior>().Rotate();
+        yield return null;
+    }
+
+    IEnumerator WTFDoICallThis(GameObject key, GameObject door)
+    {
+        // yeah no we're not refactoring everything we're going to pass a shit ton of references
+
+        Destroy(key);
+
+        // fuck this is ugly
+        player.enabled = false;
+        if (EM != null) EM.SetFreeze(true);
+
+        CameraBehavior CB = cam.GetComponent<CameraBehavior>();
+
+        // fuck why did i think requiring the camera to use transform was a good idea
+        CB.ToggleScreenLock(false);
+        CB.SetTarget(door.transform);
+
+        while(((Vector2)(cam.transform.position - door.transform.position)).magnitude > 0.05f) yield return null;
+
+        // this is how long the camera stares at the door
+        yield return new WaitForSeconds(1f);
+
+        // here is where you can play a door animation or something
+        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
+        // this is how long the camera stares at the place where there is no more door
+        yield return new WaitForSeconds(2f);
+
+        CB.SetTarget(player.GetComponentInParent<Transform>());
+
+        while (((Vector2)(cam.transform.position - player.transform.position)).magnitude > 0.05f) yield return null;
+
+        CB.ToggleScreenLock(true);
+
+        player.enabled = true;
+        if (EM != null) EM.SetFreeze(false);
+
+        Destroy(door);
+
         yield return null;
     }
 
