@@ -175,12 +175,12 @@ public class SpeedrunStats : MonoBehaviour
     }
     private void closeStats()
     {
-        timeCounter.enabled = false;
-        deathsCounter.enabled = false;
-        levelLabel.enabled = false;
-        timeLabel.enabled = false;
-        deathsLabel.enabled = false;
-        stats.enabled = false;
+        if (timeCounter != null) timeCounter.enabled = false;
+        if (deathsCounter != null) deathsCounter.enabled = false;
+        if (levelLabel != null) levelLabel.enabled = false;
+        if (timeLabel != null) timeLabel.enabled = false;
+        if (deathsLabel != null) deathsLabel.enabled = false;
+        if (stats != null) stats.enabled = false;
     }
 
     private IEnumerator updateTimer()
