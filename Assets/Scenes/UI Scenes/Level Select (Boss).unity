@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 416768066}
   anim: {fileID: 416768068}
-  NextScene: Boss
+  NextScene: Boss Level
 --- !u!114 &1333247967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,7 +1801,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1333247966}
         m_TargetAssemblyTypeName: FadeControl, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Level Select (Boss).unity
     guid: 48ff0a342c9082345b63b6c7c62156da
+  - enabled: 1
+    path: Assets/Scenes/Boss Level.unity
+    guid: b58671ad62f0f0948b1b99a27927a0f1
   m_configObjects: {}
