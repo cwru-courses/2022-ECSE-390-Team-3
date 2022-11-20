@@ -39,6 +39,8 @@ public class Umbrella : MonoBehaviour
     float jumpCd = 2f;
     float jumpTimer = 2f;
 
+    private float dashFreezeFrames = 2f;
+
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -70,6 +72,23 @@ public class Umbrella : MonoBehaviour
             playerAnim.SetBool("openUmbrella", false);
         }
 
+        // Refactor please
+        // Thoughts: Make it a different number than 90 degrees so the player has a bit of leeway
+        // Also you could combine these because the same calcultion is repeaed
+        // actually the only one we're using right now is wave percentage which is easy
+        if (inWave) {
+            Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
+            float angle = Vector2.Angle(wave.GetDirection(), direction);
+
+            if (angle < 90f)
+            {
+                float percentage = wave.GetPositionPercentage(transform.position);
+
+                percentage = Mathf.Clamp(percentage, percentage + forgiveness, 1);
+                SR.color = new Color(1 - percentage, percentage, 0);
+            }
+        }
+
         if (Input.GetMouseButtonDown(0) && inWave)
         {
             // wave should never be null when this is executed
@@ -87,6 +106,8 @@ public class Umbrella : MonoBehaviour
                 player.ApplyImpulse(direction * percentage * impulse);
 
                 SR.color = new Color(1 - percentage, percentage, 0);
+
+                StartCoroutine(freezeOnDash());
             }
         }
         else if (Input.GetMouseButton(0) && inWind)
@@ -145,6 +166,13 @@ public class Umbrella : MonoBehaviour
         // Debug.Log(velocity);
 
         if (!inWave) SR.color = new Color(1, 0.6f, 0);
+    }
+
+    // Freezes the player for a few frames when catching a wave
+    IEnumerator freezeOnDash() {
+        GM.SetFreeze(true);
+        yield return new WaitForSeconds(Time.deltaTime * dashFreezeFrames);
+        GM.SetFreeze(false);
     }
 
     void UmbrellaInWindOld()

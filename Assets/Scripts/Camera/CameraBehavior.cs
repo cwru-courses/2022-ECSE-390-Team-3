@@ -37,10 +37,11 @@ public class CameraBehavior : MonoBehaviour
 
     float shakeTimer;
     float shakeDuration = 0.1f;
-    float shakeMagnitude = 1f;
+    float shakeMagnitude = 0.25f;
     Vector2 shakeDir;
 
     private bool locked;
+    public bool stopCam;
 
     float currentSize;
     [SerializeField]
@@ -79,6 +80,10 @@ public class CameraBehavior : MonoBehaviour
     void LateUpdate()
     {
         lastPosition = transform.position;
+
+        if (stopCam) {
+            return;
+        }
 
         if(!locked)
         {
@@ -170,6 +175,12 @@ public class CameraBehavior : MonoBehaviour
         // fuck my camera system was so bad
         proxyPosition = Vector2.SmoothDamp(proxyPosition, target.position, ref velocity, 0.2f);
         transform.position = new Vector3(proxyPosition.x, proxyPosition.y, -10f);
+
+        if(shakeTimer < shakeDuration)
+        {
+            transform.localPosition += Random.value * shakeMagnitude * -(Vector3)shakeDir;
+            shakeTimer += Time.deltaTime;
+        }
     }
 
     public void Shake(Vector2 dir)

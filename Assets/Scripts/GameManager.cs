@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         player.SetSpawnPoint(point);
     }
 
-    private void SetFreeze(bool frozen)
+    public void SetFreeze(bool frozen)
     {
         player.enabled = !frozen;
         controller.enabled = !frozen;
@@ -243,12 +243,16 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Death(float respawnTime)
     {
+        CameraBehavior CB = cam.GetComponent<CameraBehavior>();
+
         respawning = true;
 
+        // Freezes the camera on death
         player.DisableRenderer();
         SetFreeze(true);
         yield return new WaitForSeconds(respawnTime);
         SetFreeze(false);
+        CB.stopCam = false;
 
         player.EnableRenderer();
         player.Respawn();

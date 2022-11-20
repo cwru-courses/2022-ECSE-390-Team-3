@@ -6,10 +6,13 @@ public class Death : MonoBehaviour
 {
     GameManager GM;
     public AudioSource deathSound;
+    Camera cam;
+    private float deathTime = 0.175f;
 
 
     private void Start()
     {
+        cam = Camera.main;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>(); ;
     }
 
@@ -17,9 +20,23 @@ public class Death : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy"))
         {
-            GM.PlayerDeath();
-            SpeedrunStats.playerDeath();
-            deathSound.PlayOneShot(deathSound.clip);
+            StartCoroutine(freezeOnDeath());
         }
+    }
+
+    // Freezes the camera on death
+    IEnumerator freezeOnDeath() {
+
+        CameraBehavior CB = cam.GetComponent<CameraBehavior>();
+        CB.stopCam = true;
+
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(deathTime);
+        Time.timeScale = 1f;
+        GM.PlayerDeath();
+        SpeedrunStats.playerDeath();
+        deathSound.PlayOneShot(deathSound.clip);
+
+        // CB.ToggleScreenLock(true);
     }
 }
