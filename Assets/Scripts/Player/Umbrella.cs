@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Umbrella : MonoBehaviour
 {
+    GameObject inWaveEffect;
+
     GameManager GM;
     Transform pivot;
     Player player;
@@ -40,6 +42,7 @@ public class Umbrella : MonoBehaviour
     float jumpTimer = 2f;
 
     private float dashFreezeFrames = 2f;
+    private int maxParticleCount = 2000;
 
     void Start()
     {
@@ -48,6 +51,7 @@ public class Umbrella : MonoBehaviour
         player = GetComponentInParent<Player>();
         SR = GetComponent<SpriteRenderer>();
         color = SR.color;
+        inWaveEffect = GameObject.Find("wave_effect");
     }
 
     void Update()
@@ -77,6 +81,8 @@ public class Umbrella : MonoBehaviour
         // Also you could combine these because the same calcultion is repeaed
         // actually the only one we're using right now is wave percentage which is easy
         if (inWave) {
+            Color tmp = inWaveEffect.GetComponent<SpriteRenderer>().color;
+
             Vector2 direction = Quaternion.AngleAxis(pivot.eulerAngles.z, Vector3.forward) * Vector2.up;
             float angle = Vector2.Angle(wave.GetDirection(), direction);
 
@@ -86,7 +92,18 @@ public class Umbrella : MonoBehaviour
 
                 percentage = Mathf.Clamp(percentage, percentage + forgiveness, 1);
                 SR.color = new Color(1 - percentage, percentage, 0);
+                inWaveEffect.GetComponent<ParticleSystem>().maxParticles = maxParticleCount;
+                tmp.a = percentage;
+            } else {
+                // tmp.a = 0.2f;
+                inWaveEffect.GetComponent<ParticleSystem>().maxParticles = (int) (0.2f*maxParticleCount);
             }
+            // inWaveEffect.GetComponent<SpriteRenderer>().color = tmp;
+        } else {
+            Color tmp = inWaveEffect.GetComponent<SpriteRenderer>().color;
+            tmp.a = 0f;
+            inWaveEffect.GetComponent<ParticleSystem>().maxParticles = 0;
+            // inWaveEffect.GetComponent<SpriteRenderer>().color = tmp;
         }
 
         if (Input.GetMouseButtonDown(0) && inWave)
