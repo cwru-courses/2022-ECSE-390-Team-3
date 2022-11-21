@@ -13,6 +13,8 @@ public class SceneTrigger : MonoBehaviour
     private bool popupOpen = false;
     private bool popupHasBeenTriggered = false;
     private AudioManager AM;
+    private bool delaySwitch = true;
+    private float delayedTime;
 
     private void Start(){
         AM = FindObjectOfType<AudioManager>();
@@ -20,10 +22,16 @@ public class SceneTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(popupOpen == true)
+        if (popupOpen == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (delaySwitch)
             {
+                delayedTime = Time.realtimeSinceStartup + 1;
+                delaySwitch = false;
+            }
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && Time.realtimeSinceStartup > delayedTime)
+            {
+                delaySwitch = true;
                 Resume();
                 popupOpen = false;
                 PauseMenu.GamePaused = true;
@@ -76,7 +84,7 @@ public class SceneTrigger : MonoBehaviour
         if(AM != null) AM.Play("alienBabbling");
     }
     public void Resume()
-    {
+    { 
         Time.timeScale = 1f;
         PopUpToOpen.SetActive(false);
         if(AM != null) AM.Stop("alienBabbling");

@@ -166,12 +166,12 @@ public class SpeedrunStats : MonoBehaviour
 
     private void openStats()
     {
-        timeCounter.enabled = true;
-        deathsCounter.enabled = true;
-        levelLabel.enabled = true;
-        timeLabel.enabled = true;
-        deathsLabel.enabled = true;
-        stats.enabled = true;
+        if (timeCounter != null) timeCounter.enabled = true;
+        if (deathsCounter != null) deathsCounter.enabled = true;
+        if (levelLabel != null) levelLabel.enabled = true;
+        if (timeLabel != null) timeLabel.enabled = true;
+        if (deathsLabel != null) deathsLabel.enabled = true;
+        if (stats != null) stats.enabled = true;
     }
     private void closeStats()
     {
