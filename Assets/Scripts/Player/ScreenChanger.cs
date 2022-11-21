@@ -44,6 +44,7 @@ public class ScreenChanger : MonoBehaviour
 
             if(lastEnteredBox != exitedBox)
             {
+                if (lastEnteredBox == null) return;
                 CameraBehavior cam = Camera.main.GetComponent<CameraBehavior>();
                 cam.UpdateScreenBounds(lastEnteredBox);
                 cam.UpdateScreen();
