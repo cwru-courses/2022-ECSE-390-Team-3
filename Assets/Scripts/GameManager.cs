@@ -256,6 +256,7 @@ public class GameManager : MonoBehaviour
 
         player.EnableRenderer();
         player.Respawn();
+        Unlatch();
         respawning = false;
         windVelocity = Vector2.zero;
         currVelocity = Vector2.zero;
