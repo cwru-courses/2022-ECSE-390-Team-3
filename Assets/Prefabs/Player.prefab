@@ -783,6 +783,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e2b8cd30a9e625a43a988ea4705612d6, type: 3}
+    - target: {fileID: 502174307604468116, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502174307604468116, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a8b9d113c92df1a459da13b5e4e687d2, type: 3}
     - target: {fileID: 651868022064878650, guid: 16481cb466169db4d9c99cae0b9f5ff7, type: 3}
       propertyPath: m_Enabled
       value: 0
