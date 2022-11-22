@@ -5,6 +5,7 @@ using UnityEngine;
 public class Umbrella : MonoBehaviour
 {
     GameManager GM;
+    AudioManager AM;
     Transform pivot;
     Player player;
     SpriteRenderer SR;
@@ -44,6 +45,7 @@ public class Umbrella : MonoBehaviour
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        AM = FindObjectOfType<AudioManager>();
         pivot = GetComponentInParent<Transform>();
         player = GetComponentInParent<Player>();
         SR = GetComponent<SpriteRenderer>();
@@ -98,6 +100,7 @@ public class Umbrella : MonoBehaviour
 
             if (angle < 90f)
             {
+                AM.Play("dash");
                 float percentage = wave.GetPositionPercentage(transform.position);
                 float impulse = wave.GetMaxImpulse();
 

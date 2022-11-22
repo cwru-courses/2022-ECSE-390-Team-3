@@ -811,6 +811,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: dash
+    clip: {fileID: 8300000, guid: 9e1148a79d2b6df43bf36aa35e354b60, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &748203655
 Transform:
   m_ObjectHideFlags: 0
