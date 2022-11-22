@@ -782,7 +782,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 1
   - name: alienBabbling
-    clip: {fileID: 8300000, guid: 2084cf705ce13a5418bd9ff30280d49a, type: 3}
+    clip: {fileID: 8300000, guid: 63c73367d105edc4eb45de77ef592058, type: 3}
     volume: 0.25
     pitch: 1
     source: {fileID: 0}

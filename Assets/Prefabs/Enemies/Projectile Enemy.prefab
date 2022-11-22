@@ -147,6 +147,7 @@ MonoBehaviour:
   bullet: {fileID: 9067955782987323891, guid: 4b80af5bab2baff4ab4039531090c82b, type: 3}
   fireTime: 1.65
   range: 13
+  shootSpeed: 7
 --- !u!114 &5367190704794666734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4350642371209128891}
-  maxVolume: 5
+  maxVolume: 1
 --- !u!1 &8444756107308191752
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a9dd41f8b2532fe49925985d02ca31a2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
