@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
         EM = FindObjectOfType<EnemyManager>();
         cam = Camera.main;
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<Player>();       
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
     }
@@ -250,6 +250,11 @@ public class GameManager : MonoBehaviour
         // Freezes the camera on death
         player.DisableRenderer();
         SetFreeze(true);
+
+        // is this a lazy hack? yes
+        GameObject corpse = Instantiate(Resources.Load("Corpse", typeof(GameObject)), player.GetComponentInParent<Transform>().position, GameObject.Find("Pivot").transform.rotation) as GameObject;
+        corpse.GetComponent<Corpse>().Scatter(respawnTime);
+
         yield return new WaitForSeconds(respawnTime);
         SetFreeze(false);
         CB.stopCam = false;
