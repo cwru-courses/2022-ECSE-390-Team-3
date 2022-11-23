@@ -8,6 +8,7 @@ public class Transition : MonoBehaviour
     public bool isExit;
     private bool inLevel;
     public float openDist;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,11 @@ public class Transition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         float distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, transform.position);
 
         if (isExit)
         {
+           
             if (distance < openDist)
             {
                 anim.SetBool("playerNear", true);
@@ -43,9 +44,14 @@ public class Transition : MonoBehaviour
 
         else
         {
+            if (distance < 2.75f)
+            {
+                Debug.Log(distance);
+                transform.position = new Vector3(transform.position.x, transform.position.y, 1);
+            }
 
-            
-            if (distance < 8f && inLevel == false)
+
+                if (distance < 8f && inLevel == false)
             {
                 anim.SetBool("playerNear", true);
                 anim.SetBool("playerTouch", true);
@@ -56,13 +62,16 @@ public class Transition : MonoBehaviour
             {
                 anim.SetBool("playerNear", false);
                 anim.SetBool("playerTouch", false);
+                transform.position = new Vector3(transform.position.x, transform.position.y, -1);
 
             }
 
-            if(distance > 25)
+            if(distance > 25f)
             {
                 inLevel = false;
             }
+
+
 
         }
         

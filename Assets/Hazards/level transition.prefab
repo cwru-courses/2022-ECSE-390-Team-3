@@ -99,6 +99,7 @@ MonoBehaviour:
   anim: {fileID: 4945555673499187029}
   isExit: 0
   openDist: 20
+  sendBack: {fileID: 0}
 --- !u!95 &4945555673499187029
 Animator:
   serializedVersion: 3
