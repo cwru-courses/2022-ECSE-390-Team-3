@@ -256,8 +256,9 @@ public class GameManager : MonoBehaviour
 
         player.EnableRenderer();
         player.Respawn();
-        Unlatch();
         respawning = false;
+        Unlatch();
+        player.GetComponentInParent<Transform>().GetComponentInChildren<Animator>().SetBool("latchOn", false);
         windVelocity = Vector2.zero;
         currVelocity = Vector2.zero;
         yield return null;

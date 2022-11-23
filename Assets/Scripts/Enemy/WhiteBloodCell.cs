@@ -56,7 +56,8 @@ public class WhiteBloodCell : MonoBehaviour
             if (pointIndex < patrolPoints.Length - 1) pointIndex++;
             bonked = true;
 
-           FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 350));
+            // FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 350));
+            collision.gameObject.GetComponentInParent<Player>();
            
         }
 
