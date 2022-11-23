@@ -31,8 +31,15 @@ public class Death : MonoBehaviour
         CB.stopCam = true;
 
         Time.timeScale = 0f;
+
+        // time for another super hacky hack
+        Player player = GetComponentInParent<Player>();
+        player.SetColorWhite();
+
         yield return new WaitForSecondsRealtime(deathTime);
         Time.timeScale = 1f;
+
+        player.ResetColor();
         GM.PlayerDeath();
         SpeedrunStats.playerDeath();
         deathSound.PlayOneShot(deathSound.clip);

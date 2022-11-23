@@ -195,6 +195,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    // another hacky hack
+    // with more find hacks because why not
+    public void SetColorWhite()
+    {
+        foreach(SpriteRenderer SR in sprites)
+        {
+            SR.material.shader = Shader.Find("GUI/Text Shader");
+        }
+    }
+
+    public void ResetColor()
+    {
+        foreach(SpriteRenderer SR in sprites)
+        {
+            SR.material.shader = Shader.Find("Sprites/Default");
+        }
+    }
+
     public void Respawn()
     {
         latched = false;
