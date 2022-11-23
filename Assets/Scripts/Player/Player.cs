@@ -14,10 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     Animator playerAnim;
 
-    [SerializeField]
-    [Tooltip("max degrees rotated per second")]
-    float rotSpd = 720;
-
     // Remember v = a * t^2; gravity magnitude gets multiplied by deltaTime twice
     // Normal platformers force your Y to zero when grounded. This is a bit tricky with our current setup.
     // We can talk about different implementations but for now I'll be doing it like this.

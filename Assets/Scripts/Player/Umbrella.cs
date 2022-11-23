@@ -25,9 +25,6 @@ public class Umbrella : MonoBehaviour
     float repulsion = 0.25f;
 
     [SerializeField]
-    [Tooltip("the max magnitude of impulse due opening in a wave")]
-    float impulse = 10f;
-    [SerializeField]
     [Tooltip("%length of the wave which grants max push")]
     float forgiveness = 0.2f;
 
