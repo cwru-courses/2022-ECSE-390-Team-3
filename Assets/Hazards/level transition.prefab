@@ -93,11 +93,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5336549980047979263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 701b690e5874b5f41b107af90787003a, type: 3}
+  m_Script: {fileID: 11500000, guid: f04f24f37f952b549b512b9b3038bb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4945555673499187029}
   isExit: 0
+  openDist: 20
 --- !u!95 &4945555673499187029
 Animator:
   serializedVersion: 3

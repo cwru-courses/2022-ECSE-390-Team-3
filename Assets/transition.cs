@@ -7,6 +7,7 @@ public class Transition : MonoBehaviour
     public Animator anim;
     public bool isExit;
     private bool inLevel;
+    public float openDist;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +24,19 @@ public class Transition : MonoBehaviour
 
         if (isExit)
         {
-            if (distance < 20f)
+            if (distance < openDist)
             {
                 anim.SetBool("playerNear", true);
             }
 
-            if (distance < 8f)
+            if (distance < 8.5f)
             {
                 anim.SetBool("playerTouch", true);
+            }
+
+            else
+            {
+                anim.SetBool("playerNear", false);
             }
 
         }
