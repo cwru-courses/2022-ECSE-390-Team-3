@@ -25,15 +25,12 @@ public class PlayAudio : MonoBehaviour
         distance = Vector3.Distance(target.transform.position, transform.position);
         audioSource.Play();
         audioSource.loop = true;
-        //isPlaying = true;
-        //Debug.Log(transform.name + " play yellow sound");
+        
     }
 
     void stopAudio()
     {
-        //Debug.Log(transform.name + " stop yellow sound");
         audioSource.Stop();
-        //isPlaying = false;
     }
 
     void updateVolume()
@@ -63,8 +60,6 @@ public class PlayAudio : MonoBehaviour
             {
                 stopAudio();
             }
-            //Debug.Log("out of range");
-
         }
     }
 }

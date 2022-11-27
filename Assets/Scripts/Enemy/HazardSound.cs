@@ -72,5 +72,6 @@ public class HazardSound : MonoBehaviour
             }
         }
         adjustVolume(minDist);
+
     }
 }

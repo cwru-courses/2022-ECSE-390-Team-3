@@ -42,12 +42,10 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject == latchableWall)
         {
-            Debug.Log("hit the wall");
             Destroy(this.gameObject);
         }
         else if (collision.gameObject == hazardWall)
         {
-            Debug.Log("hit the hazard wall");
             Destroy(this.gameObject);
         }
     }

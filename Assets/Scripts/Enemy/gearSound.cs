@@ -42,7 +42,6 @@ public class GearSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Gear sound playing? " + audioSource.isPlaying);
         if (Vector3.Distance(target.transform.position, transform.position) <= range)
         {
             //if just get into range

@@ -14,24 +14,6 @@ public class ApplyAllChild : MonoBehaviour
     {
 
         target = GameObject.FindGameObjectWithTag("Player");
-        /*foreach (Transform child in transform)
-        {
-            if (child.gameObject.GetComponent<GearSound>() == null)
-            {
-                if (child.name == "gear_sound")
-                {
-
-                }
-                else
-                {
-                    child.gameObject.AddComponent<GearSound>();
-                    GearSound audioPlayer = child.GetComponent<GearSound>();
-                    audioPlayer.audioSource = audioSource;
-                    audioPlayer.maxVolume = maxVolume;
-                    audioPlayer.range = range;
-                }
-            }
-        }*/
     }
 
     void playAudio(GameObject gear)

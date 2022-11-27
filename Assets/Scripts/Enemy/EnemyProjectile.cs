@@ -37,7 +37,6 @@ public class EnemyProjectile : MonoBehaviour
         if (Vector3.Distance(target.transform.position, transform.position) <= range)
         {
             CheckIfTimeToFire();
-            //animator.SetBool("inRange", true);
         }
     }
 
@@ -61,7 +60,6 @@ public class EnemyProjectile : MonoBehaviour
 
         Instantiate(bullet, transform.position, Quaternion.identity);
         //audioPlayer.playAudio();
-        Debug.Log("should play");
         nextFire = Time.time + fireTime;
 
         isCoroutineExecuting = false;
@@ -73,10 +71,6 @@ public class EnemyProjectile : MonoBehaviour
         {
             animator.Play("projectile enemy");
             StartCoroutine(ExecuteAfterTime(1f));
-            /*Instantiate(bullet, transform.position, Quaternion.identity);
-            audioPlayer.playAudio();
-            Debug.Log("should play");
-            nextFire = Time.time + fireTime;*/
         }
     }
 }
