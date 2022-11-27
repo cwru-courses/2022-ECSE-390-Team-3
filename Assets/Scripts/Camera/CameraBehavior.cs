@@ -57,6 +57,7 @@ public class CameraBehavior : MonoBehaviour
 
         start = true;
         bounds = new Bounds();
+        locked = true;
 
         shakeTimer = shakeDuration;
 
