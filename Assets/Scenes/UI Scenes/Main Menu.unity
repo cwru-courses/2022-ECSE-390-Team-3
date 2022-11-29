@@ -853,6 +853,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: boss
+    clip: {fileID: 8300000, guid: 05b0dbe5d3bfc9e4caca81f2ca777359, type: 3}
+    volume: 0.842
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
 --- !u!4 &748203655
 Transform:
   m_ObjectHideFlags: 0
