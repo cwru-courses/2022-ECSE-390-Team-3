@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transition : MonoBehaviour
+public class transition : MonoBehaviour
 {
     public Animator anim;
     public bool isExit;
     private bool inLevel;
-    public float openDist;
+    public float openDist; 
   
 
     // Start is called before the first frame update
