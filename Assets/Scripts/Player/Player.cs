@@ -273,5 +273,6 @@ public class Player : MonoBehaviour
         if (latched) ResetVelocities();
 
         controller.Move(velocity * Time.deltaTime);
+        Debug.DrawRay(transform.position, velocity * 0.25f, Color.green);
     }
 }
