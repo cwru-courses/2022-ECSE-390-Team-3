@@ -6,11 +6,14 @@ public class WhiteBloodCell : MonoBehaviour
 {
     public Animator anim;
     public Transform[] patrolPoints;
-    public float moveSpeed;
-    public int patrolDestination;
     private bool bonked;
     private int pointIndex = 0;
     private GameObject gameManager;
+    public SpriteRenderer sr;
+    public Material flash;
+    public Material spriteDefault;
+   // public Rigidbody2D rb2d;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,40 +23,68 @@ public class WhiteBloodCell : MonoBehaviour
 
     // Update is called once per frame
 
-    //anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5
     void Update()
     {
-        if (bonked && anim.GetCurrentAnimatorStateInfo(0).IsName("wbc swim") )
+
+        if (bonked && anim.GetCurrentAnimatorStateInfo(0).IsName("wbc swim"))
         {
-
-          /*  Vector3 vectorToTarget = patrolPoints[pointIndex].position - transform.position;
-            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+            Vector3 vectorToTarget = patrolPoints[pointIndex].position - transform.position;
+            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 100000);*/
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 20);
 
-            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, moveSpeed * Time.deltaTime);
+           float currentAnim = anim.GetCurrentAnimatorStateInfo(0).normalizedTime % anim.GetCurrentAnimatorStateInfo(0).length;
+
+           if (currentAnim > 0f && currentAnim <= 0.3f)
+            {
+                //rb2d.velocity = new Vector2(30f, 0);
+                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, 5 * Time.deltaTime);
+
+            }
+           else if (currentAnim > 0.3f && currentAnim <= 0.615f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, 25 * Time.deltaTime);
+            }
+            else if (currentAnim > 0.615f && currentAnim <= 0.8f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, 18 * Time.deltaTime);
+            }
+            else {
+
+                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, 15 * Time.deltaTime);
+
+            }
+
+
+
 
             if (Vector2.Distance(transform.position, patrolPoints[pointIndex].position) < .002f)
             {
                 anim.SetBool("unbonk", true);
                 anim.SetBool("bonked", false);
-                
+
             }
-
+            
         }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle"))
+        {
 
-
+            transform.eulerAngles = new Vector3 (0, 0, pointIndex*90);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle"))
         {
+            sr.material = flash;
+            StartCoroutine(delay(0.2f));
+
             anim.SetBool("bonked", true);
             anim.SetBool("unbonk", false);
             gameManager.GetComponent<GameManager>().Rotate90();
-            if (pointIndex < patrolPoints.Length - 1 && anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle")) pointIndex++;
+            if (pointIndex < patrolPoints.Length - 1)  pointIndex++;
             Debug.Log(pointIndex);
             bonked = true;
 
@@ -61,6 +92,14 @@ public class WhiteBloodCell : MonoBehaviour
             collision.gameObject.GetComponentInParent<Player>();
            
         }
+
+    }
+
+    IEnumerator delay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        sr.material = spriteDefault;
+
 
     }
 
