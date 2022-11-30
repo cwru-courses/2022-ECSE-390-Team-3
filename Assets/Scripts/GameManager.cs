@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
     {
         // yeah no we're not refactoring everything we're going to pass a shit ton of references
 
-        Destroy(key);
+        if(key != null) Destroy(key);
 
         // fuck this is ugly
         player.enabled = false;
