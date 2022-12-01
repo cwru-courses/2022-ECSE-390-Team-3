@@ -7,7 +7,7 @@ public class Death : MonoBehaviour
     GameManager GM;
     public AudioSource deathSound;
     Camera cam;
-    private float deathTime = 0.175f;
+    private float deathPauseTime = 0.125f;
 
 
     private void Start()
@@ -36,7 +36,7 @@ public class Death : MonoBehaviour
         Player player = GetComponentInParent<Player>();
         player.SetColorWhite();
 
-        yield return new WaitForSecondsRealtime(deathTime);
+        yield return new WaitForSecondsRealtime(deathPauseTime);
         Time.timeScale = 1f;
 
         player.ResetColor();
