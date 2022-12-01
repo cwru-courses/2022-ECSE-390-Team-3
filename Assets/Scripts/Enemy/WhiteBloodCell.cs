@@ -13,11 +13,14 @@ public class WhiteBloodCell : MonoBehaviour
     public Material flash;
     public Material spriteDefault;
     public GameObject door;
+    Camera cam;
+    private float bossHitPauseTime = 0.125f;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         gameManager = GameObject.Find("GameManager");
     }
 
@@ -78,6 +81,8 @@ public class WhiteBloodCell : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle"))
         {
+            // CameraBehavior CB = cam.GetComponent<CameraBehavior>();
+            // CB.stopCam = true;
             sr.material = flash;
             StartCoroutine(delay(0.2f));
 
