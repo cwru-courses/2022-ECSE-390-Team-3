@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
         // {
         //     StartCoroutine(RotateWorldClockwise90());
         // }
+
+        // if (Input.GetKeyDown(KeyCode.Q)) PlayerDeath();
     }
 
     public void Rotate90()
@@ -261,13 +263,13 @@ public class GameManager : MonoBehaviour
         SetFreeze(false);
         CB.stopCam = false;
 
-        player.EnableRenderer();
-        player.Respawn();
         respawning = false;
         Unlatch();
         player.GetComponentInParent<Transform>().GetComponentInChildren<Animator>().SetBool("latchOn", false);
         windVelocity = Vector2.zero;
         currVelocity = Vector2.zero;
+        player.EnableRenderer();
+        player.Respawn();
         yield return null;
     }
 
