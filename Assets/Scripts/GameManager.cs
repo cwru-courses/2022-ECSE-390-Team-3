@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     bool frozen = false;
 
+    private float respawnDelay = 0.5f;
+
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
@@ -136,7 +138,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        StartCoroutine(Death(0.5f));
+        StartCoroutine(Death(respawnDelay));
     }
 
     public void SetPlayerSpawn(Vector3 point)
@@ -206,7 +208,7 @@ public class GameManager : MonoBehaviour
     {
         // yeah no we're not refactoring everything we're going to pass a shit ton of references
 
-        Destroy(key);
+        if(key != null) Destroy(key);
 
         // fuck this is ugly
         player.enabled = false;

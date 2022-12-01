@@ -18,7 +18,8 @@ public class Corpse : MonoBehaviour
 
         for (int i = 0; i < pieces.Length; i++)
         {
-            pieces[i].position += (Vector3)directions[i] * 3f * Time.deltaTime;
+            float percentDone = timer / duration;
+            pieces[i].position += (Vector3)directions[i] * 12f * (Mathf.Pow(percentDone - 1, 2) * 0.9f + 0.1f) * Time.deltaTime;
         }
 
         timer += Time.deltaTime;
@@ -32,6 +33,7 @@ public class Corpse : MonoBehaviour
         for (int i = 0; i < pieces.Length; i++)
         {
             pieces[i] = transform.GetChild(i);
+            pieces[i].transform.Rotate(0, 0, Random.Range(0f, 360f));
             directions[i] = (pieces[i].position - transform.position).normalized;
         }
 

@@ -35,9 +35,11 @@ public class CameraBehavior : MonoBehaviour
     bool zoomOut;
     bool unZoom;
 
-    float shakeTimer;
-    float shakeDuration = 0.1f;
-    float shakeMagnitude = 0.25f;
+    // float shakeTimer;
+    // float shakeDuration = 0.1f;
+    int currentShakeIndex = 10000;
+    float[] screenShakeKeyFrames = {3, 3, -2, -2, -2, 2, 2, 2, -1, -1, 0};
+    float shakeMagnitude = 0.04f;
     Vector2 shakeDir;
 
     private bool locked;
@@ -59,7 +61,7 @@ public class CameraBehavior : MonoBehaviour
         bounds = new Bounds();
         locked = true;
 
-        shakeTimer = shakeDuration;
+        // shakeTimer = shakeDuration;
 
         target = GM.GetPlayer();
 
@@ -80,6 +82,7 @@ public class CameraBehavior : MonoBehaviour
     }
     void LateUpdate()
     {
+
         lastPosition = transform.position;
 
         if (stopCam) {
@@ -105,11 +108,17 @@ public class CameraBehavior : MonoBehaviour
 
         transform.position = new Vector3(targetPosition.x, targetPosition.y, -10.0f);
 
-        if(shakeTimer < shakeDuration)
-        {
-            transform.localPosition += Random.value * shakeMagnitude * -(Vector3)shakeDir;
-            shakeTimer += Time.deltaTime;
-        }
+        // if(currentShakeIndex < screenShakeKeyFrames.Length)
+        // {
+        //     transform.localPosition += screenShakeKeyFrames[currentShakeIndex] * shakeMagnitude * -(Vector3)shakeDir;
+        //     currentShakeIndex += 1;
+        // }
+
+        // if(shakeTimer < shakeDuration)
+        // {
+        //     transform.localPosition += Random.value * shakeMagnitude * -(Vector3)shakeDir;
+        //     shakeTimer += Time.deltaTime;
+        // }
 
         start = false;
     }
@@ -177,17 +186,23 @@ public class CameraBehavior : MonoBehaviour
         proxyPosition = Vector2.SmoothDamp(proxyPosition, target.position, ref velocity, 0.2f);
         transform.position = new Vector3(proxyPosition.x, proxyPosition.y, -10f);
 
-        if(shakeTimer < shakeDuration)
-        {
-            transform.localPosition += Random.value * shakeMagnitude * -(Vector3)shakeDir;
-            shakeTimer += Time.deltaTime;
-        }
+        // if(shakeTimer < shakeDuration)
+        // {
+        //     transform.localPosition += Random.value * shakeMagnitude * -(Vector3)shakeDir;
+        //     shakeTimer += Time.deltaTime;
+        // }
+        // if(currentShakeIndex < screenShakeKeyFrames.Length)
+        // {
+        //     transform.localPosition += screenShakeKeyFrames[currentShakeIndex] * shakeMagnitude * -(Vector3)shakeDir;
+        //     currentShakeIndex += 1;
+        // }
     }
 
     public void Shake(Vector2 dir)
     {
         shakeDir = dir.normalized;
-        shakeTimer = 0f;
+        // shakeTimer = 0f;
+        currentShakeIndex = 0;
     }
 
     void Zoom(float targetSize)

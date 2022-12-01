@@ -12,7 +12,7 @@ public class WhiteBloodCell : MonoBehaviour
     public SpriteRenderer sr;
     public Material flash;
     public Material spriteDefault;
-   // public Rigidbody2D rb2d;
+    public GameObject door;
 
 
     // Start is called before the first frame update
@@ -80,6 +80,11 @@ public class WhiteBloodCell : MonoBehaviour
         {
             sr.material = flash;
             StartCoroutine(delay(0.2f));
+
+            if (patrolPoints.Length -1 == pointIndex)
+            {
+                gameManager.GetComponent<GameManager>().OnKeyGet(this.gameObject, door);
+            }
 
             anim.SetBool("bonked", true);
             anim.SetBool("unbonk", false);
