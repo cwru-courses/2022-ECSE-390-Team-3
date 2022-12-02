@@ -29,6 +29,9 @@ public class CameraBehavior : MonoBehaviour
     float initialVertEdge;
     float initialHorizEdge;
 
+    float diagonal;
+    float initialTheta = Mathf.Atan(9f / 16f);
+
     bool transitioning;
     bool start;
 
@@ -67,10 +70,19 @@ public class CameraBehavior : MonoBehaviour
 
         initialVertEdge = vertEdge = Camera.main.orthographicSize;
         initialHorizEdge = horizEdge = Camera.main.orthographicSize * Camera.main.aspect; // multiply by aspect ratio
+
+        diagonal = Mathf.Sqrt(vertEdge * vertEdge + horizEdge * horizEdge);
     }
 
     private void Update()
     {
+        // behold, math
+        // camera bounds now dynamically defined by the diagonal of the camera's view and its current angle
+        // it's not perfect since I'm only using one orientation of diagonal but it does enough
+        // also works during zoom
+        vertEdge = diagonal * Mathf.Abs(Mathf.Sin(initialTheta + transform.localRotation.eulerAngles.z * Mathf.Deg2Rad));
+        horizEdge = diagonal * Mathf.Abs(Mathf.Cos(initialTheta + transform.localRotation.eulerAngles.z * Mathf.Deg2Rad));
+
         if(zoomOut)
         {
             Zoom(initialVertEdge * zoomAmount);
@@ -79,6 +91,8 @@ public class CameraBehavior : MonoBehaviour
         {
             Zoom(initialVertEdge);
         }
+
+        if (thisBox != null) UpdateScreenBounds(thisBox);
     }
     void LateUpdate()
     {
@@ -208,8 +222,9 @@ public class CameraBehavior : MonoBehaviour
     void Zoom(float targetSize)
     {
         Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, targetSize, ref currentSize, zoomDuration);
-        vertEdge = Camera.main.orthographicSize;
-        horizEdge = Camera.main.orthographicSize * Camera.main.aspect;
+        float zoomVertEdge = Camera.main.orthographicSize;
+        float zoomHorizEdge = Camera.main.orthographicSize * Camera.main.aspect;
+        diagonal = Mathf.Sqrt(zoomVertEdge * zoomVertEdge + zoomHorizEdge * zoomHorizEdge);
         UpdateScreenBounds(thisBox);
     }
 
@@ -223,22 +238,6 @@ public class CameraBehavior : MonoBehaviour
     {
         zoomOut = false;
         unZoom = true;
-    }
-
-    public void Rotate()
-    {
-        RotateBounds();
-    }
-
-    private void RotateBounds()
-    {
-        Bounds rotatedBounds = new Bounds();
-        rotatedBounds.xMin = bounds.yMin;
-        rotatedBounds.xMax = bounds.yMax;
-        rotatedBounds.yMin = bounds.xMax;
-        rotatedBounds.yMax = bounds.xMax;
-
-        bounds = rotatedBounds;
     }
 
     public struct Bounds

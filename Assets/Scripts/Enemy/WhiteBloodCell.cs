@@ -95,7 +95,7 @@ public class WhiteBloodCell : MonoBehaviour
             anim.SetBool("unbonk", false);
             gameManager.GetComponent<GameManager>().Rotate90();
             if (pointIndex < patrolPoints.Length - 1)  pointIndex++;
-            Debug.Log(pointIndex);
+            // Debug.Log(pointIndex);
             bonked = true;
 
             FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 200));
