@@ -21,8 +21,6 @@ public class BossDrip : MonoBehaviour
     {
         drip();
 
-
-
     }
 
     void drip()
@@ -38,11 +36,11 @@ public class BossDrip : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   /* private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Latchable"))
         {
-            splat();
+            Destroy(this);
         }
-    }
+    }*/
 }

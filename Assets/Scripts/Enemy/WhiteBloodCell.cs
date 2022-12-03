@@ -24,7 +24,7 @@ public class WhiteBloodCell : MonoBehaviour
     {
         cam = Camera.main;
         gameManager = GameObject.Find("GameManager");
-        //pointIndex = patrolPoints.Length - 1;
+        pointIndex = patrolPoints.Length - 2;
     }
 
     // Update is called once per frame
