@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public static AudioManager instance;
+    [SerializeField] private float bossMusicStartTime = 19;
+
 
     // Use this for initialization
     void Awake()
@@ -57,6 +59,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
         if (!s.source.isPlaying) {
+            if (name == "boss") {
+                s.source.time = bossMusicStartTime;
+            }
             s.source.Play();
         }
     }

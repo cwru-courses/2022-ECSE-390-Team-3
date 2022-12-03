@@ -83,6 +83,8 @@ public class WhiteBloodCell : MonoBehaviour
         {
             // CameraBehavior CB = cam.GetComponent<CameraBehavior>();
             // CB.stopCam = true;
+            cam.GetComponent<bossMusic>().startBossMusic();
+
             sr.material = flash;
             StartCoroutine(delay(0.2f));
 
