@@ -26,7 +26,7 @@ public class WhiteBloodCell : MonoBehaviour
         cam = Camera.main;
         CB = cam.GetComponent<CameraBehavior>();
         gameManager = GameObject.Find("GameManager");
-        pointIndex = patrolPoints.Length - 2;
+        //pointIndex = patrolPoints.Length - 2;
     }
 
     // Update is called once per frame
@@ -78,7 +78,7 @@ public class WhiteBloodCell : MonoBehaviour
             }
             else
             {
-                //StartCoroutine(rotateDelay(0.7f));
+                StartCoroutine(rotateDelay(0.7f));
                 if (pointIndex < patrolPoints.Length - 1) pointIndex++;
                 // Debug.Log(pointIndex);
                 bonked = true;
