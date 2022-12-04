@@ -66,7 +66,7 @@ public class transition : MonoBehaviour
 
             }
 
-            if(distance > 25f)
+            if(distance > 18f)
             {
                 inLevel = false;
             }

@@ -18,6 +18,7 @@ public class WhiteBloodCell : MonoBehaviour
     Camera cam;
     private float bossHitPauseTime = 0.125f;
     private CameraBehavior CB;
+    public bool isFinal;
 
 
 
@@ -60,45 +61,59 @@ public class WhiteBloodCell : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle"))
         {
-           
-            sr.material = flash;
-            StartCoroutine(flashDelay(0.2f));
 
-            anim.SetBool("bonked", true);
-            anim.SetBool("unbonk", false);
+            harmed();
 
             if (patrolPoints.Length - 1 == pointIndex)
             {
-                CB.stopCam = true;
-                anim.SetBool("dead", true);
-                StartCoroutine(bossDrip(2.75f));
-                StartCoroutine(unfreezeCamera(5f));
-
-
-                gameManager.GetComponent<GameManager>().OnKeyGet(null, door);
+                dead();
             }
             else
             {
-                StartCoroutine(rotateDelay(0.7f));
+                if (isFinal)
+                {
+                    StartCoroutine(rotateDelay(0.7f));
+                    
+                }
+                else
+                {
+                    Debug.Log("rgrg");
+                    CB.stopCam = true;
+                    //unfreezeCamera(3f);
+
+                }
+
                 if (pointIndex < patrolPoints.Length - 1) pointIndex++;
-                // Debug.Log(pointIndex);
                 bonked = true;
 
             }
-
-
-
 
             if (pointIndex == 1) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 200));
             else if (pointIndex == 2) FindObjectOfType<Player>().bonkedBoss(new Vector2(200, 0));
             else if (pointIndex == 3) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -200));
             else if (pointIndex == 4) FindObjectOfType<Player>().bonkedBoss(new Vector2(-200, 0));
             else if (pointIndex == 5) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -200));
-            //else FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -100));
             collision.gameObject.GetComponentInParent<Player>();
 
         }
 
+    }
+
+    void harmed()
+    {
+        sr.material = flash;
+        StartCoroutine(flashDelay(0.2f));
+        anim.SetBool("bonked", true);
+        anim.SetBool("unbonk", false);
+    }
+
+    void dead()
+    {
+        CB.stopCam = true;
+        anim.SetBool("dead", true);
+        StartCoroutine(bossDrip(2.75f));
+        StartCoroutine(unfreezeCamera(5f));
+        gameManager.GetComponent<GameManager>().OnKeyGet(null, door);
     }
 
     void swim()
@@ -170,10 +185,7 @@ public class WhiteBloodCell : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         CB.stopCam = false;
-      
-
-
-
+    
     }
     }
 
