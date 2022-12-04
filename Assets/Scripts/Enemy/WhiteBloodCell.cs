@@ -14,6 +14,7 @@ public class WhiteBloodCell : MonoBehaviour
     public Material spriteDefault;
     public GameObject door;
     public GameObject bossDripPrefab;
+    public GameObject[] organs;
     Camera cam;
     private float bossHitPauseTime = 0.125f;
     private CameraBehavior CB;
@@ -88,8 +89,12 @@ public class WhiteBloodCell : MonoBehaviour
 
 
 
-
-            FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 200));
+            if (pointIndex == 1) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 200));
+            else if (pointIndex == 2) FindObjectOfType<Player>().bonkedBoss(new Vector2(200, 0));
+            else if (pointIndex == 3) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -200));
+            else if (pointIndex == 4) FindObjectOfType<Player>().bonkedBoss(new Vector2(-200, 0));
+            else if (pointIndex == 5) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -200));
+            //else FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -100));
             collision.gameObject.GetComponentInParent<Player>();
 
         }
@@ -154,12 +159,19 @@ public class WhiteBloodCell : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Instantiate(bossDripPrefab, new Vector3(this.transform.position.x, this.transform.position.y - 5, this.transform.position.z), Quaternion.identity);
+        GetComponent<Renderer>().enabled = false;
+        Instantiate(organs[0], this.transform.position, Quaternion.identity);
+        Instantiate(organs[1], this.transform.position, Quaternion.identity);
+        Instantiate(organs[2], this.transform.position, Quaternion.identity);
+      
     }
 
     IEnumerator unfreezeCamera(float time)
     {
         yield return new WaitForSeconds(time);
         CB.stopCam = false;
+      
+
 
 
     }
