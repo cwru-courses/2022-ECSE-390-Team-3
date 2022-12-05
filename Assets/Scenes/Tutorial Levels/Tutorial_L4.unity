@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1072,6 +1072,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 0}
   ConfirmMenuUI: {fileID: 0}
   OptionsMenuUI: {fileID: 398834502}
+  AM: {fileID: 0}
 --- !u!114 &398834505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &470208191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,6 +1392,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &493386933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,6 +2077,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &639991784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2665,6 +2669,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &996997660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2694,10 +2699,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2990,6 +2995,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &1084252110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144776,6 +144782,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &1293746120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144994,6 +145001,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &1339359216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145238,6 +145246,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 1362334861}
   ConfirmMenuUI: {fileID: 0}
   OptionsMenuUI: {fileID: 0}
+  AM: {fileID: 0}
 --- !u!114 &1362334864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146276,6 +146285,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &1723494274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146466,6 +146476,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &1791141044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146789,6 +146800,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 1847939434}
   ConfirmMenuUI: {fileID: 0}
   OptionsMenuUI: {fileID: 0}
+  AM: {fileID: 0}
 --- !u!114 &1847939437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147720,6 +147732,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 2085016760}
   ConfirmMenuUI: {fileID: 1723494272}
   OptionsMenuUI: {fileID: 1791141042}
+  AM: {fileID: 0}
 --- !u!114 &2085016762
 MonoBehaviour:
   m_ObjectHideFlags: 0
