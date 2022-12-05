@@ -8,9 +8,11 @@ public class FadeControl : MonoBehaviour
     public GameObject fadeScreen;
     public Animator anim;
     public string NextScene = "";
+    public AudioManager AM;
 
     public void Start()
     {
+        AM = FindObjectOfType<AudioManager>();        
         fadeScreen.SetActive(true);
         anim.SetBool("FadeIn?", true);
         anim.SetBool("FadeOut?", false);
@@ -18,6 +20,7 @@ public class FadeControl : MonoBehaviour
 
     public void ChangeScene()
     {
+        AM.Play("uiClick");
         anim.SetBool("FadeOut?", true);
         anim.SetBool("FadeIn?", false);
         Debug.Log("Loading" + NextScene);
