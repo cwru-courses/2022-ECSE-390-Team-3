@@ -28,7 +28,11 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (frozen) return;
+        if (frozen)
+        {
+            StopAllCoroutines();
+            return;
+        }
 
         Vector3 scale = new Vector3(1.5f, 1.5f, 1);
         transform.localScale = scale;
