@@ -16,6 +16,7 @@ public class ScrollingText : MonoBehaviour
     private bool notStarted = true;
     private int flip = -1;
     public string nextScene = "Main Menu";
+    private bool canSkip = true;
 
     private int index;
 
@@ -29,7 +30,7 @@ public class ScrollingText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && canSkip == true)
         {
             endCutscene();
         }
@@ -93,6 +94,7 @@ public class ScrollingText : MonoBehaviour
 
     void endCutscene()
     {
+        canSkip = false;
         SceneController.LoadSpecificScene(nextScene);
     }
 
