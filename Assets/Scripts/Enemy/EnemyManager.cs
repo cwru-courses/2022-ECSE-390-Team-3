@@ -23,6 +23,11 @@ public class EnemyManager : MonoBehaviour
             if(enemy.GetComponentInChildren<EnemyAI>() != null) enemy.GetComponentInChildren<EnemyAI>().SetFreeze(frozen);
             if (enemy.GetComponentInChildren<EnemyProjectile>() != null) enemy.GetComponentInChildren<EnemyProjectile>().SetFreeze(frozen);
         }
+
+        foreach(Bullet bullet in FindObjectsOfType<Bullet>())
+        {
+            Destroy(bullet.gameObject);
+        }
     }
 
     public void Reset()
