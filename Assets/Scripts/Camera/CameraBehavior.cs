@@ -63,6 +63,7 @@ public class CameraBehavior : MonoBehaviour
         start = true;
         bounds = new Bounds();
         locked = true;
+        transitioning = false;
 
         // shakeTimer = shakeDuration;
 
@@ -72,6 +73,8 @@ public class CameraBehavior : MonoBehaviour
         initialHorizEdge = horizEdge = Camera.main.orthographicSize * Camera.main.aspect; // multiply by aspect ratio
 
         diagonal = Mathf.Sqrt(vertEdge * vertEdge + horizEdge * horizEdge);
+
+        proxyPosition = targetPosition = transform.position = target.position;
     }
 
     private void Update()
@@ -96,7 +99,6 @@ public class CameraBehavior : MonoBehaviour
     }
     void LateUpdate()
     {
-
         lastPosition = transform.position;
 
         if (stopCam) {
@@ -149,7 +151,7 @@ public class CameraBehavior : MonoBehaviour
 
     public void UpdateScreen()
     {
-        if (start) return;
+        if (start) { transform.position = target.position; return; }
         transitionProxyPosition = lastPosition;
         transitioning = true;
     }
