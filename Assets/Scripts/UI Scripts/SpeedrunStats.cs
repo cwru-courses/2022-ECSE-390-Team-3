@@ -145,6 +145,7 @@ public class SpeedrunStats : MonoBehaviour
 
     private void Update()
     {
+        /* DISABLED
         if (Input.GetKeyDown(KeyCode.Tab) && statsOpen == false)
         {
             statsOpen = true;
@@ -162,6 +163,7 @@ public class SpeedrunStats : MonoBehaviour
         {
             closeStats();
         }
+        */
     }
 
     private void openStats()
