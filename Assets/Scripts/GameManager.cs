@@ -31,13 +31,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
-        if(AM != null) {
+        if (AM != null)
+        {
             AM.Stop("briansTheme");
             AM.Play("puzzlingTheme");
         }
         EM = FindObjectOfType<EnemyManager>();
         cam = Camera.main;
-        player = GameObject.Find("Player").GetComponent<Player>();       
+        player = GameObject.Find("Player").GetComponent<Player>();
         controller = player.GetComponentInChildren<Controller2D>();
         winds = new List<Wind>();
     }
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         if (respawning || frozen) return;
 
-        if(winds.Count != 0)
+        if (winds.Count != 0)
         {
             Vector2 targetVelocity = Vector2.zero;
 
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         player.ApplyWind(windVelocity.normalized, windVelocity.magnitude);
 
-        if(umbrellaOpen)
+        if (umbrellaOpen)
         {
             player.ApplyUmbrella(glideVelocity);
         }
@@ -172,7 +173,7 @@ public class GameManager : MonoBehaviour
     {
         string windNames = "winds: ";
 
-        foreach(Wind wind in winds)
+        foreach (Wind wind in winds)
         {
             windNames = windNames + wind.name + " ";
         }
@@ -192,7 +193,7 @@ public class GameManager : MonoBehaviour
         float targetRotation = currentRotation + 90f;
 
 
-        while(currentRotation < targetRotation)
+        while (currentRotation < targetRotation)
         {
             cam.transform.Rotate(0f, 0f, 90f * Time.deltaTime);
             currentRotation += 90f * Time.deltaTime;
@@ -209,7 +210,7 @@ public class GameManager : MonoBehaviour
     {
         // yeah no we're not refactoring everything we're going to pass a shit ton of references
 
-        if(key != null) Destroy(key);
+        if (key != null) Destroy(key);
 
         // fuck this is ugly
         player.enabled = false;
@@ -219,31 +220,39 @@ public class GameManager : MonoBehaviour
 
         // fuck why did i think requiring the camera to use transform was a good idea
         CB.ToggleScreenLock(false);
-        CB.SetTarget(door.transform);
+        if (door != null)
+        {
+            Debug.Log("hh");
+            CB.SetTarget(door.transform);
+            while (((Vector2)(cam.transform.position - door.transform.position)).magnitude > 0.05f) yield return null;
 
-        while(((Vector2)(cam.transform.position - door.transform.position)).magnitude > 0.05f) yield return null;
-        if(AM != null){
-            AM.Play("doorOpen");
+
+            // this is how long the camera stares at the door
+            yield return new WaitForSeconds(1f);
+
+            // here is where you can play a door animation or something
+            door.GetComponentInChildren<SpriteRenderer>().enabled = false;
         }
-        // this is how long the camera stares at the door
-        yield return new WaitForSeconds(1f);
 
-        // here is where you can play a door animation or something
-        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        float pause;
+        if (door == null) pause = 4f;
+        else pause = 2f;
+
 
         // this is how long the camera stares at the place where there is no more door
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(pause);
+
 
         CB.SetTarget(player.GetComponentInParent<Transform>());
 
-        while (((Vector2)(cam.transform.position - player.transform.position)).magnitude > 0.05f) yield return null;
+        if (door != null) while (((Vector2)(cam.transform.position - player.transform.position)).magnitude > 0.05f) yield return null;
 
         CB.ToggleScreenLock(true);
 
         player.enabled = true;
         if (EM != null) EM.SetFreeze(false);
 
-        Destroy(door);
+        if (door != null) Destroy(door);
 
         yield return null;
     }

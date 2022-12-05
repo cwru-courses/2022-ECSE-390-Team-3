@@ -11,6 +11,8 @@ TagManager:
   - Screen
   - SpawnPoint
   - Enemy
+  - bossDrip
+  - Explosion
   layers:
   - Default
   - TransparentFX

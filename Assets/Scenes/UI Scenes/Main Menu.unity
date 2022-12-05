@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 1514615656}
   anim: {fileID: 1514615658}
-  NextScene: Intro
+  NextScene: Intro Video
   AM: {fileID: 0}
 --- !u!1 &443428781
 GameObject:
@@ -870,6 +870,18 @@ MonoBehaviour:
     loop: 0
   - name: uiClick
     clip: {fileID: 8300000, guid: e7ff51bfe65aa694780cca4c44f6510f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: pipeIn
+    clip: {fileID: 8300000, guid: 5a05643571d0a32448f633f7df8a0474, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: pipeOut
+    clip: {fileID: 8300000, guid: 9754d3313bc59e74fa954386227599ca, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

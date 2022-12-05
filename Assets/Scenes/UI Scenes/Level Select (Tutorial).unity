@@ -212,6 +212,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Level Select (Boss)
+  AM: {fileID: 0}
 --- !u!114 &88819913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +902,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Level Select (Bloodstream)
+  AM: {fileID: 0}
 --- !u!114 &430085297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,6 +1355,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Tutorial_L2
+  AM: {fileID: 0}
 --- !u!114 &777210548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,8 +1401,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 777210547}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: 
+        m_TargetAssemblyTypeName: FadeControl, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1502,6 +1505,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Level Select (Main)
+  AM: {fileID: 0}
 --- !u!114 &780400537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,6 +2278,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Tutorial_L1
+  AM: {fileID: 0}
 --- !u!1 &1233200972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2413,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Level Select (Puzzle)
+  AM: {fileID: 0}
 --- !u!114 &1273729385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2917,6 +2923,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Tutorial_L3
+  AM: {fileID: 0}
 --- !u!1 &1753759918
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,3 +3553,4 @@ MonoBehaviour:
   fadeScreen: {fileID: 843191258}
   anim: {fileID: 843191260}
   NextScene: Tutorial_L4
+  AM: {fileID: 0}
