@@ -9,7 +9,9 @@ public class transition : MonoBehaviour
     private bool inLevel;
     public float openDist; 
     public AudioManager AM;
-  
+    public GameObject Pipe;
+    private int pastPipeMouth = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +24,16 @@ public class transition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, transform.position);
-
+        float distance;
+        if (Pipe == null)
+        {
+            distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, transform.position);
+        }
+        else
+        {
+            distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, Pipe.transform.position);
+        }
+            
         if (isExit)
         {
            
@@ -32,7 +42,7 @@ public class transition : MonoBehaviour
                 anim.SetBool("playerNear", true);
             }
 
-            if (distance < 8.5f)
+            if (distance < 10f)
             {
                 anim.SetBool("playerTouch", true);
                 if (AM != null) AM.Play("pipeIn");        
@@ -47,7 +57,11 @@ public class transition : MonoBehaviour
 
         else
         {
-            if (distance < 2.75f)
+            if (distance < 3.4f)
+            {
+                pastPipeMouth = 1;
+            }
+            if (distance > 3.5f && pastPipeMouth == 1)
             {
                 Debug.Log(distance);
                 transform.position = new Vector3(transform.position.x, transform.position.y, 1);
