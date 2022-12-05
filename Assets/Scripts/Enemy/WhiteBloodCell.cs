@@ -21,6 +21,7 @@ public class WhiteBloodCell : MonoBehaviour
     public GameObject transition;
     public GameObject angry;
     public AudioManager AM;
+    public GameObject[] organs;
 
 
 
@@ -30,7 +31,7 @@ public class WhiteBloodCell : MonoBehaviour
         cam = Camera.main;
         gameManager = GameObject.Find("GameManager");
         CB = cam.GetComponent<CameraBehavior>();
-        //pointIndex = patrolPoints.Length - 2;
+        pointIndex = patrolPoints.Length - 2;
     }
 
     // Update is called once per frame
@@ -82,7 +83,7 @@ public class WhiteBloodCell : MonoBehaviour
                 {
                     CB.stopCam = true;
                     gameManager.GetComponent<GameManager>().OnKeyGet(null, null);
-                    if (transition != null) transition.transform.position = new Vector3(transition.transform.position.x, transition.transform.position.y, 0);
+                    if (transition != null) transition.transform.position = new Vector3(transition.transform.position.x, transition.transform.position.y, -2);
                     Instantiate(angry, new Vector3(this.transform.position.x + 2, this.transform.position.y + 4, this.transform.position.z + 1), Quaternion.identity);
                     StartCoroutine(moveTube(1.8f));
                     StartCoroutine(removeAngry(0.75f));
@@ -95,7 +96,11 @@ public class WhiteBloodCell : MonoBehaviour
 
             }
 
-            FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 200));
+            if (pointIndex == 1) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, 200));
+            else if (pointIndex == 2) FindObjectOfType<Player>().bonkedBoss(new Vector2(200, 0));
+            else if (pointIndex == 3) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -200));
+            else if (pointIndex == 4) FindObjectOfType<Player>().bonkedBoss(new Vector2(-200, 0));
+            else if (pointIndex == 5) FindObjectOfType<Player>().bonkedBoss(new Vector2(0, -200));
             collision.gameObject.GetComponentInParent<Player>();
 
         }
@@ -115,6 +120,7 @@ public class WhiteBloodCell : MonoBehaviour
         CB.stopCam = true;
         anim.SetBool("dead", true);
         StartCoroutine(bossDrip(2.75f));
+        StartCoroutine(unfreezeCamera(5f));
         gameManager.GetComponent<GameManager>().OnKeyGet(null, door);
     }
 
@@ -174,6 +180,10 @@ public class WhiteBloodCell : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Instantiate(bossDripPrefab, new Vector3(this.transform.position.x, this.transform.position.y - 5, this.transform.position.z), Quaternion.identity);
+        GetComponent<Renderer>().enabled = false;
+        Instantiate(organs[0], this.transform.position, Quaternion.identity);
+        Instantiate(organs[1], this.transform.position, Quaternion.identity);
+        Instantiate(organs[2], this.transform.position, Quaternion.identity);
     }
 
     IEnumerator moveTube(float time)
@@ -192,6 +202,13 @@ public class WhiteBloodCell : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(GameObject.FindWithTag("Angry"));
+    }
+
+    IEnumerator unfreezeCamera(float time)
+    {
+        yield return new WaitForSeconds(time);
+        CB.stopCam = false;
+
     }
 
 

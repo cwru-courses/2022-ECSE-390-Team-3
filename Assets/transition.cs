@@ -35,7 +35,7 @@ public class transition : MonoBehaviour
             if (distance < 8.5f)
             {
                 anim.SetBool("playerTouch", true);
-                AM.Play("pipeIn");        
+                if (AM != null) AM.Play("pipeIn");        
             }
 
             else
@@ -58,7 +58,7 @@ public class transition : MonoBehaviour
             {
                 anim.SetBool("playerNear", true);
                 anim.SetBool("playerTouch", true);
-                AM.Play("pipeOut"); 
+                if(AM != null) AM.Play("pipeOut"); 
                 inLevel = true;
             }
 

@@ -95,7 +95,7 @@ public class Umbrella : MonoBehaviour
 
             if (angle < 90f)
             {
-                AM.Play("dash");
+                if (AM != null) AM.Play("dash");
                 float percentage = wave.GetPositionPercentage(transform.position);
                 float impulse = wave.GetMaxImpulse();
 
