@@ -16,6 +16,9 @@ public class ScreenChanger : MonoBehaviour
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        CameraBehavior cam = Camera.main.GetComponent<CameraBehavior>();
+        if (GM.transform.GetChild(2).GetChild(0).GetComponentInChildren<BoxCollider2D>() != null) cam.UpdateScreenBounds(GM.transform.GetChild(2).GetChild(0).GetComponentInChildren<BoxCollider2D>());
+        cam.UpdateScreen();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
