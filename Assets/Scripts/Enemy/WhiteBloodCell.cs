@@ -22,6 +22,7 @@ public class WhiteBloodCell : MonoBehaviour
     public GameObject angry;
     public AudioManager AM;
     public GameObject[] organs;
+    public GameObject explosion;
 
 
 
@@ -31,7 +32,7 @@ public class WhiteBloodCell : MonoBehaviour
         cam = Camera.main;
         gameManager = GameObject.Find("GameManager");
         CB = cam.GetComponent<CameraBehavior>();
-        //pointIndex = patrolPoints.Length - 2;
+        pointIndex = patrolPoints.Length - 2;
     }
 
     // Update is called once per frame
@@ -184,6 +185,8 @@ public class WhiteBloodCell : MonoBehaviour
         Instantiate(organs[0], this.transform.position, Quaternion.identity);
         Instantiate(organs[1], this.transform.position, Quaternion.identity);
         Instantiate(organs[2], this.transform.position, Quaternion.identity);
+        Instantiate(explosion, this.transform.position, Quaternion.identity);
+        StartCoroutine(removeExplosion(0.667f));
     }
 
     IEnumerator moveTube(float time)
@@ -210,6 +213,13 @@ public class WhiteBloodCell : MonoBehaviour
         CB.stopCam = false;
 
     }
+    IEnumerator removeExplosion(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(GameObject.FindWithTag("Explosion"));
+
+    }
+
 
 
 
