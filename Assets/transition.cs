@@ -9,7 +9,6 @@ public class transition : MonoBehaviour
     private bool inLevel;
     public float openDist; 
     public AudioManager AM;
-    public GameObject Pipe;
     private int pastPipeMouth = 0;
 
 
@@ -24,16 +23,8 @@ public class transition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance;
-        if (Pipe == null)
-        {
-            distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, transform.position);
-        }
-        else
-        {
-            distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, Pipe.transform.position);
-        }
-            
+        float distance = Vector3.Distance(FindObjectOfType<Player>().transform.position, transform.position);
+
         if (isExit)
         {
            
