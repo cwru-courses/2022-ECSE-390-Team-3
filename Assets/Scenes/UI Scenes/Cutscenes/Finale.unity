@@ -465,7 +465,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: There will be plot here
+  m_Text: Outro
 --- !u!222 &824701537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -643,7 +643,12 @@ MonoBehaviour:
   storyText: {fileID: 824701536}
   continueText: {fileID: 1172533293}
   lines:
-  - The End
-  - For Now...
+  - Subject #0451 Was A Success
+  - Begin Replicating It's Design For Mass Production
+  - This Virus Is The Tool To Manage An Entire Population
+  - We Can Now Begin Ushering In A New Era
+  - And We Will Finally Have Total Control
+  - Congratulations Subject #0451
+  - Mission Accomplished
   textSpeed: 0.125
   nextScene: Credits

@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 375, y: 0.0096436}
+  m_AnchoredPosition: {x: 375, y: 0.009765625}
   m_SizeDelta: {x: 750, y: 10000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316676796
@@ -476,9 +476,21 @@ MonoBehaviour:
 
 
 
+
+
+
+
+
+
+
+
     Alona
 
     Henderson
+
+
+
+
 
 
 
@@ -491,25 +503,21 @@ MonoBehaviour:
 
     Doescher
 
-    
 
     Andrew
 
     Gross
 
-    
 
     Mikayla
 
     Heinrich-Wong
 
-    
 
     Kasper
 
     Latawiec
 
-    
 
     Brian
 
@@ -560,8 +568,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6413}
-  m_SizeDelta: {x: 1500, y: 10000}
+  m_AnchoredPosition: {x: 0, y: -6066.952}
+  m_SizeDelta: {x: 1500, y: 10692.096}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971338825
 MonoBehaviour:
@@ -596,51 +604,54 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Thank You For Checking Out
+  m_Text: 'CREDITS TEMP Broken
+
+
+
+    Thank You For Checking Out
 
     DATA STREAM
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    Group
-    3
 
-    
 
-    
+
+
+    CSDS
+    390
+
+    Group 3
+
+
+
+
 
     Cleveland Institute of Art
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    Case
-    Western Reserve University
 
-    
 
-    
 
-    
 
-    
+    Case Western
+    Reserve University
+
+
+
+
+
+
+
+
 
 '
 --- !u!222 &971338826
@@ -757,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798646578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1510, z: 0}
+  m_LocalPosition: {x: 0, y: 750, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 971338824}
@@ -817,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: 0.0048828}
+  m_AnchoredPosition: {x: -375, y: 0.0068359375}
   m_SizeDelta: {x: 750, y: 10000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871984557
@@ -853,7 +864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\n\nIan \nMcClure\n\n\n\n\n\n\n\nHaowei\r\nChen\r\n\r\nLiam\r\nGongola\r\n\r\nXiaofan\r\nHe\r\n\r\nBrandon\r\nKedson\r\n\r\nYiran\r\nLu"
+  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIan \nMcClure\n\n\n\n\n\n\n\n\n\n\n\nHaowei\r\nChen\r\n\r\nLiam\r\nGongola\r\n\r\nXiaofan\r\nHe\r\n\r\nBrandon\r\nKedson\r\n\r\nYiran\r\nLu"
 --- !u!222 &1871984558
 CanvasRenderer:
   m_ObjectHideFlags: 0

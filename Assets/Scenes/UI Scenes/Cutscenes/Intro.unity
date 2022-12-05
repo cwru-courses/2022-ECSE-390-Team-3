@@ -442,7 +442,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: There will be plot here
+  m_Text: Intro
 --- !u!222 &824701537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -620,8 +620,14 @@ MonoBehaviour:
   storyText: {fileID: 824701536}
   continueText: {fileID: 1172533293}
   lines:
-  - Infiltrate the Cyborg
-  - Find The Brain
-  - Infect It
+  - Subject #0451
+  - You Represent The Next Step In Virus Development
+  - The Perfect Mix Of Biology And Technology
+  - With A Data Payload Great Enough To Infect The Entire Host By Itself
+  - Giving Us Full Control Of The Host's Body And Mind
+  - The Body Will Try And Fight Back
+  - ' You Are Not Our First'
+  - It Is Unlikely That You Will Be The Last
+  - Commencing Test
   textSpeed: 0.125
   nextScene: Tutorial_L1
