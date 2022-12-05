@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,8 +426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: -4791.952}
-  m_SizeDelta: {x: 750, y: 10692.096}
+  m_AnchoredPosition: {x: -500, y: -7567.488}
+  m_SizeDelta: {x: 750, y: 16243.168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556626125
 MonoBehaviour:
@@ -561,7 +561,84 @@ MonoBehaviour:
 
     Xiaofan
 
-    He'
+    He
+
+
+
+
+
+
+    Aracelli
+    Doescher
+
+
+
+
+
+
+
+    Haowei
+
+    Chen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Xiofan
+
+    He
+
+
+    Yiran
+
+    Lu
+
+
+
+
+    Mikayla
+
+    Heinrich-Wong
+
+
+
+
+
+    Kasper
+
+    Latawiec
+
+
+    Liam
+
+    Gongola
+
+
+    Yiran
+
+    Lu
+
+
+    Xiofan
+
+    He
+
+
+
+
+    Tony
+
+    Calabro'
 --- !u!222 &556626126
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -688,8 +765,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1250, y: -4791.952}
-  m_SizeDelta: {x: 750, y: 10692.096}
+  m_AnchoredPosition: {x: -1250, y: -7567.488}
+  m_SizeDelta: {x: 750, y: 16243.168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940382938
 MonoBehaviour:
@@ -825,7 +902,79 @@ MonoBehaviour:
 
     Gross
 
-'
+
+
+
+
+
+    Brandon
+    Kedson
+
+
+
+
+
+
+
+    Brian
+
+    Xu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Brian
+
+    Xu
+
+
+    Haowei
+
+    Chen
+
+
+
+
+    Kasper
+
+    Latawiec
+
+
+
+
+
+    Aracelli
+    Doescher
+
+
+    Brandon Kedson
+
+
+    Brian
+
+    Xu
+
+
+    Andrew
+
+    Gross
+
+
+
+
+    Michael
+
+    Fu'
 --- !u!222 &940382939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -868,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -4791.952}
-  m_SizeDelta: {x: 1500, y: 10692.096}
+  m_AnchoredPosition: {x: -880, y: -7567.488}
+  m_SizeDelta: {x: 1500, y: 16243.168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971338825
 MonoBehaviour:
@@ -907,8 +1056,10 @@ MonoBehaviour:
   m_Text: "\r\n\r\n\r\nThank You \nFor Checking Out\r\nDATA STREAM\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nECSE
     390\r\nGroup 3\r\n\r\n\r\n\r\nProject Lead\r\n\r\n\n\nProject Manager\r\n\r\n\n\nCode
     Manager\r\n\r\n\n\nBackgrounds, Sprites, and Animations\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacter
-    Design and Implementation\r\n\r\n\n\n\n\n\n\n\n\nEnemy Design\n\n\n\n\n\n\n\n\nLevel
-    Design"
+    Design and Implementation\r\n\r\n\n\n\n\n\n\n\n\nEnemy Design\n\n\n\n\n\n\n\n\n\nLevel
+    Design\n\n\n\n\n\n\n\n\n\n\n\nMusic and Sound\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUI
+    and UX\n\n\n\nAdditional Mechanics and Programming\n\n\n\n\n\n\n\n\n\n\nSPECIAL
+    THANKS"
 --- !u!222 &971338826
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -951,8 +1102,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -4791.952}
-  m_SizeDelta: {x: 1500, y: 10692.096}
+  m_AnchoredPosition: {x: -880, y: -7567.488}
+  m_SizeDelta: {x: 1500, y: 16243.168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105437847
 MonoBehaviour:
@@ -1093,7 +1244,30 @@ MonoBehaviour:
 
 
 
-    Design and Implementation'
+
+
+
+
+    Design and
+    Implementation
+
+
+
+
+
+
+
+    Lead Designer
+
+
+
+
+    Music
+
+
+
+
+    Sound Design'
 --- !u!222 &1105437848
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1217,8 +1391,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -4791.952}
-  m_SizeDelta: {x: 1500, y: 10692.096}
+  m_AnchoredPosition: {x: -880, y: -7567.488}
+  m_SizeDelta: {x: 1500, y: 16243.168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502848356
 MonoBehaviour:
@@ -1347,7 +1521,79 @@ MonoBehaviour:
 
     Liam
 
-    Gongoal'
+    Gongoala
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Mikayla
+
+    Heinrich-Wong
+
+
+
+
+
+
+
+
+
+
+
+    Andrew
+    Gross
+
+
+
+
+    Aracelli Doescher
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Luis Mesias
+    Flores'
 --- !u!222 &1502848357
 CanvasRenderer:
   m_ObjectHideFlags: 0
