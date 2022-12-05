@@ -855,10 +855,16 @@ MonoBehaviour:
     loop: 0
   - name: boss
     clip: {fileID: 8300000, guid: 05b0dbe5d3bfc9e4caca81f2ca777359, type: 3}
-    volume: 0.842
+    volume: 0.705
     pitch: 1
     source: {fileID: 0}
     loop: 1
+  - name: bonk
+    clip: {fileID: 8300000, guid: c49cbd569f4a6cd428de80435ab2a490, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &748203655
 Transform:
   m_ObjectHideFlags: 0

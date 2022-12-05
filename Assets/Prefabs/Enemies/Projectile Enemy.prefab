@@ -148,7 +148,6 @@ MonoBehaviour:
   fireTime: 0.5
   range: 40
   shootSpeed: 7
-  anim: {fileID: 6229985043575722811}
 --- !u!114 &5367190704794666734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +205,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a9dd41f8b2532fe49925985d02ca31a2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.565
   m_Pitch: 1
   Loop: 0
   Mute: 0

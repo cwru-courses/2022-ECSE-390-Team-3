@@ -19,12 +19,13 @@ public class WhiteBloodCell : MonoBehaviour
     private float bossHitPauseTime = 0.125f;
     private CameraBehavior CB;
     public bool isFinal;
-
+    public AudioManager AM;
 
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        AM = FindObjectOfType<AudioManager>();
         cam = Camera.main;
         CB = cam.GetComponent<CameraBehavior>();
         gameManager = GameObject.Find("GameManager");
@@ -61,7 +62,9 @@ public class WhiteBloodCell : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle"))
         {
-
+            if(AM != null){
+                AM.Play("bonk");
+            }
             harmed();
 
             if (patrolPoints.Length - 1 == pointIndex)

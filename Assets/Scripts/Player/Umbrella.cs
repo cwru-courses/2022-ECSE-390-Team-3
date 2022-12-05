@@ -62,8 +62,6 @@ public class Umbrella : MonoBehaviour
                 jumpTimer = 0f;
             }
             playerAnim.SetBool("openUmbrella", true);
-            AudioSource latchSound = soundSources.transform.GetChild(1).gameObject.GetComponent<AudioSource>();
-            latchSound.PlayOneShot(latchSound.clip);
             // Debug.Log("open");
         }
         else if (Input.GetMouseButtonUp(0))
@@ -97,7 +95,7 @@ public class Umbrella : MonoBehaviour
 
             if (angle < 90f)
             {
-                //AM.Play("dash");
+                AM.Play("dash");
                 float percentage = wave.GetPositionPercentage(transform.position);
                 float impulse = wave.GetMaxImpulse();
 

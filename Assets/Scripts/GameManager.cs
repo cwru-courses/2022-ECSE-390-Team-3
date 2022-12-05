@@ -222,7 +222,9 @@ public class GameManager : MonoBehaviour
         CB.SetTarget(door.transform);
 
         while(((Vector2)(cam.transform.position - door.transform.position)).magnitude > 0.05f) yield return null;
-
+        if(AM != null){
+            AM.Play("doorOpen");
+        }
         // this is how long the camera stares at the door
         yield return new WaitForSeconds(1f);
 

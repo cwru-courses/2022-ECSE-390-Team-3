@@ -10,8 +10,10 @@ public class MenuMusic : MonoBehaviour
     {
         AM = FindObjectOfType<AudioManager>();
         if(AM != null){
-            AM.Stop("all");
-            AM.Play("briansTheme");
+            if(!AM.sounds[2].source.isPlaying){
+                AM.Stop("all");
+                AM.Play("briansTheme");
+            }
         }
     }
 
