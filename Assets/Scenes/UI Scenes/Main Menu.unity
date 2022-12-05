@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 1514615656}
   anim: {fileID: 1514615658}
-  NextScene: Intro
+  NextScene: Intro Video
   AM: {fileID: 0}
 --- !u!1 &443428781
 GameObject:
