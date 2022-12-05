@@ -29,6 +29,7 @@ public class WhiteBloodCell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AM = FindObjectOfType<AudioManager>();
         cam = Camera.main;
         gameManager = GameObject.Find("GameManager");
         CB = cam.GetComponent<CameraBehavior>();
