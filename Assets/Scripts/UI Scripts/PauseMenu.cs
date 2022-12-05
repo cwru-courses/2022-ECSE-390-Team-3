@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject ConfirmMenuUI;
     public GameObject OptionsMenuUI;
+    public AudioManager AM;
+
+    private void Start() {
+        AM = FindObjectOfType<AudioManager>();   
+    }
 
     void Update()
     {
@@ -27,6 +32,9 @@ public class PauseMenu : MonoBehaviour
 
     private void closeAll()
     {
+        if(AM != null){
+            AM.Play("uiClick");
+        }
         if (PauseMenuUI != null)
         {
             PauseMenuUI.SetActive(false);
