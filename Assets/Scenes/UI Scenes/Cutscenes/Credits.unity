@@ -550,7 +550,18 @@ MonoBehaviour:
     Latawiec
 
 
-'
+
+
+
+
+
+
+
+
+
+    Xiaofan
+
+    He'
 --- !u!222 &556626126
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -800,6 +811,20 @@ MonoBehaviour:
 
     He
 
+
+
+
+
+
+
+
+
+
+
+    Andrew
+
+    Gross
+
 '
 --- !u!222 &940382939
 CanvasRenderer:
@@ -882,7 +907,8 @@ MonoBehaviour:
   m_Text: "\r\n\r\n\r\nThank You \nFor Checking Out\r\nDATA STREAM\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nECSE
     390\r\nGroup 3\r\n\r\n\r\n\r\nProject Lead\r\n\r\n\n\nProject Manager\r\n\r\n\n\nCode
     Manager\r\n\r\n\n\nBackgrounds, Sprites, and Animations\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacter
-    Design and Implementation\r\n\r\n\n\n\n\n\n\n\n\nEnemy Design"
+    Design and Implementation\r\n\r\n\n\n\n\n\n\n\n\nEnemy Design\n\n\n\n\n\n\n\n\nLevel
+    Design"
 --- !u!222 &971338826
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1054,7 +1080,20 @@ MonoBehaviour:
 
 
 
-    Programmers'
+    Programmers
+
+
+
+
+
+
+
+    Lead Designers
+
+
+
+
+    Design and Implementation'
 --- !u!222 &1105437848
 CanvasRenderer:
   m_ObjectHideFlags: 0
