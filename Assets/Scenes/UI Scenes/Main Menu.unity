@@ -874,6 +874,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: pipeIn
+    clip: {fileID: 8300000, guid: 5a05643571d0a32448f633f7df8a0474, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: pipeOut
+    clip: {fileID: 8300000, guid: 9754d3313bc59e74fa954386227599ca, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &748203655
 Transform:
   m_ObjectHideFlags: 0

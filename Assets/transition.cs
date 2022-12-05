@@ -8,11 +8,13 @@ public class transition : MonoBehaviour
     public bool isExit;
     private bool inLevel;
     public float openDist; 
+    public AudioManager AM;
   
 
     // Start is called before the first frame update
     void Start()
     {
+        AM = FindObjectOfType<AudioManager>();        
         anim.SetBool("isExit", isExit);
 
     }
@@ -33,6 +35,7 @@ public class transition : MonoBehaviour
             if (distance < 8.5f)
             {
                 anim.SetBool("playerTouch", true);
+                AM.Play("pipeIn");        
             }
 
             else
@@ -55,6 +58,7 @@ public class transition : MonoBehaviour
             {
                 anim.SetBool("playerNear", true);
                 anim.SetBool("playerTouch", true);
+                AM.Play("pipeOut"); 
                 inLevel = true;
             }
 
