@@ -18,7 +18,7 @@ public class SceneController : MonoBehaviour
 
      public void Update()
      {
-          if(Input.GetKeyDown(KeyCode.Escape))
+          if(Input.GetKeyDown(KeyCode.Escape) && NextScene != "")
           {
                StopAllCoroutines();
                LoadScene();
