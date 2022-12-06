@@ -95,7 +95,6 @@ public class GreenEnemyAI : MonoBehaviour
             nextID += change;
         }
     }
-
     public void SetFreeze(bool _frozen)
     {
         frozen = _frozen;
