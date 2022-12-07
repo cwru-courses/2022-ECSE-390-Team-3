@@ -854,7 +854,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 1
   - name: bonk
-    clip: {fileID: 8300000, guid: 1cae423dae6ef2b47a99046d7f2561c3, type: 3}
+    clip: {fileID: 8300000, guid: cf0879e13bed08345ada8b72c5285f3e, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -878,7 +878,19 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: explosion
-    clip: {fileID: 8300000, guid: bc4bfd09989d03b45be8cfc57d1634df, type: 3}
+    clip: {fileID: 8300000, guid: 86cc5aae8cdaefa43b7b3d0bb8f90ffd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: whoosh
+    clip: {fileID: 8300000, guid: 9135c0ffe62f7904ab80956f1e376c4b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: angry
+    clip: {fileID: 8300000, guid: 09d1af5edc01adc469f1e5319c66250b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
