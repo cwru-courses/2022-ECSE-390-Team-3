@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -807,61 +807,61 @@ MonoBehaviour:
   sounds:
   - name: puzzlingTheme
     clip: {fileID: 8300000, guid: 490e51be40e87e74ebe1e5f3ae0eb418, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 1
   - name: alienBabbling
     clip: {fileID: 8300000, guid: 63c73367d105edc4eb45de77ef592058, type: 3}
-    volume: 0.25
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: briansTheme
     clip: {fileID: 8300000, guid: e89d1bb8f9dd9fa41839dbfce219d6e2, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 1
   - name: vyrusVibing
     clip: {fileID: 8300000, guid: 166986f7951dcad418bc27e556a29f2f, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: puzzleComplete
     clip: {fileID: 8300000, guid: de8f3f1dba26e4a44bfba1817c1f7c0c, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: doorOpen
     clip: {fileID: 8300000, guid: 652114ad84d7ab84081c24474022bb83, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: dash
     clip: {fileID: 8300000, guid: 9e1148a79d2b6df43bf36aa35e354b60, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: boss
     clip: {fileID: 8300000, guid: 05b0dbe5d3bfc9e4caca81f2ca777359, type: 3}
-    volume: 0.705
+    volume: 0.4935
     pitch: 1
     source: {fileID: 0}
     loop: 1
   - name: bonk
     clip: {fileID: 8300000, guid: c49cbd569f4a6cd428de80435ab2a490, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: uiClick
     clip: {fileID: 8300000, guid: e7ff51bfe65aa694780cca4c44f6510f, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
     loop: 0
