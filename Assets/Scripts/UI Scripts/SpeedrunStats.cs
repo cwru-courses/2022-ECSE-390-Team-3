@@ -206,7 +206,6 @@ public class SpeedrunStats : MonoBehaviour
                     break;
                 case "Outro Video":
                     BossLevelTime = timePlaying - PuzzleL2Time - PuzzleL1Time - BloodstreamL4Time - BloodstreamL3Time - BloodstreamL2Time - BloodstreamL1Time - TutorialL4Time - TutorialL3Time - TutorialL2Time - TutorialL1Time;
-                    totalTime = timePlaying;
                     break;
             }
         }
@@ -214,20 +213,20 @@ public class SpeedrunStats : MonoBehaviour
         {
             restarted = false;
         }
+    }
 
-
+    private void Update()
+    {
         if (finalTime != null)
         {
+            totalTime = timePlaying;
             finalTime.text = "Total Playtime" + "\n" + totalTime.ToString("mm':'ss'.'ff");
         }
         if (finalDeaths != null)
         {
             finalDeaths.text = "Total Deaths" + "\n" + totalDeaths;
         }
-    }
 
-    private void Update()
-    {
         if (Input.GetKeyDown(KeyCode.Tab) && statsOpen == false)
         {
             statsOpen = true;
@@ -420,7 +419,7 @@ public class SpeedrunStats : MonoBehaviour
             case "Puzzle_L2":
                 PuzzleL2Deaths++;
                 break;
-            case "Boss_Level":
+            case "Boss Level":
                 BossLevelDeaths++;
                 break;
             case "Finale":

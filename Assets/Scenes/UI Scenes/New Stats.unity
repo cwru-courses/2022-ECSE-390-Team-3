@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &60104342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -656,22 +656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d855a2b17648954fa5e1f9a58ce2a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tutorial_L1Time: {fileID: 874792468}
-  Tutorial_L2Time: {fileID: 322751948}
-  Tutorial_L3Time: {fileID: 377581583}
-  Tutorial_L4Time: {fileID: 1644663129}
-  Bloodstream_L1Time: {fileID: 1587138044}
-  Bloodstream_L2Time: {fileID: 2089948773}
-  Puzzle_L1Time: {fileID: 2000432329}
-  Bloodstream_L3Time: {fileID: 168181672}
-  Bloodstream_L4Time: {fileID: 877402827}
-  Puzzle_L2Time: {fileID: 1347906065}
-  Boss_LevelTime: {fileID: 1309498452}
   finalTime: {fileID: 1304714126}
   finalDeaths: {fileID: 222211683}
   currentLevel: Final Stats
-  timeCounter: {fileID: 0}
-  deathCounter: {fileID: 0}
 --- !u!114 &130755245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,8 +891,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651.27, y: -166.27}
-  m_SizeDelta: {x: 617.46, y: 332.54}
+  m_AnchoredPosition: {x: -0.0050049, y: -165.75}
+  m_SizeDelta: {x: 1920, y: 332.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &222211683
 MonoBehaviour:
@@ -929,7 +916,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 302f076dc3f8f664cbed549efb7edecc, type: 3}
-    m_FontSize: 65
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1531,7 +1518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &715349229
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2590,8 +2577,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651.27, y: 175.75}
-  m_SizeDelta: {x: 617.46, y: 351.5}
+  m_AnchoredPosition: {x: 0.0050049, y: 176.27}
+  m_SizeDelta: {x: 1920, y: 351.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304714126
 MonoBehaviour:
@@ -2615,7 +2602,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 302f076dc3f8f664cbed549efb7edecc, type: 3}
-    m_FontSize: 65
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2628,7 +2615,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Total Playtime
 
-    00:00.00
+    00:00.0
 
 
 '
@@ -3286,7 +3273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1550096018
 Transform:
   m_ObjectHideFlags: 0
