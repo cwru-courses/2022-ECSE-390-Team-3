@@ -104,9 +104,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Cutscenes/Credits/4 Character.unity
     guid: d7cfcb90c5cfab348aa78ce88dcb37be
-  - enabled: 1
+  - enabled: 0
     path: 
-    guid: 2822a9d1ad4ee2240a393210f37b46ed
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Cutscenes/Credits/6 Level.unity
     guid: c9e9a4d4180f6c649961e702b8dd1c28
@@ -122,9 +122,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Cutscenes/Credits/10 Special.unity
     guid: b2fae01775eb77d45854989e700d62fe
-  - enabled: 1
+  - enabled: 0
     path: 
-    guid: 2ecd4e91ba6e55d46afe9558f3bc14d9
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Cutscenes/Credits/5 Enemy.unity
     guid: c5ebfb145ad989748818da4039dacd50

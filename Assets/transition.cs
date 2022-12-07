@@ -76,6 +76,7 @@ public class transition : MonoBehaviour
 
             if(distance > 18f)
             {
+                pastPipeMouth = 0;
                 inLevel = false;
             }
 

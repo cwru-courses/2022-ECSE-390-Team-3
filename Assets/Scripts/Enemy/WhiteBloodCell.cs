@@ -18,7 +18,6 @@ public class WhiteBloodCell : MonoBehaviour
     private float bossHitPauseTime = 0.125f;
     public bool notFinal;
     private CameraBehavior CB;
-    public GameObject transition;
     public GameObject angry;
     public AudioManager AM;
     public GameObject[] organs;
@@ -40,16 +39,17 @@ public class WhiteBloodCell : MonoBehaviour
 
     void Update()
     {
+       
 
         if (bonked && anim.GetCurrentAnimatorStateInfo(0).IsName("wbc swim"))
         {
-            if (notFinal) StartCoroutine(swimDelay(1f));
-            else swim();
+             swim();
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("white blood cell idle"))
         {
             transform.eulerAngles = new Vector3(0, 0, pointIndex * 90);
+            if (AM != null) AM.Stop("whoosh");
         }
 
         //jank
@@ -85,10 +85,9 @@ public class WhiteBloodCell : MonoBehaviour
                 {
                     CB.stopCam = true;
                     gameManager.GetComponent<GameManager>().OnKeyGet(null, null);
-                    if (transition != null) transition.transform.position = new Vector3(transition.transform.position.x, transition.transform.position.y, -2);
                     Instantiate(angry, new Vector3(this.transform.position.x + 2, this.transform.position.y + 4, this.transform.position.z + 1), Quaternion.identity);
-                    StartCoroutine(moveTube(1.8f));
-                    StartCoroutine(removeAngry(0.75f));
+                    AM.Play("angry");
+                    StartCoroutine(removeAngry(1.6f));
 
                 }
 
@@ -113,10 +112,21 @@ public class WhiteBloodCell : MonoBehaviour
 
         sr.material = flash;
         StartCoroutine(flashDelay(0.2f));
+
+        if (notFinal)
+        {
+            anim.SetBool("swim", true);
+            StartCoroutine(delayAngry(1.4f));
+        }
+       
+
         anim.SetBool("bonked", true);
         anim.SetBool("unbonk", false);
+
+
     }
 
+    
     void dead()
     {
         CB.stopCam = true;
@@ -128,6 +138,7 @@ public class WhiteBloodCell : MonoBehaviour
 
     void swim()
     {
+        if(AM != null) AM.Play("whoosh");
         Vector3 vectorToTarget = patrolPoints[pointIndex].position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -143,6 +154,7 @@ public class WhiteBloodCell : MonoBehaviour
         else if (currentAnim > 0.3f && currentAnim <= 0.615f)
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[pointIndex].position, 25 * Time.deltaTime);
+           
         }
         else if (currentAnim > 0.615f && currentAnim <= 0.8f)
         {
@@ -163,6 +175,7 @@ public class WhiteBloodCell : MonoBehaviour
             anim.SetBool("bonked", false);
 
         }
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -2);
 
     }
 
@@ -187,14 +200,10 @@ public class WhiteBloodCell : MonoBehaviour
         Instantiate(organs[1], this.transform.position, Quaternion.identity);
         Instantiate(organs[2], this.transform.position, Quaternion.identity);
         Instantiate(explosion, this.transform.position, Quaternion.identity);
+        if (AM != null) AM.Play("explosion");
         StartCoroutine(removeExplosion(0.667f));
     }
 
-    IEnumerator moveTube(float time)
-    {
-        yield return new WaitForSeconds(time);
-        transition.transform.position = new Vector3(transition.transform.position.x, transition.transform.position.y, -1);
-    }
 
     IEnumerator swimDelay(float time)
     {
@@ -218,6 +227,15 @@ public class WhiteBloodCell : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(GameObject.FindWithTag("Explosion"));
+
+    }
+
+   
+    IEnumerator delayAngry(float time)
+    {
+        yield return new WaitForSeconds(time);
+        anim.SetBool("swim", false);
+
 
     }
 
