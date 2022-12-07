@@ -9,6 +9,7 @@ public class FadeControl : MonoBehaviour
     public Animator anim;
     public string NextScene = "";
     public AudioManager AM;
+    public bool isCredits = false;
 
     public void Start()
     {
@@ -16,11 +17,21 @@ public class FadeControl : MonoBehaviour
         fadeScreen.SetActive(true);
         anim.SetBool("FadeIn?", true);
         anim.SetBool("FadeOut?", false);
+
+        if(isCredits == true) StartCoroutine(LoadLevelAfterDelayCredits());
+    }
+
+    public void Update()
+    {
+        if(isCredits && (Input.GetKey(KeyCode.Escape)))
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 
     public void ChangeScene()
     {
-        AM.Play("uiClick");
+        if(!isCredits) AM.Play("uiClick");
         anim.SetBool("FadeOut?", true);
         anim.SetBool("FadeIn?", false);
         Debug.Log("Loading" + NextScene);
@@ -31,5 +42,11 @@ public class FadeControl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(NextScene);
+    }
+
+    IEnumerator LoadLevelAfterDelayCredits()
+    {
+        yield return new WaitForSeconds(8.0f);
+        ChangeScene();
     }
 }

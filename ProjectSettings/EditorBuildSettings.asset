@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Cutscenes/Intro.unity
     guid: c061b76d17372664bbb85e825a5ad9f8
   - enabled: 1
-    path: Assets/Scenes/UI Scenes/Cutscenes/Credits.unity
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/Ze Old Credits.unity
     guid: 0767794e347b4f14f85c377dce0ba8e0
   - enabled: 1
     path: Assets/Scenes/Bloodstream Levels/Bloodstream_L1.unity
@@ -92,4 +92,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Cutscenes/Post PuzzleL2.unity
     guid: 9db6f6942a44b2e488ec6956f468897b
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/1 Thanks.unity
+    guid: 3d2aa28d7e4c77b4fa2506dddeb29e61
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/2 Leads.unity
+    guid: aa430c2ed3811e345af8c4dc05ff52bd
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/3 Art.unity
+    guid: 5116f1a011965f34ea8e614b9abb817b
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/4 Character.unity
+    guid: d7cfcb90c5cfab348aa78ce88dcb37be
+  - enabled: 1
+    path: 
+    guid: 2822a9d1ad4ee2240a393210f37b46ed
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/6 Level.unity
+    guid: c9e9a4d4180f6c649961e702b8dd1c28
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/7 Music.unity
+    guid: 7a4d54ac6e4e3a04ba4b65c92d8263a3
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/8 UI.unity
+    guid: 0e5a702a1572d2d4db084591ea6934f6
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/9 Misc.unity
+    guid: 067306fb37c4ba742b33d7a73867b441
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/10 Special.unity
+    guid: b2fae01775eb77d45854989e700d62fe
+  - enabled: 1
+    path: 
+    guid: 2ecd4e91ba6e55d46afe9558f3bc14d9
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Cutscenes/Credits/5 Enemy.unity
+    guid: c5ebfb145ad989748818da4039dacd50
   m_configObjects: {}

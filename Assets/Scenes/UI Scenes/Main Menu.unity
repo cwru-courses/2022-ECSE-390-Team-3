@@ -285,6 +285,7 @@ MonoBehaviour:
   anim: {fileID: 1514615658}
   NextScene: Controls
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!1 &237190881
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +544,7 @@ MonoBehaviour:
   anim: {fileID: 1514615658}
   NextScene: Intro Video
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!1 &443428781
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +601,7 @@ MonoBehaviour:
   anim: {fileID: 1514615658}
   NextScene: Level Select (Main)
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!114 &443428784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,8 +1142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 1514615656}
   anim: {fileID: 1514615658}
-  NextScene: Credits
+  NextScene: 1 Thanks
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!1 &910231931
 GameObject:
   m_ObjectHideFlags: 0
