@@ -12,7 +12,6 @@ public class Splash : MonoBehaviour
     {
         re = GetComponent<Renderer>();
         re.enabled = false;
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -2);
     }
 
     // Update is called once per frame
