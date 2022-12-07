@@ -187,7 +187,6 @@ public class WhiteBloodCell : MonoBehaviour
         Instantiate(organs[1], this.transform.position, Quaternion.identity);
         Instantiate(organs[2], this.transform.position, Quaternion.identity);
         Instantiate(explosion, this.transform.position, Quaternion.identity);
-        AM.Play("explosion");
         StartCoroutine(removeExplosion(0.667f));
     }
 
