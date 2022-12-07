@@ -54,7 +54,6 @@ public class transition : MonoBehaviour
             }
             if (distance > 3.5f && pastPipeMouth == 1)
             {
-                Debug.Log(distance);
                 transform.position = new Vector3(transform.position.x, transform.position.y, 1);
             }
 

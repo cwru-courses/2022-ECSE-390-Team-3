@@ -721,6 +721,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 502000067}
   anim: {fileID: 502000068}
-  NextScene: Main Menu
+  NextScene: New Stats
   AM: {fileID: 0}
   isCredits: 1

@@ -319,13 +319,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d855a2b17648954fa5e1f9a58ce2a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeCounter: {fileID: 0}
-  deathsCounter: {fileID: 0}
-  stats: {fileID: 0}
-  levelLabel: {fileID: 0}
-  timeLabel: {fileID: 0}
-  deathsLabel: {fileID: 0}
-  finalStats: {fileID: 0}
+  Tutorial_L1Time: {fileID: 0}
+  Tutorial_L2Time: {fileID: 0}
+  Tutorial_L3Time: {fileID: 0}
+  Tutorial_L4Time: {fileID: 0}
+  Bloodstream_L1Time: {fileID: 0}
+  Bloodstream_L2Time: {fileID: 0}
+  Puzzle_L1Time: {fileID: 0}
+  Bloodstream_L3Time: {fileID: 0}
+  Bloodstream_L4Time: {fileID: 0}
+  Puzzle_L2Time: {fileID: 0}
+  Boss_LevelTime: {fileID: 0}
   finalTime: {fileID: 0}
   finalDeaths: {fileID: 0}
   currentLevel: Finale
@@ -651,4 +655,4 @@ MonoBehaviour:
   - Congratulations Subject #0451
   - Mission Accomplished
   textSpeed: 0.125
-  nextScene: Credits
+  nextScene: 1 Thanks

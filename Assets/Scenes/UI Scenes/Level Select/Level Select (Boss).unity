@@ -819,6 +819,7 @@ MonoBehaviour:
   anim: {fileID: 416768068}
   NextScene: Level Select (Bloodstream)
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!114 &430085297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   anim: {fileID: 416768068}
   NextScene: Level Select (Main)
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!114 &780400537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,6 +1275,7 @@ MonoBehaviour:
   anim: {fileID: 416768068}
   NextScene: Level Select (Tutorial)
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!114 &795710336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,6 +1580,7 @@ MonoBehaviour:
   anim: {fileID: 416768068}
   NextScene: Level Select (Puzzle)
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!114 &1273729385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,6 +1839,7 @@ MonoBehaviour:
   anim: {fileID: 416768068}
   NextScene: Boss Level
   AM: {fileID: 0}
+  isCredits: 0
 --- !u!114 &1333247967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1882,6 +1887,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1333247966}
         m_TargetAssemblyTypeName: FadeControl, Assembly-CSharp
         m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1333247966}
+        m_TargetAssemblyTypeName: FadeControl, Assembly-CSharp
+        m_MethodName: ResetStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

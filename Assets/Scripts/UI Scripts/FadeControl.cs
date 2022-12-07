@@ -25,7 +25,14 @@ public class FadeControl : MonoBehaviour
     {
         if(isCredits && (Input.GetKey(KeyCode.Escape)))
         {
-            SceneManager.LoadScene("Main Menu");
+            if (SpeedrunStats.notFullStats == true)
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
+            else
+            {
+                SceneManager.LoadScene("New Stats");
+            }
         }
     }
 
@@ -49,4 +56,9 @@ public class FadeControl : MonoBehaviour
         yield return new WaitForSeconds(8.0f);
         ChangeScene();
     }
-}
+
+    public void ResetStats()
+    {
+        SpeedrunStats.resetAll();
+    }
+    }
