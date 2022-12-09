@@ -86,7 +86,7 @@ public class WhiteBloodCell : MonoBehaviour
                     CB.stopCam = true;
                     gameManager.GetComponent<GameManager>().OnKeyGet(null, null);
                     Instantiate(angry, new Vector3(this.transform.position.x + 2, this.transform.position.y + 4, this.transform.position.z + 1), Quaternion.identity);
-                    StartCoroutine(delayAngrySound(0.9f));
+                    StartCoroutine(delayAngrySound(0.6f));
                     StartCoroutine(removeAngry(1.6f));
 
                 }
