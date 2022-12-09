@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     Camera cam;
     EnemyManager EM;
 
+    public GameObject doorFront;
+    public GameObject doorBack;
+
     List<Wind> winds;
     Vector2 windVelocity;
     Vector2 currVelocity;
@@ -222,19 +225,22 @@ public class GameManager : MonoBehaviour
         CB.ToggleScreenLock(false);
         if (door != null)
         {
-            Debug.Log("hh");
             CB.SetTarget(door.transform);
             while (((Vector2)(cam.transform.position - door.transform.position)).magnitude > 0.05f) yield return null;
 
 
-            if(AM != null) {
+            if (AM != null)
+            {
                 AM.Play("doorOpen");
             }
             // this is how long the camera stares at the door
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(0.5f);
 
             // here is where you can play a door animation or something
-            door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            door.GetComponent<Animator>().SetBool("open", true);
+
+
+
         }
 
         float pause;
@@ -255,7 +261,10 @@ public class GameManager : MonoBehaviour
         player.enabled = true;
         if (EM != null) EM.SetFreeze(false);
 
-        if (door != null) Destroy(door);
+        Instantiate(doorBack, new Vector3(door.transform.position.x, door.transform.position.y, 1), door.transform.rotation);
+        Instantiate(doorFront, new Vector3(door.transform.position.x, door.transform.position.y, -1), door.transform.rotation);
+        Destroy(door);
+
 
         yield return null;
     }
