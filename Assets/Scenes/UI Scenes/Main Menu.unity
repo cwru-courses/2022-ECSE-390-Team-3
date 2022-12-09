@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -873,6 +873,24 @@ MonoBehaviour:
     loop: 0
   - name: pipeOut
     clip: {fileID: 8300000, guid: 9754d3313bc59e74fa954386227599ca, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: explosion
+    clip: {fileID: 8300000, guid: 86cc5aae8cdaefa43b7b3d0bb8f90ffd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: angry
+    clip: {fileID: 8300000, guid: 84f2ef719c1a0b245b8de9e8afe64355, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: whoosh
+    clip: {fileID: 8300000, guid: 20f2093bc26812142bbb623d4db6006c, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
